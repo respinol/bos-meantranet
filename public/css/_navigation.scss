@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=SourceCodePro:400,200,700");
+/*Stylus variables for navbar height*/
+$navbar-height: 50px;
+$big-logo-padding:  30px;
+$small-logo-padding: 4px;
+
+/*Multilevel dropdown*/
+@media (min-width: 767px) {
+  .navbar-nav .dropdown-menu .caret {
+    transform: rotate(-90deg);
+  }
+}
+.navbar-inverse {
+  background: rgba(62,195,246,0);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: none;
+}
+.navbar-inverse .navbar-toggle {
+  border: 1px solid #333;
+  border-color: rgba(255,255,255,0.7);
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: transparent;
+}
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-collapse,
+  .navbar-inverse .navbar-form {
+    background: rgba(255,255,255,0.75);
+  }
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #000;
+}
+.navbar-inverse .navbar-nav > li > a:hover .navbar-inverse .navbar-nav > li > a:focus {
+  color: #22f;
+}
+.small-logo-container {
+  padding-top: $navbar-height;
+  height: $navbar-height;
+  overflow: hidden;
+}
+.small-logo {
+  color: #fff;
+  font-size: 2.5em;
+  padding-bottom: $small-logo-padding;
+}
+.big-logo-row {
+  background: #ffd700;
+}
+.big-logo-row .big-logo-container {
+  padding-top: $navbar-height;
+}
+.h1 {
+  font-size: 4em;
+  margin: 0;
+  padding: 0 0 $big-logo-padding 0;
+}
+@media (min-width: 400px) {
+  .h1 {
+    font-size: 4.5em;
+  }
+}
+@media (min-width: 440px) {
+  .h1 {
+    font-size: 5.5em;
+  }
+}
+@media (min-width: 500px) {
+  .h1 {
+    font-size: 6.5em;
+  }
+}
+@media (min-width: 630px) {
+  .h1 {
+    font-size: 7.5em;
+  }
+}
+@media (min-width: 768px) {
+  .h1 {
+    font-size: 9em;
+    padding-bottom: $big-logo-padding;
+  }
+}
+@media (min-width: 1200px) {
+  .h1 {
+    font-size: 12em;
+  }
+}

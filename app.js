@@ -35,6 +35,8 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
+const applicantController = require('./controllers/applicant');
+
 /**
  * API keys and Passport configuration.
  */
@@ -175,6 +177,12 @@ app.get('/auth/tumblr', passport.authorize('tumblr'));
 app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), (req, res) => {
   res.redirect('/api/tumblr');
 });
+
+/**
+ * Custom routes.
+ */
+ app.get('/applicant/exam', applicantController.getExam);
+
 
 /**
  * Error Handler.
