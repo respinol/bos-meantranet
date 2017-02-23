@@ -8,31 +8,43 @@
         span.icon-bar
 
       .small-logo-container
-        a.small-logo(href='#') Big Outsource
+        a.small-logo(href='#')
+          b BIG
+          span &nbsp;OUTSOURCE
 
     .navbar-collapse.collapse
       ul.nav.navbar-nav.navbar-right
         li(class=(title == 'Home') ? 'active' : undefined)
-          a(href='/') Home
+          a(href='/')
+            span.fa.fa-home(aria-hidden='true')
+            | Home
+
         li(class=(title == 'API Examples') ? 'active' : undefined)
           a(href='/api') API Examples
-        li(class=(title == 'Contact') ? 'active' : undefined)
-          a(href='/contact') Contact
-        li
-          a(href='/status') Status
+        //- 
+        //- li(class=(title == 'Contact') ? 'active' : undefined)
+        //-   a(href='/contact') Contact
+        //-
+        //- li
+        //-   a(href='/status') Status
+
         li(class=(title == 'Applicant Exam') ? 'active' : undefined)
           a(href='/applicant/exam') Applicant exam
+
         li.dropdown(class=(title == 'Intern Tools') ? 'active' : undefined)
           a.dropdown-toggle(href='#', data-toggle='dropdown') Intern Tools
             b.caret
           ul.dropdown-menu
             li(class=(title == 'Assessment Score Data Entry Form') ? 'active' : undefined)
               a(href='/intern/assessment-form') Assessment Score Data Entry Form
+
             li.divider
             li(class=(title == 'Web Crawler') ? 'active' : undefined)
               a(href='/crawler') Web Crawler
+
             li(class=(title == 'Consequence Picker') ? 'active' : undefined)
               a(href='/intern/consequence-picker') Consequence Picker
+
         li.dropdown(class=(title == 'Admin Tools') ? 'active' : undefined)
           a.dropdown-toggle(href='#', data-toggle='dropdown') Admin Tools
             b.caret
@@ -66,4 +78,6 @@
   .container
     .row
       .col-xs-12.big-logo-container
-        h1.big-logo BIG OUTSOURCE
+        h1.big-logo
+          b Big
+          span &nbsp;Outsource
