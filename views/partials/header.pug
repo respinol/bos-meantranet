@@ -1,4 +1,4 @@
-.navbar.navbar-default.navbar-fixed-top
+.navbar.navbar-inverse.navbar-default.navbar-fixed-top(role='navigation')
   .container
     .navbar-header
       button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
@@ -6,9 +6,10 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/')
-        i.fa.fa-cube
-        | Project name
+
+      .small-logo-container
+        a.small-logo(href='/') Big Outsource
+
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li(class=(title == 'Home') ? 'active' : undefined)
@@ -19,6 +20,27 @@
           a(href='/contact') Contact
         li
           a(href='/status') Status
+        li(class=(title == 'Applicant Exam') ? 'active' : undefined)
+          a(href='/applicant/exam') Applicant exam
+        li.dropdown(class=(title == 'Intern Tools') ? 'active' : undefined)
+          a.dropdown-toggle(href='#', data-toggle='dropdown') Intern Tools
+            b.caret
+          ul.dropdown-menu
+            li(class=(title == 'Assessment Score Data Entry Form') ? 'active' : undefined)
+              a(href='/intern/assessment-form') Assessment Score Data Entry Form
+            li.divider
+            li(class=(title == 'Web Crawler') ? 'active' : undefined)
+              a(href='/crawler') Web Crawler
+            li(class=(title == 'Consequence Picker') ? 'active' : undefined)
+              a(href='/intern/consequence-picker') Consequence Picker
+        li.dropdown(class=(title == 'Admin Tools') ? 'active' : undefined)
+          a.dropdown-toggle(href='#', data-toggle='dropdown') Admin Tools
+            b.caret
+          ul.dropdown-menu
+            li(class=(title == 'Assessment Scores') ? 'active' : undefined)
+              a(href='/applicant/scores') Assessment Scores
+
+
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=(title == 'Login') ? 'active' : undefined)
@@ -40,3 +62,9 @@
               li.divider
               li
                 a(href='/logout') Logout
+
+.container-fluid.big-logo-row
+  .container
+    .row
+      .col-xs-12.big-logo-container
+        h1.big-logo BIG OUTSOURCE
