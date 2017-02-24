@@ -20,6 +20,10 @@ $(window).scroll(function() {
         smallPadding = 0;
     }
 
+    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+        //Need code here//
+    }
+
     $('.small-logo-container ').css({
         "padding-top": smallPadding
     });

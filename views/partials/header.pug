@@ -21,7 +21,7 @@
 
         li(class=(title == 'API Examples') ? 'active' : undefined)
           a(href='/api') API Examples
-        //- 
+        //-
         //- li(class=(title == 'Contact') ? 'active' : undefined)
         //-   a(href='/contact') Contact
         //-
@@ -36,14 +36,14 @@
             b.caret
           ul.dropdown-menu
             li(class=(title == 'Assessment Score Data Entry Form') ? 'active' : undefined)
-              a(href='/intern/assessment-form') Assessment Score Data Entry Form
+              a(href='/applicant/form') Assessment Score Data Entry Form
 
             li.divider
             li(class=(title == 'Web Crawler') ? 'active' : undefined)
               a(href='/crawler') Web Crawler
 
             li(class=(title == 'Consequence Picker') ? 'active' : undefined)
-              a(href='/intern/consequence-picker') Consequence Picker
+              a(href='/intern/consequence') Consequence Picker
 
         li.dropdown(class=(title == 'Admin Tools') ? 'active' : undefined)
           a.dropdown-toggle(href='#', data-toggle='dropdown') Admin Tools
@@ -51,6 +51,13 @@
           ul.dropdown-menu
             li(class=(title == 'Assessment Scores') ? 'active' : undefined)
               a(href='/applicant/scores') Assessment Scores
+
+            li.divider
+            li
+              a(href='/status') Application Status
+
+        li(class=(title == 'Contact') ? 'active' : undefined)
+          a(href='/contact') Contact
 
         ul.nav.navbar-nav.pull-right
           if !user

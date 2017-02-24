@@ -1,0 +1,51 @@
+extends ../layout
+
+block script
+
+    script.
+        var main = function() {
+            //The array of questions
+            var consequences = [
+                'Sing while eating polvoron.',
+                'Sing Leron Leron Sinta in english.',
+                'Spell your name using your butt.',
+                'Sing the theme song of Ang Probinsyano in the tune of May Tatlong Bibe.',
+                'Duck walk to the third floor.',
+                'Dance Boom Tarat Tarat with feelings.',
+                'Re-enact the scene from Barcelona: Mahalin mo ako dahil mahal mo ako, because that is what I deserve.',
+                'Perform the Mr. Bean - Mr. Bombastic dance. https://www.youtube.com/watch?v=2J5xs2ukksE',
+                'Sing with your tongue out.',
+                'You are not allowed to speak Tagalog for the day.',
+                'Do the Juicy Wiggle. ',
+                'Sing Bring Me To Life with headbang.',
+                'Jump ten time while laughing.',
+                'Interpretative sing and dance of May Tatlong Bibe.',
+                'Tell everyone when and why you last cried.',
+                'Dance like a native without any sound.',
+                'You cannot use your right hand for 30 minutes.',
+                'Say Anneyeong before speaking.',
+                'Say meow at the end of every sentence.',
+                'No one talks to you for the day.',
+                'Act like the opposite gender for the day.'
+                ];
+
+            //Function triggered when button is clicked
+            $('.cons-btn').click(function() {
+                //Generate random number between 0 & the length of the array
+                var numRand = Math.floor(Math.random() * consequences.length);
+        //Print to html:
+            $('#consequences').text(consequences[numRand]);
+            //Remove item from array so that the question will not be repeated:
+            consequences.splice(numRand, 1);
+            return false;
+            });
+        }
+
+        $(document).ready(main);
+
+block content
+    h1 What's My Consequence?
+    a(href="#")
+        .cons-btn
+            p Let's do this!
+    h2#consequences

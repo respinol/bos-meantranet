@@ -4,7 +4,7 @@
   "description": "Intranet built using MEAN stack. Boilerplate: https://github.com/sahat/hackathon-starter.git",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iamjigz/bos-meantranet"
+    "url": "git@github.com:iamjigz/bos-meantranet"
   },
   "author": "Jigno Alfred V. Venezuela",
   "license": "MIT",
@@ -46,7 +46,8 @@
     "pug": "^2.0.0-beta6",
     "request": "^2.78.0",
     "tumblr.js": "^1.1.1",
-    "validator": "^6.1.0"
+    "validator": "^6.1.0",
+    "x-ray": "^2.3.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",

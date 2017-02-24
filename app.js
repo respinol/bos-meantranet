@@ -20,6 +20,11 @@ const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
 const multer = require('multer');
 
+/**
+ * Custom module dependencies.
+ */
+const Xray = require('x-ray');
+
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
 /**
@@ -36,7 +41,8 @@ const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
 const applicantController = require('./controllers/applicant');
-
+const internController = require('./controllers/intern');
+const crawlerController = require('./controllers/crawler');
 /**
  * API keys and Passport configuration.
  */
@@ -179,11 +185,23 @@ app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect:
 });
 
 /**
- * Custom routes.
+ * Applicant Hiring Process routes.
  */
- app.get('/applicant/exam', applicantController.getExam);
+app.get('/applicant/exam', applicantController.getExam);
+app.get('/applicant/scores', applicantController.getScores);
+app.get('/applicant/form', applicantController.getForm);
 
+/**
+ * Intern Tools routes.
+ */
+app.get('/intern/consequence', internController.getConsequence);
 
+/**
+ * Crawler routes.
+ */
+app.get('/crawler', crawlerController.getCrawler);
+app.get('/crawler.json', crawlerController.getLocations);
+app.get('/searching', crawlerController.getData);
 /**
  * Error Handler.
  */
