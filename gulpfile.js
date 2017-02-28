@@ -3,9 +3,21 @@ var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
 var notify = require('gulp-notify');
 var livereload = require('gulp-livereload');
+var exec = require('child_process').exec;
 
-// Task
-gulp.task('default', function() {
+function runCommand(command) {
+  return function(callback) {
+    exec(command, function(err, stdout, stderr) {
+      console.log(stdout);
+      console.log(stderr);
+      callback(err);
+    });
+  };
+}
+
+gulp.task('mongo', runCommand('net start MongoDB'));
+
+gulp.task('start', function() {
     // listen for changes
     livereload.listen();
     // configure nodemon
@@ -33,3 +45,7 @@ gulp.task('default', function() {
 					stream.emit('restart', 10)
 				})
 })
+
+gulp.task('default', [ 'mongo', 'start' ], function() {
+
+});

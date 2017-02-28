@@ -1,30 +1,53 @@
 extends ../layout
 
 block script
-  script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js")
-  script(src="//cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.4/papaparse.min.js")
-  script(src='/js/crawler.js')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.4/papaparse.min.js")
+    script(src='/js/crawler.js')
 
 block content
     .container
-      h1 Search Yell.com
-      #alert-area
-      #scraperModal.modal.fade(role="dialog")
-        .modal-dialog
-          .modal-content
-            .modal-header
-              button.close("button", data-dismiss="modal") x
-              h4.modal-title Scraping Status
-            .modal-body
-              p.modal-msg Scrape finished...
-            .modal-footer
-              button.btn.btn-default(type="button", data-dismiss="modal") Close
+        h1 Big Outsource Web Crawler
+        #alert-area
+        #scraperModal.modal.fade(role="dialog")
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button.close("button", data-dismiss="modal") x
+                        h4.modal-title Scraping Status
+                    .modal-body
+                        p.modal-msg Scrape finished...
+                    .modal-footer
+                        button.btn.btn-default(type="button", data-dismiss="modal") Close
 
-      div#page-wrapper
-        label(for="location") Select a location:
-        input#location(type="text", list="json-locations", placeholder="e.g. Glasgow")
-        datalist#json-locations
-        input#search(type="search", placeholder="Enter category")
-        button#download.btn.default(type="button") Download
-      ul#results(data-role='listview', data-filter='true')
-        include crawl-template.html
+        div#page-wrapper
+            label(for="select-country") Select a country:
+            form#select-country
+              input#country(type="radio", name="country", value = "US")
+              | &nbsp; USA
+              input#country(type="radio", name="country", value = "UK")
+              | &nbsp; UK
+            label(for="website") Select a website:
+            input#website(type="text", list="website-crawlers", placeholder="e.g. Yell.com")
+            datalist#website-crawlers
+                option Citysearch
+                option Restaurant.com
+                option Tripadvisor
+                option Yell
+                option Yelp
+                option Yellowpages
+
+
+        div#page-wrapper
+            label(for="location") Select a location:
+            input#location(type="text", list="json-locations", placeholder="e.g. Glasgow")
+            datalist#json-locations
+            br
+            label(for="search") Select a category:
+            input#search(type="search", placeholder="Enter category")
+
+        div
+            button#scrape.btn.default(type="button") Scrape
+            button#download.btn.default(type="button") Download
+        ul#results(data-role='listview', data-filter='true')
+          include crawl-template.html

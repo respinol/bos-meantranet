@@ -8,7 +8,8 @@ $(function() {
     $('#search').on('keyup', function(e) {
         if (e.keyCode === 13) {
             var parameters = {
-                search: $(this).val(),
+                crawler: $('#website').val(),
+                search: $('#search').val(),
                 location: $('#location').val()
             };
 
@@ -170,6 +171,6 @@ $(function() {
     input.placeholder = "Loading options...";
 
     // Set up and make the request.
-    req.open('GET', '/crawler.json', true);
+    req.open('GET', '/uk-locations.json', true);
     req.send();
 });

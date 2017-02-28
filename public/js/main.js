@@ -50,4 +50,15 @@ $(window).scroll(function() {
             "box-shadow": "none"
         });
     }
+
+    // if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+    //     //Need code here//
+    //     $('.big-logo-row').css({
+    //         "height": 0
+    //     });
+    // } else {
+    //     $('.big-logo-row').css({
+    //         "height": bigLogoHeight
+    //     });
+    // }
 });

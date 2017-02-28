@@ -2,14 +2,16 @@
            Variables
   ********************************** */
 $navbar-height: 30px;
-$big-logo-padding: 10px; // adjust these 2 values
-$small-logo-padding: 4px; // of bottom padding to look nice
+$big-logo-padding: 15px; // adjust these 2 values
+$small-logo-padding: 2px; // of bottom padding to look nice
 /* *********************************
    Some Style Overrides on Bootstrap
   ********************************** */
+
 .navbar-inverse {
     background: rgba(62,195,246,0);
     border-bottom: none;
+    padding: $small-logo-padding;
 }
 
 .navbar-inverse .navbar-toggle {
