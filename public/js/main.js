@@ -1,4 +1,4 @@
-$(window).scroll(function() {
+$(window).on('DOMMouseScroll mousewheel', function(e) {
     var navbarColor = "62,195,246"; //color attr for rgba
     var smallLogoHeight = $('.small-logo').height();
     var bigLogoHeight = $('.big-logo').height();
@@ -17,17 +17,12 @@ $(window).scroll(function() {
         smallPadding = smallLogoEndPos;
     }
     if (smallPadding < 0) {
-        smallPadding = 0;
-    }
-
-    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-        //Need code here//
+        smallPadding = smallLogoEndPos;
     }
 
     $('.small-logo-container ').css({
         "padding-top": smallPadding
     });
-
     var navOpacity = ySmall / smallLogoHeight;
     if (navOpacity > 1) {
         navOpacity = 1;
@@ -35,6 +30,7 @@ $(window).scroll(function() {
     if (navOpacity < 0) {
         navOpacity = 0;
     }
+
     var navBackColor = 'rgba(' + navbarColor + ',' + navOpacity + ')';
     $('.navbar').css({
         "background-color": navBackColor
@@ -51,14 +47,15 @@ $(window).scroll(function() {
         });
     }
 
+    // var bigLogo = $('.big-logo-row');
+    // var smallLogo = $('.small-logo-container');
     // if ($(window).scrollTop() + $(window).height() == $(document).height()) {
     //     //Need code here//
-    //     $('.big-logo-row').css({
-    //         "height": 0
-    //     });
+    //     bigLogo.fadeOut("slow");
+    //     smallLogo.show();
+    //
     // } else {
-    //     $('.big-logo-row').css({
-    //         "height": bigLogoHeight
-    //     });
+    //     bigLogo.show();
+    //     smallLogo.fadeOut('slow');
     // }
 });

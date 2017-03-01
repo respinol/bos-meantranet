@@ -1,5 +1,10 @@
 var scrapedData = [];
 
+$(document).ready(function() {
+    $('input[name=country]:radio').change(loadLocations);
+
+});
+
 $(function() {
     var source = $("#search-results").html();
     var dataTemplate = Handlebars.compile(source);
@@ -8,7 +13,7 @@ $(function() {
     $('#search').on('keyup', function(e) {
         if (e.keyCode === 13) {
             var parameters = {
-                crawler: $('#website').val(),
+                website: $('#website').val(),
                 search: $('#search').val(),
                 location: $('#location').val()
             };
@@ -26,14 +31,14 @@ $(function() {
                 };
 
                 var D121 = {
-                  name: '',
-                  phone: '',
-                  category: [
-                    'Hospitals',
-                    'Bakeries',
-                    'Restaurant',
-                    'Printers'
-                  ],
+                    name: '',
+                    phone: '',
+                    category: [
+                        'Hospitals',
+                        'Bakeries',
+                        'Restaurant',
+                        'Printers'
+                    ],
                 };
 
                 showModal(parameters, data.business.length);
@@ -46,22 +51,22 @@ $(function() {
             var filteredData,
                 predicates = [
                     function removeNames(data) {
-                      for (var i = 0; i < filters.name.length; i++)
-                        if (data.name.indexOf(filters.name[i]) != -1)
-                          return false;
-                      return true;
+                        for (var i = 0; i < filters.name.length; i++)
+                            if (data.name.indexOf(filters.name[i]) != -1)
+                                return false;
+                        return true;
                     },
                     function removePhone(data) {
-                      for (var i = 0; i < filters.phone.length; i++)
-                        if (data.phone.indexOf(filters.phone[i]) != -1)
-                          return false;
-                      return true;
+                        for (var i = 0; i < filters.phone.length; i++)
+                            if (data.phone.indexOf(filters.phone[i]) != -1)
+                                return false;
+                        return true;
                     },
                     function removeCategories(data) {
-                      for (var i = 0; i < filters.category.length; i++)
-                        if (data.category.indexOf(filters.category[i]) != -1)
-                          return false;
-                      return true;
+                        for (var i = 0; i < filters.category.length; i++)
+                            if (data.category.indexOf(filters.category[i]) != -1)
+                                return false;
+                        return true;
                     }
                 ];
 
@@ -91,7 +96,7 @@ $(function() {
             $('#scraperModal').modal('show');
             $('.modal-msg').text(msg);
             $(".alert").delay(3000).fadeOut("slow", function() {
-                $(this).remove();
+                $(this).first().remove();
             });
         }
     });
@@ -120,7 +125,6 @@ $(function() {
         }
 
         scrapedData.length = 0;
-        console.log(scrapedData.length);
 
         var downloadLink = document.createElement("a");
         var blob = new Blob(["\ufeff", csv]);
@@ -135,42 +139,47 @@ $(function() {
     });
 });
 
-$(function() {
+function loadLocations(e) {
+    var country = $('input[name=country]:checked').val();
     var datalist = document.getElementById('json-locations');
     var input = document.getElementById('location');
     var req = new XMLHttpRequest();
 
-    // Handle state changes for the request.
+    var jsonUrl = 'https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json';
+    var placeholder = 'Loading options...';
+
+    if (country == 'United States') {
+      jsonUrl = 'https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json';
+      placeholder = 'e.g. New York';
+    } else if (country == 'United Kingdom') {
+      jsonUrl = 'https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json';
+      placeholder = "e.g. Glasgow";
+    } else {
+      jsonUrl = '';
+      placeholder = "Couldn't load datalist options...";
+    }
+
     req.onreadystatechange = function(res) {
         if (req.readyState === 4) {
             if (req.status === 200) {
-                // Parse JSON
                 var json = JSON.parse(req.responseText);
-                var jsonOptions = json.locations;
+                var jsonOptions = json[country];
 
-                // Loop over JSON array
+                datalist.empty();
                 jsonOptions.forEach(function(item) {
-                    // Create a new <option> element.
                     var option = document.createElement('option');
 
-                    // Set the value using the item in the JSON array.
                     option.value = item;
-                    // Add the <option> element to the <datalist>.
                     datalist.appendChild(option);
                 });
 
-                // Update the placeholder text.
-                input.placeholder = "e.g. Glasgow";
+                input.placeholder = placeholder;
             } else {
-                // An error occured.
                 input.placeholder = "Couldn't load datalist options...";
             }
         }
     };
-    // Update the placeholder text.
     input.placeholder = "Loading options...";
-
-    // Set up and make the request.
-    req.open('GET', '/uk-locations.json', true);
+    req.open('GET', jsonUrl, true);
     req.send();
-});
+}

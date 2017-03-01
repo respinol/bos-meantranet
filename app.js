@@ -226,8 +226,6 @@ app.get('/intern/consequence', internController.getConsequence);
  * Crawler routes.
  */
 app.get('/crawler', crawlerController.getCrawler);
-app.get('/uk-locations.json', crawlerController.getUkLocations);
-app.get('/us-locations.json', crawlerController.getUsLocations);
 app.get('/searching', crawlerController.getData);
 
 /**

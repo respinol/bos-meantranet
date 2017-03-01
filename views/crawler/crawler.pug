@@ -23,10 +23,10 @@ block content
         div#page-wrapper
             label(for="select-country") Select a country:
             form#select-country
-              input#country(type="radio", name="country", value = "US")
-              | &nbsp; USA
-              input#country(type="radio", name="country", value = "UK")
-              | &nbsp; UK
+              input.country(type="radio", name="country", value = "United States")
+              | &nbsp; United States
+              input.country(type="radio", name="country", value = "United Kingdom")
+              | &nbsp; United Kingdom
             label(for="website") Select a website:
             input#website(type="text", list="website-crawlers", placeholder="e.g. Yell.com")
             datalist#website-crawlers
