@@ -180,8 +180,8 @@ app.get('/auth/google/callback', passport.authenticate('google', {
  * Applicant Hiring Process routes.
  */
 app.get('/applicant/exam', applicantController.getExam);
-app.get('/applicant/scores', applicantController.getScores);
-app.get('/applicant/form', applicantController.getForm);
+app.get('/applicant/scores',  passportConfig.isAuthenticated, applicantController.getScores);
+app.get('/applicant/form',  passportConfig.isAuthenticated, applicantController.getForm);
 
 /**
  * Intern Tools routes.
