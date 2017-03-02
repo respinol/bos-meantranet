@@ -41,7 +41,6 @@ exports.getData = (req, res, err) => {
     var search = req.query.search;
     var location = req.query.location;
 
-    console.log(website);
     if (website === 'Yell') {
         var url = "https://www.yell.com/s/" + search + "-" + location.split(' ').join('+') + ".html";
         x(url, {
@@ -58,6 +57,7 @@ exports.getData = (req, res, err) => {
                 .paginate('.pagination--next@href')
         })(function(err, page) {
             res.json(page);
+            console.log(page.length);
         })
     }
 };
