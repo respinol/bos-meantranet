@@ -193,7 +193,6 @@ app.get('/intern/consequence', internController.getConsequence);
  */
 app.get('/crawler', crawlerController.getCrawler);
 app.get('/searching', crawlerController.getData);
-
 /**
  * Error Handler.
  */

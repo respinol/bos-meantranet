@@ -122,10 +122,10 @@ $(document).ready(function() {
      * Start scraper function on button click.
      */
     function scrapeThis(e) {
+        var categories = $('#category').val().split('\n');
         var parameters = {
-            website: $('#website').val(),
+            country: $('input[name=country]:checked').val(),
             location: $('#location').val(),
-            categories: $('#category').val().split('\n'),
             category: ''
         };
 
@@ -133,10 +133,10 @@ $(document).ready(function() {
         var dataTemplate = Handlebars.compile(source);
         results = $('#results')
 
-        newAlert("Please Wait!", "We're still scraping...");
+        // newAlert("Please Wait!", "We're still scraping...");
 
-        for (var i = 0; i < parameters.categories.length; i++) {
-          parameters.category = parameters.categories[i];
+        for (var i = 0; i < categories.length; i++) {
+          parameters.category = categories[i];
 
           $.get('/searching', parameters, function(data) {
 
@@ -153,21 +153,6 @@ $(document).ready(function() {
               scrapedData.push(data);
           });
         }
-
-        // $.get('/searching', parameters, function(data) {
-        //
-        //     if (data instanceof Object) {
-        //         results.append(dataTemplate({
-        //             page: data
-        //         }));
-        //     } else {
-        //         results.append(data);
-        //     };
-        //
-        //     showModal(parameters, data.business.length);
-        //     data.business = filterArray(data.business, filterD121);
-        //     scrapedData.push(data);
-        // });
     }
 
     /**

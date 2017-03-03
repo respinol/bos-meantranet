@@ -36,29 +36,47 @@ exports.getCrawler = (req, res) => {
 /**
  * Passess a json object to #results.
  */
-exports.getData = (req, res, err) => {
-    var website = req.query.website;
+exports.getData = (req, res) => {
+    var country = req.query.country;
     var location = req.query.location;
-    var categories = req.query.categories;
     var category = req.query.category;
+    var url = "";
 
-    if (website === 'Yell.com') {
-        var url = "https://www.yell.com/s/" + category + "-" + location.split(' ').join('+') + ".html";
-        x(url, {
-            business: x('.businessCapsule', [{
-                    name: '.businessCapsule--title h2',
-                    phone: '.businessCapsule--telephone strong | formatPhoneUK',
-                    street_address: '.businessCapsule--address a span span:nth-child(1) | formatString',
-                    address_locality: '.businessCapsule--address a span span:nth-child(2) | formatString',
-                    postal_code: '.businessCapsule--address a span span:nth-child(3)',
-                    category: '.businessCapsule--classificationText | trim',
-                    website: '.businessCapsule--callToAction a@href',
-                    page_url: '.col-sm-24 a@href'
-                }])
-                .paginate('.pagination--next@href')
-        })(function(err, page) {
+    console.log(country);
+    if (country == 'United Kingdom') {
+        url = "https://www.yell.com/s/" + category + "-" + location.split(' ').join('+') + ".html";
+
+        scrapeYell(url, function(page) {
             res.json(page);
-            console.log(page.length);
         })
     }
+};
+
+// exports.startScrape = (req, res, next) => {
+//     var website = req.query.website;
+//     var location = req.query.location;
+//     var category = req.query.category;
+//
+//     req.flash('info', {
+//         msg: `Scraping ${location} for ${category}.`
+//     });
+//     next();
+// };
+
+function scrapeYell(url, callback) {
+    x(url, {
+        business: x('.businessCapsule', [{
+                name: '.businessCapsule--title h2',
+                phone: '.businessCapsule--telephone strong | formatPhoneUK',
+                street_address: '.businessCapsule--address a span span:nth-child(1) | formatString',
+                address_locality: '.businessCapsule--address a span span:nth-child(2) | formatString',
+                postal_code: '.businessCapsule--address a span span:nth-child(3)',
+                category: '.businessCapsule--classificationText | trim',
+                website: '.businessCapsule--callToAction a@href',
+                page_url: '.col-sm-24 a@href'
+            }])
+            .paginate('.pagination--next@href')
+    })(function(err, page) {
+        callback(page);
+    })
 };
