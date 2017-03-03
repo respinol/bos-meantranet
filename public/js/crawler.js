@@ -11,13 +11,59 @@ $(document).ready(function() {
         ],
     };
 
-    $('input[name=country]:radio').change(loadLocations);
+    // $('input[name=country]:radio').change(loadLocations);
+    $('input[name=country]:radio').change(function() {
+        loadLocations();
+        loadCrawlers();
+    });
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
 
     /**
      * Functions:
      */
+
+    /**
+     * Loads list of available website crawlers.
+     */
+    function loadCrawlers(e) {
+        var datalist = document.getElementById('website-crawlers');
+        var country = $('input[name=country]:checked').val();
+        var crawlers = {
+            uk: [
+                'Yell.com'
+            ],
+            us: [
+                'Citysearch.com',
+                'Yellowpages.com',
+                'Restaurant.com',
+                'Tripdavisor.com',
+                'Yelp.com'
+            ]
+        }
+
+        var crawler;
+
+        if (country == 'United States') {
+            crawler = crawlers['us'];
+
+        } else if (country == 'United Kingdom') {
+            crawler = crawlers['uk'];
+        }
+
+        if (datalist.hasChildNodes()) {
+            while (datalist.firstChild) {
+                datalist.removeChild(datalist.firstChild);
+            }
+        }
+
+        for (var i = 0; i < crawler.length; i++) {
+            var option = document.createElement('option');
+
+            option.value = crawler[i];
+            datalist.appendChild(option);
+        }
+    }
 
     /**
      * Loads location data depending on selected radio button.
@@ -78,8 +124,9 @@ $(document).ready(function() {
     function scrapeThis(e) {
         var parameters = {
             website: $('#website').val(),
-            search: $('#search').val(),
-            location: $('#location').val()
+            location: $('#location').val(),
+            categories: $('#category').val().split('\n'),
+            category: ''
         };
 
         var source = $("#search-results").html();
@@ -88,20 +135,39 @@ $(document).ready(function() {
 
         newAlert("Please Wait!", "We're still scraping...");
 
-        $.get('/searching', parameters, function(data) {
+        for (var i = 0; i < parameters.categories.length; i++) {
+          parameters.category = parameters.categories[i];
 
-            if (data instanceof Object) {
-                results.append(dataTemplate({
-                    page: data
-                }));
-            } else {
-                results.append(data);
-            };
+          $.get('/searching', parameters, function(data) {
 
-            showModal(parameters, data.business.length);
-            data.business = filterArray(data.business, filterD121);
-            scrapedData.push(data);
-        });
+              if (data instanceof Object) {
+                  results.append(dataTemplate({
+                      page: data
+                  }));
+              } else {
+                  results.append(data);
+              };
+
+              showModal(parameters, data.business.length);
+              data.business = filterArray(data.business, filterD121);
+              scrapedData.push(data);
+          });
+        }
+
+        // $.get('/searching', parameters, function(data) {
+        //
+        //     if (data instanceof Object) {
+        //         results.append(dataTemplate({
+        //             page: data
+        //         }));
+        //     } else {
+        //         results.append(data);
+        //     };
+        //
+        //     showModal(parameters, data.business.length);
+        //     data.business = filterArray(data.business, filterD121);
+        //     scrapedData.push(data);
+        // });
     }
 
     /**
@@ -157,7 +223,7 @@ $(document).ready(function() {
      * Show modal with results.
      */
     function showModal(parameters, count) {
-        var msg = "Scraped " + count + " " + parameters.search + " from " + parameters.location + ".";
+        var msg = "Scraped " + count + " " + parameters.category + " from " + parameters.location + ".";
 
         $('#scraperModal').modal('show');
         $('.modal-msg').text(msg);
@@ -167,39 +233,39 @@ $(document).ready(function() {
     }
 
     function downloadCSV() {
-      var csv = '';
+        var csv = '';
 
-      csv = Papa.unparse(scrapedData[0].business, {
-          quotes: false,
-          quoteChar: '"',
-          delimiter: ",",
-          header: true,
-          newline: "\r\n"
-      });
+        csv = Papa.unparse(scrapedData[0].business, {
+            quotes: false,
+            quoteChar: '"',
+            delimiter: ",",
+            header: true,
+            newline: "\r\n"
+        });
 
-      if (scrapedData.length > 0) {
-          for (var i = 1; i < scrapedData.length; i++) {
-              csv += "\r\n" + Papa.unparse(scrapedData[i].business, {
-                  quotes: false,
-                  quoteChar: '"',
-                  delimiter: ",",
-                  header: false,
-                  newline: "\r\n"
-              });
-          }
-      }
+        if (scrapedData.length > 0) {
+            for (var i = 1; i < scrapedData.length; i++) {
+                csv += "\r\n" + Papa.unparse(scrapedData[i].business, {
+                    quotes: false,
+                    quoteChar: '"',
+                    delimiter: ",",
+                    header: false,
+                    newline: "\r\n"
+                });
+            }
+        }
 
-      scrapedData.length = 0;
+        scrapedData.length = 0;
 
-      var downloadLink = document.createElement("a");
-      var blob = new Blob(["\ufeff", csv]);
-      var url = URL.createObjectURL(blob);
+        var downloadLink = document.createElement("a");
+        var blob = new Blob(["\ufeff", csv]);
+        var url = URL.createObjectURL(blob);
 
-      downloadLink.href = url;
-      downloadLink.download = "data.csv";
+        downloadLink.href = url;
+        downloadLink.download = "data.csv";
 
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
     }
 });

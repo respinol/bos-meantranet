@@ -38,11 +38,12 @@ exports.getCrawler = (req, res) => {
  */
 exports.getData = (req, res, err) => {
     var website = req.query.website;
-    var search = req.query.search;
     var location = req.query.location;
+    var categories = req.query.categories;
+    var category = req.query.category;
 
-    if (website === 'Yell') {
-        var url = "https://www.yell.com/s/" + search + "-" + location.split(' ').join('+') + ".html";
+    if (website === 'Yell.com') {
+        var url = "https://www.yell.com/s/" + category + "-" + location.split(' ').join('+') + ".html";
         x(url, {
             business: x('.businessCapsule', [{
                     name: '.businessCapsule--title h2',
