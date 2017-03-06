@@ -1,0 +1,23 @@
+extends ../layout
+
+block script
+    script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js")
+
+block content
+    .container
+      .page-header
+        h3 Admin Page
+
+      ul
+        for user in users
+          form.form-horizontal(action='/admin/users', method='POST')
+            input(type='hidden', name='_csrf', value=_csrf)
+            .form-group
+              label.control-label(for='name') Name
+              input#name.form-control(type='text', name='name', value=user.profile.name)
+              input#email.form-control(type='text', name='email', value=user.email)
+
+              .col-sm-offset-3.col-sm-4
+                button.btn.btn.btn-primary(type='submit')
+                  i.fa.fa-pencil
+                  | Update Profiles

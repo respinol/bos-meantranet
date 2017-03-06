@@ -18,10 +18,10 @@ block content
       label.col-sm-3.control-label Gender
       .col-sm-6
         label.radio.col-sm-3
-          input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
+          input(type='radio', checked=user.profile.gender=='male', name='gender', value='Male', data-toggle='radio')
           span Male
         label.radio.col-sm-3
-          input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
+          input(type='radio', checked=user.profile.gender=='female', name='gender', value='Female', data-toggle='radio')
           span Female
     .form-group
       label.col-sm-3.control-label(for='userlevel') User Level
@@ -41,15 +41,26 @@ block content
           input#department.form-control(type='text', list='departments', name='department', value=user.profile.department)
           datalist#departments
             option I.T.
-            option Management
+            option Human Resources
+            option Finance
+            option Operations
             option Intern
         else
-          input#location.form-control(type='text', name='department', value=user.profile.department)
+          input#location.form-control(type='text', name='department' disabled, value=user.profile.department)
 
     .form-group
       label.col-sm-3.control-label(for='jobtitle') Job Title
       .col-sm-7
-        input#jobtitle.form-control(type='text', name='jobtitle', value=user.profile.jobtitle)
+        if user.profile.userlevel == 'Admin'
+          input#jobtitle.form-control(type='text', list='jobtitles', name='jobtitle', value=user.profile.jobtitle)
+          datalist#jobtitles
+            option I.T. Administrator
+            option Management
+            option Team Leader
+            option Agent
+            option Intern
+        else
+          input#jobtitle.form-control(type='text', name='jobtitle' disabled, value=user.profile.jobtitle)
     .form-group
       label.col-sm-3.control-label Gravatar
       .col-sm-4

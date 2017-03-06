@@ -48,6 +48,7 @@ const contactController = require('./controllers/contact');
  * App-specific Controllers (route handlers).
  */
 const applicantController = require('./controllers/applicant');
+const adminController = require('./controllers/admin');
 const internController = require('./controllers/intern');
 const crawlerController = require('./controllers/crawler');
 
@@ -136,17 +137,22 @@ app.use(express.static(path.join(__dirname, 'public'), {
  * Primary app routes.
  */
 app.get('/', homeController.index);
-app.get('/login', userController.getLogin);
-app.post('/login', userController.postLogin);
+app.route('/login')
+  .get(userController.getLogin)
+  .post(userController.postLogin)
 app.get('/logout', userController.logout);
-app.get('/forgot', userController.getForgot);
-app.post('/forgot', userController.postForgot);
-app.get('/reset/:token', userController.getReset);
-app.post('/reset/:token', userController.postReset);
-app.get('/signup', userController.getSignup);
-app.post('/signup', userController.postSignup);
-app.get('/contact', contactController.getContact);
-app.post('/contact', contactController.postContact);
+app.route('/forgot')
+  .get(userController.getForgot)
+  .post(userController.postForgot)
+app.route('/reset/:token')
+  .get(userController.getReset)
+  .post(userController.postReset)
+app.route('/signup')
+  .get(userController.getSignup)
+  .post(userController.postSignup)
+app.route('/contact')
+  .get(contactController.getContact)
+  .post(contactController.postContact)
 app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
@@ -193,6 +199,14 @@ app.get('/intern/consequence', internController.getConsequence);
  */
 app.get('/crawler', crawlerController.getCrawler);
 app.get('/searching', crawlerController.getData);
+
+/**
+ * Admin routes.
+ */
+app.route('/admin/users')
+  .get(adminController.getUsers)
+  .post(adminController.postUpdateUsers)
+
 /**
  * Error Handler.
  */
