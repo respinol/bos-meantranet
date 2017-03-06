@@ -66,10 +66,10 @@ const app = express();
  */
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGODB_URI);
-// mongoose.connection.on('error', () => {
-//     console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
-//     process.exit();
-// });
+mongoose.connection.on('error', () => {
+    console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
+    process.exit();
+});
 
 /**
  * Express configuration.

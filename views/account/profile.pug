@@ -9,11 +9,11 @@ block content
     .form-group
       label.col-sm-3.control-label(for='email') Email
       .col-sm-7
-        input.form-control(type='email', name='email', id='email', value=user.email)
+        input#email.form-control(type='email', name='email', value=user.email)
     .form-group
       label.col-sm-3.control-label(for='name') Name
       .col-sm-7
-        input.form-control(type='text', name='name', id='name', value=user.profile.name)
+        input#name.form-control(type='text', name='name', value=user.profile.name)
     .form-group
       label.col-sm-3.control-label Gender
       .col-sm-6
@@ -23,17 +23,33 @@ block content
         label.radio.col-sm-3
           input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
           span Female
-        label.radio.col-sm-3
-          input(type='radio', checked=user.profile.gender=='other', name='gender', value='other', data-toggle='radio')
-          span Other
     .form-group
-      label.col-sm-3.control-label(for='location') Location
+      label.col-sm-3.control-label(for='userlevel') User Level
       .col-sm-7
-        input.form-control(type='text', name='location', id='location', value=user.profile.location)
+        if user.profile.userlevel == 'Admin'
+          input#userlevel.form-control(type='text', list='userlevels', name='userlevel', value=user.profile.userlevel)
+          datalist#userlevels
+            option Admin
+            option Employee
+            option Intern
+        else
+          input#userlevel.form-control(type='text', name='userlevel' disabled, value=user.profile.userlevel)
     .form-group
-      label.col-sm-3.control-label(for='website') Website
+      label.col-sm-3.control-label(for='department') Department
       .col-sm-7
-        input.form-control(type='text', name='website', id='website', value=user.profile.website)
+        if user.profile.userlevel == 'Admin'
+          input#department.form-control(type='text', list='departments', name='department', value=user.profile.department)
+          datalist#departments
+            option I.T.
+            option Management
+            option Intern
+        else
+          input#location.form-control(type='text', name='department', value=user.profile.department)
+
+    .form-group
+      label.col-sm-3.control-label(for='jobtitle') Job Title
+      .col-sm-7
+        input#jobtitle.form-control(type='text', name='jobtitle', value=user.profile.jobtitle)
     .form-group
       label.col-sm-3.control-label Gravatar
       .col-sm-4
@@ -52,11 +68,11 @@ block content
     .form-group
       label.col-sm-3.control-label(for='password') New Password
       .col-sm-7
-        input.form-control(type='password', name='password', id='password')
+        input#password.form-control(type='password', name='password')
     .form-group
       label.col-sm-3.control-label(for='confirmPassword') Confirm Password
       .col-sm-7
-        input.form-control(type='password', name='confirmPassword', id='confirmPassword')
+        input#confirmPassword.form-control(type='password', name='confirmPassword')
     .form-group
       .col-sm-offset-3.col-sm-4
         button.btn.btn-primary(type='submit')

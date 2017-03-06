@@ -14,8 +14,9 @@ const userSchema = new mongoose.Schema({
   profile: {
     name: String,
     gender: String,
-    location: String,
-    website: String,
+    userlevel: String,
+    department: String,
+    jobtitle: String,
     picture: String
   }
 }, { timestamps: true });

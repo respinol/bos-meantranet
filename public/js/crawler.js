@@ -11,7 +11,6 @@ $(document).ready(function() {
         ],
     };
 
-    // $('input[name=country]:radio').change(loadLocations);
     $('input[name=country]:radio').change(function() {
         loadLocations();
         loadCrawlers();
