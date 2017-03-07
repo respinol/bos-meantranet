@@ -1,89 +1,107 @@
 /* *********************************
            Variables
   ********************************** */
-$navbar-height: 30px;
-$big-logo-padding: 15px; // adjust these 2 values
+$navbar-paddingTop:10px;
+$navbar-height: 50px;
+
 $small-logo-padding: 2px; // of bottom padding to look nice
+.main-content{
+  padding-top: $navbar-height + $navbar-paddingTop * 3;
+}
+
 /* *********************************
    Some Style Overrides on Bootstrap
-  ********************************** */
 
+ ********************************** */
+.navbar{
+  padding:10px;
+
+}
 .navbar-inverse {
-    background: rgba(62,195,246,0);
-    border-bottom: none;
-    padding: $small-logo-padding;
+  background: rgba(0, 42, 67,0.5);
+  border-bottom: none;
+  padding:$navbar-paddingTop;
 }
 
 .navbar-inverse .navbar-toggle {
-    border: 1px solid #333;
-    border-color: rgba(255,255,255,0.7);
+  border: 1px solid #333;
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
-    border-color: transparent;
-    @media (max-width: 767px) {
-        background: rgba(255,255,255,0.75);
-    }
+  border-color: transparent;
+  @media (max-width: 767px) {
+    background: rgba(255, 255, 255, 0.75);
+  }
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: black;
+  color: #FFF;
 }
 
-.navbar-inverse .navbar-nav > li > a:focus,
-.navbar-inverse .navbar-nav > li > a:hover {
-    color: #22F;
+.navbar-inverse .navbar-nav > li:hover,
+.navbar-inverse .navbar-nav > li:focus {
+  color: #686565;
 }
 
-ul.nav {}
+
 /* *********************************
            Toolbar Logo
   ********************************** */
+
 .small-logo-container {
-    padding-top: $navbar-height;
-    height: $navbar-height;
-    overflow: hidden;
+  padding-top: $navbar-height;
+  height: $navbar-height;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .small-logo {
-    color: white;
-    font-size: 2.5em;
-    padding-bottom: $small-logo-padding;
+  color: white;
+  font-size: 2.5em;
+  padding-bottom: $navbar-paddingTop;
 }
-/* *********************************
-           Big Logo
-  ********************************** */
-.big-logo-row {
-    background: gold;
+.small-logo > span {
+  font-family: arial;
+  color: #676262;
+}
 
-    .big-logo-container {
-        padding-top: $navbar-height;
-        padding-bottom: $navbar-height * 2;
-    }
-
-    h1 {
-        font-size: 4em;
-        margin: 0;
-        padding: 0 0 $big-logo-padding;
-        @media (min-width: 400px) {
-            font-size: 4.5em;
-        }
-        @media (min-width: 440px) {
-            font-size: 5.5em;
-        }
-        @media (min-width: 500px) {
-            font-size: 6.5em;
-        }
-        @media (min-width: 630px) {
-            font-size: 7.5em;
-        }
-        @media (min-width: 768px) {
-            font-size: 9em;
-            padding-bottom: $big-logo-padding * 2;
-        }
-        @media (min-width: 1200px) {
-            font-size: 12em;
-        }
-    }
+#consequences {
+  color: #2d3e50;
+  display: inline-block;
+  border: 1px solid #333;
+  text-align: center;
+  padding: 10px;
+  min-height: 70px;
+  width: 600px;
+  margin-left: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+#search {
+  text-align: center;
+  width: 500px;
+  height: 70px;
+  font-size: 3.5em;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+}
+#location {
+  text-align: center;
+  width: 400px;
+  height: 70px;
+  font-size: 2.5em;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+}
+#search-btn {
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  font-size: 2.5em;
+  border-radius: 8px;
+  display: inline-block;
 }

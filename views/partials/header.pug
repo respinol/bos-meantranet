@@ -9,8 +9,7 @@
 
       .small-logo-container
         a.small-logo(href='#')
-          b BIG
-          span &nbsp;OUTSOURCE
+          img(src="http://www.bigoutsource.com/wp-content/themes/bigoutsource-2017/img/logo-bigoutsource.png")
 
     .navbar-collapse.collapse
       ul.nav.navbar-nav.navbar-right
@@ -20,39 +19,57 @@
             | Home
 
         li(class=(title == 'Applicant Exam') ? 'active' : undefined)
-          a(href='/applicant/exam') Applicant exam
+          a(href='/applicant/exam')
+            span.fa.fa-bar-chart(aria-hidden='true')
+            | Applicant exam
 
         li.dropdown(class=(title == 'Intern Tools') ? 'active' : undefined)
-          a.dropdown-toggle(href='#', data-toggle='dropdown') Intern Tools
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            span.fa.fa-users(aria-hidden='true')
+            | Intern Tools
             b.caret
           ul.dropdown-menu
             li(class=(title == 'Assessment Score Data Entry Form') ? 'active' : undefined)
-              a(href='/applicant/form') Assessment Score Data Entry Form
+              a(href='/applicant/form')
+                span.fa.fa-caret-right(aria-hiden='true')
+                | Assessment Score Data Entry Form
 
             li.divider
             li(class=(title == 'Web Crawler') ? 'active' : undefined)
-              a(href='/crawler') Web Crawler
+              a(href='/crawler')
+                span.fa.fa-caret-right(aria-hiden='true')
+                |Web Crawler
 
             li(class=(title == 'Consequence Picker') ? 'active' : undefined)
-              a(href='/intern/consequence') Consequence Picker
+              a(href='/intern/consequence')
+                span.fa.fa-caret-right(aria-hidden='true')
+                | Consequence Picker
 
         li.dropdown(class=(title == 'Admin Tools') ? 'active' : undefined)
-          a.dropdown-toggle(href='#', data-toggle='dropdown') Admin Tools
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            span.fa.fa-user-circle(aria-hidden='true')
+            | Admin Tools
             b.caret
           ul.dropdown-menu
             li(class=(title == 'Assessment Scores') ? 'active' : undefined)
-              a(href='/applicant/scores') Assessment Scores
-            li(class=(title == 'Admin Page') ? 'active' : undefined)
-              a(href='/admin/users') Admin Page
+              a(href='/applicant/scores')
+                span.fa.fa-caret-right(aria-hidden='true')
+                  |  Assessment Scores
 
             li.divider
             li(class=(title == 'API Examples') ? 'active' : undefined)
-              a(href='/api') API Examples
+              a(href='/api')
+                span.fa.fa-caret-right(aria-hidden='true')
+                | API Examples
             li
-              a(href='/status') Application Status
+              a(href='/status')
+                span.fa.fa-caret-right(aria-hidden='true')
+                | Application Status
 
         li(class=(title == 'Contact') ? 'active' : undefined)
-          a(href='/contact') Contact
+          a(href='/contact')
+            span.fa.fa-phone(aria-hidden='true')
+            | Contact
 
         ul.nav.navbar-nav.pull-right
           if !user

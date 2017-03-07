@@ -17,7 +17,7 @@ $(document).ready(function() {
     });
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
-
+    $('#reset').click(function(){$('input, textarea').val('');});
     /**
      * Functions:
      */
@@ -28,18 +28,7 @@ $(document).ready(function() {
     function loadCrawlers(e) {
         var datalist = document.getElementById('website-crawlers');
         var country = $('input[name=country]:checked').val();
-        var crawlers = {
-            uk: [
-                'Yell.com'
-            ],
-            us: [
-                'Citysearch.com',
-                'Yellowpages.com',
-                'Restaurant.com',
-                'Tripdavisor.com',
-                'Yelp.com'
-            ]
-        }
+        var crawlers = {uk:['Yell.com'],us:['Citysearch.com','Yellowpages.com','Restaurant.com','Tripdavisor.com','Yelp.com']}
 
         var crawler;
 
@@ -62,6 +51,7 @@ $(document).ready(function() {
             option.value = crawler[i];
             datalist.appendChild(option);
         }
+
     }
 
     /**
@@ -70,7 +60,7 @@ $(document).ready(function() {
     function loadLocations(e) {
         var country = $('input[name=country]:checked').val();
         var datalist = document.getElementById('json-locations');
-        var input = document.getElementById('location');
+        var input = document.getElementById('locations');
         var req = new XMLHttpRequest();
 
         var jsonUrl = 'https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json';
@@ -123,9 +113,15 @@ $(document).ready(function() {
     function scrapeThis(e) {
         var categories = $('#category').val().split('\n');
         var parameters = {
-            country: $('input[name=country]:checked').val(),
-            location: $('#location').val(),
+
+            website: $('#website').val(),
+            search: $('#search').val(),
+            location: $('#locations').val(),
+
+            country: $('input[name="country"]:checked').val(),
+            location: $('#locations').val(),
             category: ''
+
         };
 
         var source = $("#search-results").html();

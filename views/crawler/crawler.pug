@@ -7,7 +7,7 @@ block script
 
 block content
     .container
-        h1 Big Outsource Web Crawler
+        //h1 Big Outsource Web Crawler
         #alert-area
         #scraperModal.modal.fade(role="dialog")
             .modal-dialog
@@ -19,28 +19,38 @@ block content
                         p.modal-msg Scrape finished...
                     .modal-footer
                         button.btn.btn-default(type="button", data-dismiss="modal") Close
+        .main-content
+          .container.well
+            header
+              h1.crawler.webcrawler
+                strong Web Crawler
+              .col-xs-1
+              .col-xs-2
+                label(for='select-country') Select a country:
+                form#select-country
+                  input.country(type='radio', name='country', value='United States')
+                  |   United States
+                  br
+                  input.country(type='radio', name='country', value='United Kingdom')
+                  |   United Kingdom
 
-        div.page-wrapper
-            label(for="select-country") Select a country:
-            form#select-country
-              input.country(type="radio", name="country", value = "United States")
-              | &nbsp; United States
-              input.country(type="radio", name="country", value = "United Kingdom")
-              | &nbsp; United Kingdom
-            label(for="website") Select a website:
-            input#website(type="text", list="website-crawlers", placeholder="e.g. Yell.com")
-            datalist#website-crawlers
 
-        div.page-wrapper
-            label(for="location") Select a location:
-            input#location(type="text", list="json-locations", placeholder="e.g. Glasgow")
-            datalist#json-locations
-            br
-            label(for="category") Select a category:
-            textarea#category(name="textarea" rows="10")
-
-        div
-            button#scrape.btn.default(type="button") Scrape
-            button#download.btn.default(type="button") Download
-        ul#results(data-role='listview', data-filter='true')
-          include crawl-template.html
+              .col-xs-3
+                label Select Website:
+                input#input-datalist.Datalist.search-box(required='', list='website-crawlers', pattern='Citysearch|Restaurant.com|Tripadvisor|Yell|Yelp|Yellowpages', placeholder='Website')
+                datalist#website-crawlers
+              form
+                .col-xs-3
+                  label Select Location:
+                  input.Datalist.search-box#locations(type='text', list='json-locations', placeholder='e.g. Glasgow', name='focus', required='')
+                  datalist#json-locations
+                  button.close-icon(type='reset')
+              form
+                .col-xs-3
+                  label Select Category
+                  textarea#category.Datalist.search-box(name="textarea" rows="10", required='', placeholder='Category')
+                  button.close-icon(type='reset')
+              #position.col-xs-6
+                button#scrape.cr-btn SCRAPE
+                button#download.cr-btn DOWNLOAD
+                button#reset.cr-btn RESET
