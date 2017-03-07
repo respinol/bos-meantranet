@@ -28,7 +28,18 @@ $(document).ready(function() {
     function loadCrawlers(e) {
         var datalist = document.getElementById('website-crawlers');
         var country = $('input[name=country]:checked').val();
-        var crawlers = {uk:['Yell.com'],us:['Citysearch.com','Yellowpages.com','Restaurant.com','Tripdavisor.com','Yelp.com']}
+        var crawlers = {
+            uk: [
+                'Yell.com'
+            ],
+            us: [
+                'Citysearch.com',
+                'Yellowpages.com',
+                'Restaurant.com',
+                'Tripdavisor.com',
+                'Yelp.com'
+            ]
+        }
 
         var crawler;
 
