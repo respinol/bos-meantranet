@@ -20,37 +20,36 @@ block content
                     .modal-footer
                         button.btn.btn-default(type="button", data-dismiss="modal") Close
         .main-content
+          header
+            h1.crawler
+              strong Web Crawler
           .container.well
-            header
-              h1.crawler.webcrawler
-                strong Web Crawler
-              .col-xs-1
-              .col-xs-2
-                label(for='select-country') Select a country:
-                form#select-country
+            form#select
+              .row
+                .col-xs-3
+                  label Select a Country:
+                  br
                   input.country(type='radio', name='country', value='United States')
                   |   United States
                   br
                   input.country(type='radio', name='country', value='United Kingdom')
                   |   United Kingdom
-
-
-              .col-xs-3
-                label Select Website:
-                input#input-datalist.Datalist.search-box(required='', list='website-crawlers', pattern='Citysearch|Restaurant.com|Tripadvisor|Yell|Yelp|Yellowpages', placeholder='Website')
-                datalist#website-crawlers
-              form
+                .col-xs-3
+                  label Select Website:
+                  input#input-datalist.Datalist.search-box(required='', list='website-crawlers', placeholder='Website')
+                  datalist#website-crawlers
                 .col-xs-3
                   label Select Location:
-                  input.Datalist.search-box#locations(type='text', list='json-location', placeholder='e.g. Glasgow', name='focus', required='')
+                  input.Datalist.search-box#location(type='text', list='json-locations', placeholder='e.g. Glasgow', name='focus', required='')
                   datalist#json-locations
                   button.close-icon(type='reset')
-              form
                 .col-xs-3
                   label Select Category
                   textarea#category.Datalist.search-box(name="textarea" rows="10", required='', placeholder='Category')
                   button.close-icon(type='reset')
-              #position.col-xs-6
-                button#scrape.cr-btn SCRAPE
-                button#download.cr-btn DOWNLOAD
-                button#reset.cr-btn RESET
+              .row.crawler-btn
+                .col-xs-4
+                .col-xs-6
+                  button#scrape.cr-btn SCRAPE
+                  button#download.cr-btn DOWNLOAD
+                  button(type='reset').cr-btn RESET

@@ -17,7 +17,10 @@ $(document).ready(function() {
     });
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
-    $('#reset').click(function(){$('input, textarea').val('');});
+    // $('#reset').click(function(){
+    //
+    // });
+
     /**
      * Functions:
      */
@@ -62,7 +65,6 @@ $(document).ready(function() {
             option.value = crawler[i];
             datalist.appendChild(option);
         }
-
     }
 
     /**
@@ -71,7 +73,7 @@ $(document).ready(function() {
     function loadLocations(e) {
         var country = $('input[name=country]:checked').val();
         var datalist = document.getElementById('json-locations');
-        var input = document.getElementById('locations');
+        var input = document.getElementById('location');
         var req = new XMLHttpRequest();
 
         var jsonUrl = 'https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json';
@@ -124,15 +126,9 @@ $(document).ready(function() {
     function scrapeThis(e) {
         var categories = $('#category').val().split('\n');
         var parameters = {
-
-            website: $('#website').val(),
-            search: $('#search').val(),
-            location: $('#locations').val(),
-
-            country: $('input[name="country"]:checked').val(),
-            location: $('#locations').val(),
+            country: $('input[name=country]:checked').val(),
+            location: $('#location').val(),
             category: ''
-
         };
 
         var source = $("#search-results").html();
