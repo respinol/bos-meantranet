@@ -17,9 +17,9 @@ $(document).ready(function() {
     });
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
-    $('#reset').click(function(){
-      $('input, textarea').val('');
-    });
+    // $('#reset').click(function(){
+    //
+    // });
 
     /**
      * Functions:
