@@ -37,12 +37,12 @@ block content
 
               .col-xs-3
                 label Select Website:
-                input#input-datalist.Datalist.search-box(required='', list='website-crawlers', pattern='Citysearch|Restaurant.com|Tripadvisor|Yell|Yelp|Yellowpages', placeholder='Website')
+                input#input-datalist.Datalist.search-box(required='', list='website-crawlers', placeholder='Website')
                 datalist#website-crawlers
               form
                 .col-xs-3
                   label Select Location:
-                  input.Datalist.search-box#locations(type='text', list='json-location', placeholder='e.g. Glasgow', name='focus', required='')
+                  input.Datalist.search-box#location(type='text', list='json-locations', placeholder='e.g. Glasgow', name='focus', required='')
                   datalist#json-locations
                   button.close-icon(type='reset')
               form
