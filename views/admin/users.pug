@@ -16,7 +16,25 @@ block content
               label.control-label(for='name') Name
               input#name.form-control(type='text', name='name', value=user.profile.name)
               input#email.form-control(type='text', name='email', value=user.email)
-
+              input#userlevel.form-control(type='text', list='userlevels', name='userlevel', value=user.profile.userlevel)
+              datalist#userlevels
+                option Admin
+                option Employee
+                option Intern
+              input#department.form-control(type='text', list='departments', name='department', value=user.profile.department)
+              datalist#departments
+                option I.T.
+                option Human Resources
+                option Finance
+                option Operations
+                option Intern
+              input#jobtitle.form-control(type='text', list='jobtitles', name='jobtitle', value=user.profile.jobtitle)
+              datalist#jobtitles
+                option I.T. Administrator
+                option Management
+                option Team Leader
+                option Agent
+                option Intern
               .col-sm-offset-3.col-sm-4
                 button.btn.btn.btn-primary(type='submit')
                   i.fa.fa-pencil

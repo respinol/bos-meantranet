@@ -12,9 +12,18 @@ $(document).ready(function() {
     };
 
     $('input[name=country]:radio').change(function() {
-        loadLocations();
+        var country = $('input[name=country]:checked').val();
+
+        if (country == 'United Kingdom') {
+            loadUkLocations();
+
+        } else {
+            loadUsStates();
+        }
+
         loadCrawlers();
     });
+    $('#state').bind('select', loadUsCities());
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
 
@@ -65,33 +74,106 @@ $(document).ready(function() {
     }
 
     /**
-     * Loads location data depending on selected radio button.
+     * Loads list of states in the United States.
      */
-    function loadLocations(e) {
-        var country = $('input[name=country]:checked').val();
-        var datalist = document.getElementById('json-locations');
-        var input = document.getElementById('location');
+    function loadUsStates() {
+        var datalist = document.getElementById('json-states');
+        var input = document.getElementById('state');
+
         var req = new XMLHttpRequest();
 
-        var jsonUrl = 'https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json';
-        var placeholder = 'Loading options...';
-
-        if (country == 'United States') {
-            jsonUrl = 'https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json';
-            placeholder = 'e.g. New York';
-        } else if (country == 'United Kingdom') {
-            jsonUrl = 'https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json';
-            placeholder = "e.g. Glasgow";
-        } else {
-            jsonUrl = '';
-            placeholder = "Couldn't load datalist options...";
-        }
+        var jsonUrl = 'https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json';
+        var placeholder = "e.g. Texas";
 
         req.onreadystatechange = function(res) {
             if (req.readyState === 4) {
                 if (req.status === 200) {
                     var json = JSON.parse(req.responseText);
-                    var jsonOptions = json[country];
+
+                    if (datalist.hasChildNodes()) {
+                        while (datalist.firstChild) {
+                            datalist.removeChild(datalist.firstChild);
+                        }
+                    }
+
+                    json.forEach(function(item) {
+                        var option = document.createElement('option');
+
+                        option.value = item['abbreviation'];
+                        option.text = item['name'];
+                        datalist.appendChild(option);
+                    });
+
+                    input.placeholder = placeholder;
+                } else {
+                    input.placeholder = "Couldn't load datalist options...";
+                }
+            }
+        };
+        input.placeholder = "Loading options...";
+        req.open('GET', jsonUrl, true);
+        req.send();
+    }
+
+    /**
+     * Loads list of cities in the United States.
+     */
+    function loadUsCities() {
+        var datalist = document.getElementById('json-cities');
+        var input = document.getElementById('city');
+        var state = $('#state').val();
+
+        var req = new XMLHttpRequest();
+        var jsonUrl = 'http://gomashup.com/json.php?fds=geo/usa/zipcode/state/' + state;
+
+        var placeholder = "e.g. Austin";
+
+        req.onreadystatechange = function(res) {
+            if (req.readyState === 4) {
+                if (req.status === 200) {
+                    var json = JSON.parse(req.responseText);
+                    var jsonOptions = json['result'];
+
+                    if (datalist.hasChildNodes()) {
+                        while (datalist.firstChild) {
+                            datalist.removeChild(datalist.firstChild);
+                        }
+                    }
+
+                    jsonOptions.forEach(function(item) {
+                        var option = document.createElement('option');
+
+                        option.value = item['City'];
+                        datalist.appendChild(option);
+                    });
+
+                    input.placeholder = placeholder;
+                } else {
+                    input.placeholder = "Couldn't load datalist options...";
+                }
+            }
+        };
+        input.placeholder = "Loading options...";
+        req.open('GET', jsonUrl, true);
+        req.send();
+    }
+
+    /**
+     * Loads list of cities in the United Kingdom.
+     */
+    function loadUkLocations(e) {
+        var datalist = document.getElementById('json-cities');
+        var input = document.getElementById('city');
+        var req = new XMLHttpRequest();
+
+        var jsonUrl = 'https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json';
+        var placeholder = "e.g. Glasgow";
+
+        req.onreadystatechange = function(res) {
+            if (req.readyState === 4) {
+                if (req.status === 200) {
+                    var json = JSON.parse(req.responseText);
+                    var jsonOptions = json['United Kingdom'];
 
                     if (datalist.hasChildNodes()) {
                         while (datalist.firstChild) {
@@ -124,7 +206,7 @@ $(document).ready(function() {
         var categories = $('#category').val().split('\n');
         var parameters = {
             country: $('input[name=country]:checked').val(),
-            location: $('#location').val(),
+            location: $('#city').val(),
             category: ''
         };
 
@@ -135,22 +217,22 @@ $(document).ready(function() {
         // newAlert("Please Wait!", "We're still scraping...");
 
         for (var i = 0; i < categories.length; i++) {
-          parameters.category = categories[i];
+            parameters.category = categories[i];
 
-          $.get('/searching', parameters, function(data) {
+            $.get('/searching', parameters, function(data) {
 
-              if (data instanceof Object) {
-                  results.append(dataTemplate({
-                      page: data
-                  }));
-              } else {
-                  results.append(data);
-              };
+                if (data instanceof Object) {
+                    results.append(dataTemplate({
+                        page: data
+                    }));
+                } else {
+                    results.append(data);
+                };
 
-              showModal(parameters, data.business.length);
-              data.business = filterArray(data.business, filterD121);
-              scrapedData.push(data);
-          });
+                showModal(parameters, data.business.length);
+                data.business = filterArray(data.business, filterD121);
+                scrapedData.push(data);
+            });
         }
     }
 
