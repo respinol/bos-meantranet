@@ -23,6 +23,7 @@ $(document).ready(function() {
 
         loadCrawlers();
     });
+
     $('#state').bind('select', loadUsCities());
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
