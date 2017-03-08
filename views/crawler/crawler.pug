@@ -21,10 +21,10 @@ block content
                         button.btn.btn-default(type="button", data-dismiss="modal") Close
         .main-content
           header
-            h1.crawler.webcrawler
+            h1.crawler
               strong Web Crawler
           .container.well
-            form#select-country
+            form#select
               .row
                 .col-xs-3
                   label Select a Country:
@@ -47,10 +47,9 @@ block content
                   label Select Category
                   textarea#category.Datalist.search-box(name="textarea" rows="10", required='', placeholder='Category')
                   button.close-icon(type='reset')
-              .row
-                .col-xs-3
+              .row.crawler-btn
+                .col-xs-4
                 .col-xs-6
                   button#scrape.cr-btn SCRAPE
                   button#download.cr-btn DOWNLOAD
                   button(type='reset').cr-btn RESET
-                .col-xs-3

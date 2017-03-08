@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  .page-header
+  .page-header(style="padding-top:50px;")
     h3 Sign in
   form.form-horizontal(method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
