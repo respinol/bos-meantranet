@@ -9,8 +9,9 @@
 
       .small-logo-container
         a.small-logo(href='#')
-          img(src="http://www.bigoutsource.com/wp-content/themes/bigoutsource-2017/img/logo-bigoutsource.png")
-
+          span.move-text
+            |BIG OUTSOURCE
+          img(src="/logo-bigoutsource.png")
     .navbar-collapse.collapse
       ul.nav.navbar-nav.navbar-right
         li(class=(title == 'Home') ? 'active' : undefined)
@@ -92,11 +93,3 @@
                 li.divider
                 li
                   a(href='/logout') Logout
-
-.container-fluid.big-logo-row
-  .container
-    .row
-      .col-xs-12.big-logo-container
-        h1.big-logo
-          b Big
-          span &nbsp;Outsource
