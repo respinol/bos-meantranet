@@ -27,6 +27,9 @@ $(document).ready(function() {
     $('#state').bind('select', loadUsCities());
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
+    // $('#reset').click(function(){
+    //
+    // });
 
     /**
      * Functions:
