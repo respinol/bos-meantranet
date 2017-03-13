@@ -77,9 +77,11 @@ $(document).ready(function() {
 
         if (country == 'United States') {
             crawler = crawlers['us'];
+            $('#USStates').show();
 
         } else if (country == 'United Kingdom') {
             crawler = crawlers['uk'];
+            $('#USStates').hide();
         }
 
         if (datalist.hasChildNodes()) {
