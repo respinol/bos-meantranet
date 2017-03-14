@@ -232,7 +232,7 @@ $(document).ready(function() {
     function scrapeThis() {
         var categories = $('#category').val().split('\n');
         var parameters = {
-            // country: $('input[name=country]:checked').val(),
+            country: $('input[name=country]:checked').val(),
             website: $('#website').val(),
             location: $('#city').val(),
             category: ''
