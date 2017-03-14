@@ -248,7 +248,6 @@ $(document).ready(function() {
             parameters.category = categories[i];
 
             $.get('/searching', parameters, function(data) {
-
                 if (data instanceof Object) {
                     results.append(dataTemplate({
                         page: data
@@ -257,7 +256,7 @@ $(document).ready(function() {
                     results.append(data);
                 };
 
-                showModal(parameters, data.business.length);
+                // showModal(parameters, data.business.length);
                 data.business = filterArray(data.business, filterD121);
                 scrapedData.push(data);
             });

@@ -49,11 +49,18 @@ exports.getData = (req, res) => {
         category: req.query.category
     };
 
-    if (country = 'United Kingdom') {
-        async.series([
+    if (country == 'United Kingdom') {
+        async.parallel([
                 function(callback) {
                     scrapeYell(parameters, function(data) {
-                        console.log('scrapeYell ' + data.business.length);
+                        console.log(`Yell: ${data.business.length} records ready for merging...`);
+                        callback(null, data.business);
+                        return;
+                    });
+                },
+                function(callback) {
+                    scrapeYell(parameters, function(data) {
+                        console.log(`YellTest: ${data.business.length} records ready for merging...`);
                         callback(null, data.business);
                         return;
                     });
@@ -66,22 +73,32 @@ exports.getData = (req, res) => {
                     return;
                 }
 
-                var page = { business: {} };
-                console.log('Results ' + results.length);
+                var page = {
+                    business: []
+                };
 
+                console.log(`Merging ${results.length} results...`);
                 for (var i = 0; i < results.length; i++) {
-                    _.merge(page.business, results[i]);
+                    console.log(`Appending ${results[i].length} records to object...`);
+                    page.business = page.business.concat(results[i]);
                 }
 
-                console.log('Page ' + page.length);
+                console.log(`Parsing ${page.business.length} records to page...`);
                 res.json(page);
             });
 
     } else if (country == 'United States') {
-        async.series([
+        async.parallel([
+                function(callback) {
+                    scrapeYelp(parameters, function(data) {
+                        console.log(`Yelp: ${data.business.length} records ready for merging...`);
+                        callback(null, data.business);
+                        return;
+                    });
+                },
                 function(callback) {
                     scrapeYellowpages(parameters, function(data) {
-                        console.log('scrapeYellowpages ' + data.business.length);
+                        console.log(`Yellowpages: ${data.business.length} records ready for merging...`);
                         callback(null, data.business);
                         return;
                     });
@@ -94,38 +111,25 @@ exports.getData = (req, res) => {
                     return;
                 }
 
+                var page = {
+                    business: []
+                };
 
-                var page = [];
-                console.log('Results ' + results.length);
-
+                console.log(`Merging ${results.length} results...`);
                 for (var i = 0; i < results.length; i++) {
-                    _.concat(page, results[i]);
+                    console.log(`Appending ${results[i].length} records to object...`);
+                    page.business = page.business.concat(results[i]);
                 }
-                console.log('Page ' + page.length);
+
+                console.log(`Parsing ${page.business.length} records to page...`);
                 res.json(page);
             });
     }
-
-    // if (website == 'Yell') {
-    //     scrapeYell(parameters, function(page) {
-    //         res.json(page);
-    //     })
-    //
-    // } else if (website == 'Yellowpages') {
-    //     scrapeYellowpages(parameters, function(page) {
-    //         res.json(page);
-    //     })
-    //
-    // } else if (website == 'Yelp') {
-    //     scrapeYelp(parameters, function(page) {
-    //         res.json(page);
-    //     })
-    // }
 };
 
 function scrapeYell(params, callback) {
     var url = "https://www.yell.com/s/" + params.category + "-" + params.location.split(' ').join('+') + ".html";
-    console.log('Scraping ' + url);
+    console.log(`Scraping ${url}`);
 
     x(url, {
         business: x('.businessCapsule', [{
@@ -140,7 +144,7 @@ function scrapeYell(params, callback) {
             }])
             .paginate('.pagination--next@href')
     })(function(err, data) {
-        console.log('Yell Total: ' + data.business.length);
+        console.log(`Yell: ${data.business.length} ${params.category} scraped from ${params.location}`);
         callback(data);
     })
 }
@@ -148,7 +152,7 @@ function scrapeYell(params, callback) {
 
 function scrapeYellowpages(params, callback) {
     var url = url = "https://www.yellowpages.com/search?search_terms=" + params.category + "&geo_location_terms=" + params.location.split(' ').join('+');
-    console.log('Scraping ' + url);
+    console.log(`Scraping ${url}`);
 
     x(url, {
         business: x('.v-card', [{
@@ -156,7 +160,7 @@ function scrapeYellowpages(params, callback) {
                 phone: '.phones.phone.primary | formatPhone',
                 street_address: '.street-address | formatString',
                 address_locality: '.locality | formatString',
-                address_region: '.adr span:nth-child(3) | formatString',
+                address_region: '.adr span:nth-child(3) | trim',
                 postal_code: '.adr span:nth-child(4) | formatString',
                 category: '.categories a | trim',
                 website: '.track-visit-website@href',
@@ -164,14 +168,14 @@ function scrapeYellowpages(params, callback) {
             }])
             .paginate('.next@href')
     })(function(err, data) {
-        console.log('Yellowpages Total: ' + data.business.length);
+        console.log(`Yellowpages: ${data.business.length} ${params.category} scraped from ${params.location}`);
         callback(data);
     })
 }
 
 function scrapeYelp(params, callback) {
     var url = url = "https://www.yelp.com/search?rpp=40&cflt=" + params.category + "&find_loc=" + params.location.split(' ').join('+');
-    console.log('Scraping ' + url);
+    console.log(`Scraping ${url}`);
 
     x(url, {
         business: x('.regular-search-result', [{
@@ -179,7 +183,7 @@ function scrapeYelp(params, callback) {
                 phone: '.biz-phone | formatPhone',
                 street_address: '.neighborhood-str-list | formatString',
                 address_locality: '.neighborhood-str-list | formatString',
-                address_region: '.neighborhood-str-list | formatString',
+                address_region: '.neighborhood-str-list | trim',
                 postal_code: '.neighborhood-str-list | formatString',
                 category: '.category-str-list | trim',
                 website: '.price-range',
@@ -187,7 +191,7 @@ function scrapeYelp(params, callback) {
             }])
             .paginate('.next@href')
     })(function(err, data) {
-        console.log('Yelp Total: ' + data.business.length);
+        console.log(`Yelp: ${data.business.length} ${params.category} scraped from ${params.location}`);
         callback(data);
     })
 }
