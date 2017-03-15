@@ -18,7 +18,7 @@ $(document).ready(function() {
             loadUkLocations();
 
         } else {
-            loadUsStates();
+            loadUsCities();
         }
 
         loadCrawlers();
