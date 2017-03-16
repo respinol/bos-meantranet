@@ -118,15 +118,17 @@ $(document).ready(function() {
             }
         }
 
-        loadJSON('js/us-cities.json', function(res) {
+        loadJSON('js/usLocations.json', function(res) {
             var json = JSON.parse(res);
-            
+
             json.forEach(function(item) {
                 var option = document.createElement('option');
 
                 option.value = item['region'];
                 option.text = item['region_abbrev'];
-                datalist.appendChild(option);
+                if ($(`#json-states option[value='${option.value}']`).length == 0) {
+                  datalist.appendChild(option);
+                }
             });
         });
     }
@@ -137,6 +139,7 @@ $(document).ready(function() {
     function loadUsCities() {
         var datalist = document.getElementById('json-cities');
         var input = document.getElementById('city');
+        var state = document.getElementById('state');
 
         if (datalist.hasChildNodes()) {
             while (datalist.firstChild) {
@@ -144,19 +147,19 @@ $(document).ready(function() {
             }
         }
 
-        loadJSON('js/us-cities.json', function(res) {
+        loadJSON('js/usLocations.json', function(res) {
             var json = JSON.parse(res);
 
-            $.grep(json, function(elem, index) {
-                return elem.region == $('#state').val() || $('#state').text();
-            });
-
             json.forEach(function(item) {
-                var option = document.createElement('option');
+                if (item['region'] == state.value) {
+                  var option = document.createElement('option');
 
-                option.value = item['locality'];
-                option.text = item['locality'];
-                datalist.appendChild(option);
+                  option.value = item['locality'];
+                  option.text = item['locality'];
+                  if ($(`#json-cities option[value='${option.value}']`).length == 0) {
+                    datalist.appendChild(option);
+                  }
+                }
             });
         });
     }
