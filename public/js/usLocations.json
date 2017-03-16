@@ -1,0 +1,6002 @@
+[
+ {
+   "time_zone": "Central",
+   "locality": "Aaron",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aaronsburg",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Abbeville",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Abbeville",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abbeville",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abbeville",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abbeville",
+   "region_abbrev": "SC",
+   "region": "South Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Abbot",
+   "region_abbrev": "ME",
+   "region": "Maine"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abbotsford",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abbott",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Abbottstown",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Abbyville",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Abell",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abercrombie",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Aberdeen",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Aberdeen",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Aberdeen",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aberdeen",
+   "region_abbrev": "ID",
+   "region": "Idaho"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aberdeen",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aberdeen",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aberdeen",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aberdeen",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aberdeen Proving Ground",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abernant",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abernathy",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abie",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Abilene",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abilene",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Abingdon",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Abingdon",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abingdon",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Abington",
+   "region_abbrev": "CT",
+   "region": "Connecticut"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Abington",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abington",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Abiquiu",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abita Springs",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Abrams",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Absaraka",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Absarokee",
+   "region_abbrev": "MT",
+   "region": "Montana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Absecon",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Acampo",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Accident",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Accokeek",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Accomac",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Accord",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Accord",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Accoville",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ace",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Achille",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Achilles",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ackerly",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ackerman",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ackermanville",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ackley",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ackworth",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Acme",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Acme",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Acme",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Acme",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Acosta",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Acra",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Acton",
+   "region_abbrev": "ME",
+   "region": "Maine"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Acton",
+   "region_abbrev": "MT",
+   "region": "Montana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Acton",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Acton",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Acushnet",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Acworth",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Acworth",
+   "region_abbrev": "NH",
+   "region": "New Hampshire"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Ada",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ada",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ada",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ada",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ada",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adah",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adair",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adair",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adair",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adairsville",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adairville",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Adak",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adamant",
+   "region_abbrev": "VT",
+   "region": "Vermont"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Adams",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adams",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adams",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adams",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adams",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adams",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adams",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adams",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adams",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adams",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adams Basin",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adams Center",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adams Run",
+   "region_abbrev": "SC",
+   "region": "South Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adamsburg",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adamstown",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adamstown",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adamsville",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adamsville",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adamsville",
+   "region_abbrev": "RI",
+   "region": "Rhode Island"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adamsville",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adamsville",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Addieville",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Addington",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Addis",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Addison",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Addison",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Addison",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Addison",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Addison",
+   "region_abbrev": "ME",
+   "region": "Maine"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Addison",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Addison",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Addy",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Addyston",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Adel",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adel",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adel",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Adelanto",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adell",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adelphi",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adelphia",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adena",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adger",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Adin",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adirondack",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adkins",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Admire",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Adna",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adolph",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adolphus",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adona",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Adrian",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Adrian",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adrian",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adrian",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adrian",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Adrian",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adrian",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adrian",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adrian",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Adrian",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Advance",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Advance",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Advance",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Advent",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Afton",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Afton",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Afton",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Afton",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Afton",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Afton",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Afton",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Afton",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Afton",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Afton",
+   "region_abbrev": "WY",
+   "region": "Wyoming"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Agar",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Agate",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Agate",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Agawam",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Agency",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Agency",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Agenda",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ages Brookside",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Agness",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Agoura Hills",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Agra",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Agra",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Agua Dulce",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Aguanga",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Aguila",
+   "region_abbrev": "AZ",
+   "region": "Arizona"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Aguilar",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ah Gwah Ching",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ahmeek",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ahoskie",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Ahsahka",
+   "region_abbrev": "ID",
+   "region": "Idaho"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Ahwahnee",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Hawaii",
+   "locality": "Aiea",
+   "region_abbrev": "HI",
+   "region": "Hawaii"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aiken",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aiken",
+   "region_abbrev": "SC",
+   "region": "South Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ailey",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aimwell",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ainsworth",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ainsworth",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Airville",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Airway Heights",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aitkin",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Ajo",
+   "region_abbrev": "AZ",
+   "region": "Arizona"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Akaska",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Akeley",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Akers",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Akiachak",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Akiak",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Akin",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Akron",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Akron",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Akron",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Akron",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Akron",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Akron",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Akron",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Akron",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Akutan",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alabama",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alabaster",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alachua",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Aladdin",
+   "region_abbrev": "WY",
+   "region": "Wyoming"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Alakanuk",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alamance",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alameda",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alamo",
+   "region_abbrev": "NV",
+   "region": "Nevada"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alamo",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alamo",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alamo",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alamo",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alamo",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alamo",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alamogordo",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alamosa",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alanreed",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alanson",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alapaha",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alba",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alba",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alba",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alba",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Albany",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Albany",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Albany",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albany",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albany",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albany",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albany",
+   "region_abbrev": "VT",
+   "region": "Vermont"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albany",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albany",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albany",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albany",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albany",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albany",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albany",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albany",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albemarle",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albers",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Albert",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albert",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albert City",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albert Lea",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alberta",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alberta",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alberta",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alberton",
+   "region_abbrev": "MT",
+   "region": "Montana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albertson",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albertson",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albertville",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albertville",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albia",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Albin",
+   "region_abbrev": "WY",
+   "region": "Wyoming"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Albion",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Albion",
+   "region_abbrev": "ID",
+   "region": "Idaho"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Albion",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albion",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albion",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albion",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albion",
+   "region_abbrev": "RI",
+   "region": "Rhode Island"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albion",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albion",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albion",
+   "region_abbrev": "ME",
+   "region": "Maine"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albion",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albion",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Albion",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alborn",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albright",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Albrightsville",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Albuquerque",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alburg",
+   "region_abbrev": "VT",
+   "region": "Vermont"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alburnett",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alburtis",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alcalde",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alcester",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alco",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alcoa",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alcolu",
+   "region_abbrev": "SC",
+   "region": "South Carolina"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alcova",
+   "region_abbrev": "WY",
+   "region": "Wyoming"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alcove",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alda",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alden",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alden",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alden",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alden",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alden",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alden",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aldenville",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alder",
+   "region_abbrev": "MT",
+   "region": "Montana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alder Creek",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alderpoint",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alderson",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alderson",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aldie",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Aldrich",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aldrich",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aledo",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aledo",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Aleknagik",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aleppo",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alex",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alexander",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alexander",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alexander",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexander",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexander",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexander",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexander",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexander City",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alexandria",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alexandria",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alexandria",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alexandria",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alexandria",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alexandria",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alexandria",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexandria",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexandria",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexandria",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexandria",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexandria",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alexandria Bay",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alexis",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alexis",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alford",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alfred",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alfred",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alfred",
+   "region_abbrev": "ME",
+   "region": "Maine"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alfred Station",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alger",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alger",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Algodones",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Algoma",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Algoma",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Algona",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Algonac",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Algonquin",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alhambra",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alhambra",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alice",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alice",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aliceville",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alicia",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alief",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aline",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aliquippa",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Aliso Viejo",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alix",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alkol",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Allakaket",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allamuchy",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allardt",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alledonia",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alleene",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allegan",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Allegany",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allegany",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alleghany",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allegre",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alleman",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Allen",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Allen",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allen",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allen",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allen",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allen",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allen",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allen",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allen",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allen Junction",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allen Park",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Allendale",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allendale",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allendale",
+   "region_abbrev": "SC",
+   "region": "South Carolina"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allendale",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allendale",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allendorf",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allenhurst",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allenhurst",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allenport",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Allenspark",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allensville",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allensville",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Allenton",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allenton",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allenton",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allentown",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allentown",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allentown",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allentown",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allenwood",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allenwood",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allerton",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allerton",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alleyton",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allgood",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alliance",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alliance",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alliance",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alligator",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allison",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allison",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allison",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allison Park",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allons",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Allouez",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alloway",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alloy",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allport",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allred",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Allston",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Allyn",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alma",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alma",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alma",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alma",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alma",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alma",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alma",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alma",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alma",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alma",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alma",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alma",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alma Center",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Almelund",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Almena",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Almena",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Almira",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Almo",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Almo",
+   "region_abbrev": "ID",
+   "region": "Idaho"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Almond",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Almond",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Almond",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Almont",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Almont",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Almont",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Almyra",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alna",
+   "region_abbrev": "ME",
+   "region": "Maine"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alpaugh",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alpena",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpena",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpena",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alpha",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpha",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpha",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpha",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpha",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpha",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alpharetta",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alpine",
+   "region_abbrev": "AZ",
+   "region": "Arizona"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alpine",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alpine",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alpine",
+   "region_abbrev": "UT",
+   "region": "Utah"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alpine",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alpine",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alpine",
+   "region_abbrev": "WY",
+   "region": "Wyoming"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpine",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpine",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alpine",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alplaus",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alpoca",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alsea",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alsen",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alsey",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alsip",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alstead",
+   "region_abbrev": "NH",
+   "region": "New Hampshire"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alston",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alta",
+   "region_abbrev": "WY",
+   "region": "Wyoming"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alta",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alta",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alta Loma",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alta Vista",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alta Vista",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Altadena",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altair",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altamahaw",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Altamont",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Altamont",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Altamont",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altamont",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altamont",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altamont",
+   "region_abbrev": "UT",
+   "region": "Utah"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altamonte Springs",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Altaville",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altavista",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Altenburg",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altha",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altheimer",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altmar",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alto",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alto",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alto",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alto",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alto Pass",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alton",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alton",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alton",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alton",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alton",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alton",
+   "region_abbrev": "UT",
+   "region": "Utah"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alton",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alton",
+   "region_abbrev": "NH",
+   "region": "New Hampshire"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alton",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alton Bay",
+   "region_abbrev": "NH",
+   "region": "New Hampshire"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altona",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altona",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Altonah",
+   "region_abbrev": "UT",
+   "region": "Utah"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Altoona",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altoona",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Altoona",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altoona",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altoona",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altoona",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altro",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altura",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alturas",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alturas",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altus",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altus",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Altus Afb",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alum Bank",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alum Bridge",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alum Creek",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alva",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alva",
+   "region_abbrev": "WY",
+   "region": "Wyoming"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alva",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alvada",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alvadore",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alvarado",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alvarado",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alvaton",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alverda",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alverton",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alvin",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alvin",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Alviso",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alvo",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alvord",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Alvord",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alvordton",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Alvy",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Alzada",
+   "region_abbrev": "MT",
+   "region": "Montana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ama",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Amado",
+   "region_abbrev": "AZ",
+   "region": "Arizona"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Amador City",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amagansett",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amagon",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Amalia",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amana",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amanda",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Amanda Park",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Amargosa Valley",
+   "region_abbrev": "NV",
+   "region": "Nevada"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amarillo",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amasa",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amawalk",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Amazonia",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amber",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amberg",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amberson",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ambia",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ambler",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Ambler",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Amboy",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Amboy",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amboy",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amboy",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amboy",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ambridge",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ambrose",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ambrose",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amburgey",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ameagle",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amelia",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amelia",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amelia",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amelia Court House",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amenia",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amenia",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "American Canyon",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "American Falls",
+   "region_abbrev": "ID",
+   "region": "Idaho"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "American Fork",
+   "region_abbrev": "UT",
+   "region": "Utah"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Americus",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Americus",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amery",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Ames",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ames",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ames",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ames",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amesbury",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amesville",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amf Ohare",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Amherst",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Amherst",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amherst",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amherst",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amherst",
+   "region_abbrev": "NH",
+   "region": "New Hampshire"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amherst",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amherst",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amherst",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amherst",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amherst Junction",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amherstdale",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amidon",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amigo",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amiret",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amissville",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Amistad",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amite",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Amity",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Amity",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amity",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amity",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amityville",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amlin",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amma",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ammon",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amo",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amonate",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Amoret",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amorita",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amory",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amsden",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Amsterdam",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amsterdam",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Amsterdam",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Amston",
+   "region_abbrev": "CT",
+   "region": "Connecticut"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Anabel",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anacoco",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Anaconda",
+   "region_abbrev": "MT",
+   "region": "Montana"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Anacortes",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anadarko",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Anaheim",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Hawaii",
+   "locality": "Anahola",
+   "region_abbrev": "HI",
+   "region": "Hawaii"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anahuac",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Anaktuvuk Pass",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Analomink",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anamoose",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anamosa",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Anatone",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Anawalt",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anchor",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Anchor Point",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Anchorage",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anchorville",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ancona",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ancram",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ancramdale",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Andale",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Andalusia",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Andalusia",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Anderson",
+   "region_abbrev": "SC",
+   "region": "South Carolina"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Anderson",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Anderson",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Anderson",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anderson",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anderson",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Anderson",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Anderson Island",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andersonville",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andersonville",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andersonville",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andes",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Andover",
+   "region_abbrev": "CT",
+   "region": "Connecticut"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Andover",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andover",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andover",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andover",
+   "region_abbrev": "ME",
+   "region": "Maine"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andover",
+   "region_abbrev": "NH",
+   "region": "New Hampshire"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andover",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andover",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andover",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Andover",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Andover",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Andover",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Andover",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andreas",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Andrew",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andrews",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andrews",
+   "region_abbrev": "SC",
+   "region": "South Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andrews",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Andrews",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andrews A F B",
+   "region_abbrev": "DC",
+   "region": "District of Columbia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Andrews Air Force Base",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aneta",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Aneth",
+   "region_abbrev": "UT",
+   "region": "Utah"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Angel Fire",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Angela",
+   "region_abbrev": "MT",
+   "region": "Montana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Angelica",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Angels Camp",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Angelus Oaks",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Angie",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Angier",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Angle Inlet",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Angleton",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Angola",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Angola",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Angola",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Angoon",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Angora",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Angora",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anguilla",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Angus",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Angwin",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Aniak",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Animas",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Anita",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anita",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aniwa",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ankeny",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Anmoore",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ann Arbor",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Anna",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anna",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anna",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Anna Maria",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Annabella",
+   "region_abbrev": "UT",
+   "region": "Utah"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Annada",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Annandale",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Annandale",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Annandale",
+   "region_abbrev": "NJ",
+   "region": "New Jersey"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Annandale On Hudson",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Annapolis",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Annapolis",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Annapolis",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Annapolis",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Annapolis Junction",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Annawan",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Annemanie",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Anniston",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anniston",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Annona",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Annville",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Annville",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anoka",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anselmo",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ansley",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Anson",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anson",
+   "region_abbrev": "ME",
+   "region": "Maine"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ansonia",
+   "region_abbrev": "CT",
+   "region": "Connecticut"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ansonia",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ansonville",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ansted",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Antelope",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Antelope",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Antelope",
+   "region_abbrev": "MT",
+   "region": "Montana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Antes Fort",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Anthem",
+   "region_abbrev": "AZ",
+   "region": "Arizona"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anthon",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Anthony",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Anthony",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Anthony",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anthony",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Antigo",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Antimony",
+   "region_abbrev": "UT",
+   "region": "Utah"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Antioch",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Antioch",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Antioch",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Antler",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Antlers",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Antoine",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Anton",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Anton",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Anton Chico",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Antonito",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Antrim",
+   "region_abbrev": "NH",
+   "region": "New Hampshire"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Antwerp",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Antwerp",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Anvik",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Anza",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Apache",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Apache Junction",
+   "region_abbrev": "AZ",
+   "region": "Arizona"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apalachicola",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apalachin",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apex",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apison",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aplington",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apollo",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apollo Beach",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apopka",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Appalachia",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apple Creek",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apple Grove",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Apple River",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Apple Springs",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Apple Valley",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Applegate",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Applegate",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Appleton",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Appleton",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Appleton",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Appleton",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Appleton City",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Appling",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Appomattox",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Aptos",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Apulia Station",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aquasco",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aquashicola",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aquebogue",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aquilla",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aquone",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arab",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arabi",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arabi",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Aragon",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aragon",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aransas Pass",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arapaho",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arapahoe",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arapahoe",
+   "region_abbrev": "WY",
+   "region": "Wyoming"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arapahoe",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arapahoe",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ararat",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ararat",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arbela",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arboles",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arbon",
+   "region_abbrev": "ID",
+   "region": "Idaho"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arbovale",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Arbuckle",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arbyrd",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcade",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Arcadia",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arcadia",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arcadia",
+   "region_abbrev": "SC",
+   "region": "South Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcadia",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcadia",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcadia",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcadia",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcadia",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arcadia",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arcadia",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arcadia",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arcadia",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arcadia",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arcadia",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcanum",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Arcata",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Arch Cape",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Archbald",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Archbold",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Archer",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Archer",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Archer",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Archer City",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Archibald",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Archie",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arco",
+   "region_abbrev": "ID",
+   "region": "Idaho"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arco",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arcola",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcola",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcola",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arcola",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arcola",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arcola",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Alaska",
+   "locality": "Arctic Village",
+   "region_abbrev": "AK",
+   "region": "Alaska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ardara",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arden",
+   "region_abbrev": "NC",
+   "region": "North Carolina"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arden",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Ardenvoir",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ardmore",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ardmore",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ardmore",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ardmore",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ardoch",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ardsley",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ardsley On Hudson",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aredale",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arena",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arena",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arenas Valley",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arendtsville",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arenzville",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Argenta",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Argillite",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Argonia",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Argonne",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Argos",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Argusville",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Argyle",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Argyle",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Argyle",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Argyle",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Argyle",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Argyle",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Argyle",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Argyle",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Argyle",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Ariel",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arimo",
+   "region_abbrev": "ID",
+   "region": "Idaho"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arion",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aripeka",
+   "region_abbrev": "FL",
+   "region": "Florida"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arispe",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aristes",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Ariton",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arivaca",
+   "region_abbrev": "AZ",
+   "region": "Arizona"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arizona City",
+   "region_abbrev": "AZ",
+   "region": "Arizona"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arjay",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Ark",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arkabutla",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arkadelphia",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arkansas City",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arkansas City",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arkansaw",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arkdale",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arkoma",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arkport",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arkville",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arlee",
+   "region_abbrev": "MT",
+   "region": "Montana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arley",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Arlington",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Arlington",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arlington",
+   "region_abbrev": "AL",
+   "region": "Alabama"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arlington",
+   "region_abbrev": "MN",
+   "region": "Minnesota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arlington",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arlington",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arlington",
+   "region_abbrev": "AZ",
+   "region": "Arizona"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arlington",
+   "region_abbrev": "IN",
+   "region": "Indiana"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arlington",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arlington",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arlington",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arlington",
+   "region_abbrev": "VT",
+   "region": "Vermont"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arlington",
+   "region_abbrev": "WA",
+   "region": "Washington"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arlington",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arlington",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arlington",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arlington",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arlington",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arlington",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arlington",
+   "region_abbrev": "OH",
+   "region": "Ohio"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arlington",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arlington Heights",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arlington Heights",
+   "region_abbrev": "MA",
+   "region": "Massachusetts"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arma",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Armada",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Armagh",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Armbrust",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Armington",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arminto",
+   "region_abbrev": "WY",
+   "region": "Wyoming"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Armona",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Armonk",
+   "region_abbrev": "NY",
+   "region": "New York"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Armorel",
+   "region_abbrev": "AR",
+   "region": "Arkansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Armour",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Armstrong",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Armstrong",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Armstrong",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Armstrong",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Armstrong Creek",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Armuchee",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arnaudville",
+   "region_abbrev": "LA",
+   "region": "Louisiana"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arnegard",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arnett",
+   "region_abbrev": "OK",
+   "region": "Oklahoma"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arnett",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Arnold",
+   "region_abbrev": "MD",
+   "region": "Maryland"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arnold",
+   "region_abbrev": "KS",
+   "region": "Kansas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arnold",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arnold",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arnold",
+   "region_abbrev": "MI",
+   "region": "Michigan"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arnold",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arnold Afb",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arnolds Park",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arnoldsburg",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arnoldsville",
+   "region_abbrev": "GA",
+   "region": "Georgia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arnot",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Arock",
+   "region_abbrev": "OR",
+   "region": "Oregon"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Aroda",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Aroma Park",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Aromas",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arona",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arp",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arpin",
+   "region_abbrev": "WI",
+   "region": "Wisconsin"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arrey",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arriba",
+   "region_abbrev": "CO",
+   "region": "Colorado"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arrington",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arrington",
+   "region_abbrev": "VA",
+   "region": "Virginia"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arrow Rock",
+   "region_abbrev": "MO",
+   "region": "Missouri"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arrowsmith",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Arroyo Grande",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arroyo Hondo",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Arroyo Seco",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Art",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Artemas",
+   "region_abbrev": "PA",
+   "region": "Pennsylvania"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Artemus",
+   "region_abbrev": "KY",
+   "region": "Kentucky"
+ },
+ {
+   "time_zone": "Pacific",
+   "locality": "Artesia",
+   "region_abbrev": "CA",
+   "region": "California"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Artesia",
+   "region_abbrev": "MS",
+   "region": "Mississippi"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Artesia",
+   "region_abbrev": "NM",
+   "region": "New Mexico"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Artesia Wells",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Mountain",
+   "locality": "Artesian",
+   "region_abbrev": "SD",
+   "region": "South Dakota"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arthur",
+   "region_abbrev": "IL",
+   "region": "Illinois"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arthur",
+   "region_abbrev": "NE",
+   "region": "Nebraska"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arthur",
+   "region_abbrev": "IA",
+   "region": "Iowa"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arthur",
+   "region_abbrev": "ND",
+   "region": "North Dakota"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arthur",
+   "region_abbrev": "TN",
+   "region": "Tennessee"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arthur",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Central",
+   "locality": "Arthur City",
+   "region_abbrev": "TX",
+   "region": "Texas"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Arthurdale",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ },
+ {
+   "time_zone": "Eastern",
+   "locality": "Artie",
+   "region_abbrev": "WV",
+   "region": "West Virginia"
+ }
+]

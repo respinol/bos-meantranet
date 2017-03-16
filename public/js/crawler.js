@@ -18,7 +18,7 @@ $(document).ready(function() {
             loadUkLocations();
 
         } else {
-            loadUsCities();
+            loadUsStates();
         }
 
         loadCrawlers();
@@ -35,11 +35,11 @@ $(document).ready(function() {
 
     //TODO test
     function crawlMode() {
-      do {
-        $('#city').val(getRandomItem($('#json-cities > option')));
-        scrapeThis();
-      }
-      while (($('input[type=checkbox]:checked').length > 0));
+        do {
+            $('#city').val(getRandomItem($('#json-cities > option')));
+            scrapeThis();
+        }
+        while (($('input[type=checkbox]:checked').length > 0));
     }
     /**
      * Get random item.
@@ -96,46 +96,41 @@ $(document).ready(function() {
         }
     }
 
-    /**
-     * Loads list of states in the United States.
-     */
+    function loadJSON(file, callback) {
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType('application/json');
+        xobj.open('GET', file, true);
+        xobj.onreadystatechange = function() {
+            if (xobj.readyState == 4 && xobj.status == '200') {
+                callback(xobj.responseText);
+            }
+        };
+        xobj.send(null);
+    }
+
     function loadUsStates() {
         var datalist = document.getElementById('json-states');
         var input = document.getElementById('state');
 
-        var req = new XMLHttpRequest();
-
-        var jsonUrl = 'https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json';
-        var placeholder = "e.g. Texas";
-
-        req.onreadystatechange = function(res) {
-            if (req.readyState === 4) {
-                if (req.status === 200) {
-                    var json = JSON.parse(req.responseText);
-
-                    if (datalist.hasChildNodes()) {
-                        while (datalist.firstChild) {
-                            datalist.removeChild(datalist.firstChild);
-                        }
-                    }
-
-                    json.forEach(function(item) {
-                        var option = document.createElement('option');
-
-                        option.value = item['abbreviation'];
-                        option.text = item['name'];
-                        datalist.appendChild(option);
-                    });
-
-                    input.placeholder = placeholder;
-                } else {
-                    input.placeholder = "Couldn't load datalist options...";
-                }
+        if (datalist.hasChildNodes()) {
+            while (datalist.firstChild) {
+                datalist.removeChild(datalist.firstChild);
             }
-        };
-        input.placeholder = "Loading options...";
-        req.open('GET', jsonUrl, true);
-        req.send();
+        }
+
+        loadJSON('js/usLocations.json', function(res) {
+            var json = JSON.parse(res);
+
+            json.forEach(function(item) {
+                var option = document.createElement('option');
+
+                option.value = item['region'];
+                option.text = item['region_abbrev'];
+                if ($(`#json-states option[value='${option.value}']`).length == 0) {
+                  datalist.appendChild(option);
+                }
+            });
+        });
     }
 
     /**
@@ -144,45 +139,29 @@ $(document).ready(function() {
     function loadUsCities() {
         var datalist = document.getElementById('json-cities');
         var input = document.getElementById('city');
-        var state = $('#state').val();
+        var state = document.getElementById('state');
 
-        var req = new XMLHttpRequest();
-        // var jsonUrl = 'https://gist.github.com/Miserlou/c5cd8364bf9b2420bb29';
-
-        //TODO Change this to US Cities json
-        var jsonUrl = 'https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json';
-        var placeholder = "e.g. Austin";
-
-        req.onreadystatechange = function(res) {
-            if (req.readyState === 4) {
-                if (req.status === 200) {
-                    var json = JSON.parse(req.responseText);
-
-                    if (datalist.hasChildNodes()) {
-                        while (datalist.firstChild) {
-                            datalist.removeChild(datalist.firstChild);
-                        }
-                    }
-
-                    json.forEach(function(item) {
-                        var option = document.createElement('option');
-
-                        // option.value = item['city'];
-                        //TODO CHange option value and text
-                        option.text = item['abbreviation'];
-                        option.value = item['name'];
-                        datalist.appendChild(option);
-                    });
-
-                    input.placeholder = placeholder;
-                } else {
-                    input.placeholder = "Couldn't load datalist options...";
-                }
+        if (datalist.hasChildNodes()) {
+            while (datalist.firstChild) {
+                datalist.removeChild(datalist.firstChild);
             }
-        };
-        input.placeholder = "Loading options...";
-        req.open('GET', jsonUrl, true);
-        req.send();
+        }
+
+        loadJSON('js/usLocations.json', function(res) {
+            var json = JSON.parse(res);
+
+            json.forEach(function(item) {
+                if (item['region'] == state.value) {
+                  var option = document.createElement('option');
+
+                  option.value = item['locality'];
+                  option.text = item['locality'];
+                  if ($(`#json-cities option[value='${option.value}']`).length == 0) {
+                    datalist.appendChild(option);
+                  }
+                }
+            });
+        });
     }
 
     /**
