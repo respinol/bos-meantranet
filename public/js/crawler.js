@@ -77,11 +77,9 @@ $(document).ready(function() {
 
         if (country == 'United States') {
             crawler = crawlers['us'];
-            $('#USStates').show();
 
         } else if (country == 'United Kingdom') {
             crawler = crawlers['uk'];
-            $('#USStates').hide();
         }
 
         if (datalist.hasChildNodes()) {
@@ -242,7 +240,7 @@ $(document).ready(function() {
 
         var source = $("#search-results").html();
         var dataTemplate = Handlebars.compile(source);
-        results = $('#results')
+        var results = $('#results');
 
         newAlert("Please Wait!", "We're still scraping...");
 
