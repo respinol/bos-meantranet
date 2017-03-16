@@ -45,7 +45,8 @@ exports.getData = (req, res) => {
     var country = req.query.country;
 
     var parameters = {
-        location: req.query.location,
+        city: req.query.city,
+        state: req.query.state,
         category: req.query.category
     };
 
@@ -120,7 +121,8 @@ exports.getData = (req, res) => {
 };
 
 function scrapeYell(params, callback) {
-    var url = "https://www.yell.com/s/" + params.category + "-" + params.location.split(' ').join('+') + ".html";
+    var url = "https://www.yell.com/s/" + params.category + "-" + params.city.split(' ').join('+') +
+        "+" + params.state.split(' ').join('+') + ".html";
     console.log(`Scraping ${url}`);
 
     x(url, {
@@ -147,16 +149,19 @@ function scrapeYell(params, callback) {
         }
 
         for (var i = 0; i < data.business.length; i++) {
-          _.assign(data.business[i], {scraper: 'Yell.com'});
+            _.assign(data.business[i], {
+                scraper: 'Yell.com'
+            });
         }
 
-        console.log(`Yell: ${data.business.length} ${params.category} scraped from ${params.location}`);
+        console.log(`Yell: ${data.business.length} ${params.category} scraped from ${params.city} ${params.state}`);
         callback(data);
     })
 }
 
 function scrapeYellowpages(params, callback) {
-    var url = url = "https://www.yellowpages.com/search?search_terms=" + params.category + "&geo_location_terms=" + params.location.split(' ').join('+');
+    var url = url = "https://www.yellowpages.com/search?search_terms=" + params.category + "&geo_location_terms=" +
+        params.city.split(' ').join('+') + "+" + params.state.split(' ').join('+');
     console.log(`Scraping ${url}`);
 
     x(url, {
@@ -184,10 +189,12 @@ function scrapeYellowpages(params, callback) {
         }
 
         for (var i = 0; i < data.business.length; i++) {
-          _.assign(data.business[i], {scraper: 'Yellowpages.com'});
+            _.assign(data.business[i], {
+                scraper: 'Yellowpages.com'
+            });
         }
 
-        console.log(`Yellowpages: ${data.business.length} ${params.category} scraped from ${params.location}`);
+        console.log(`Yellowpages: ${data.business.length} ${params.category} scraped from ${params.city} ${params.state}`);
         callback(data);
     })
 }
@@ -216,7 +223,8 @@ function scrapeYellowpages(params, callback) {
 // }
 
 function scrapeYelp(params, callback) {
-    var url = url = "https://www.yelp.com/search?cflt=" + params.category + "&find_loc=" + params.location.split(' ').join('+');
+    var url = url = "https://www.yelp.com/search?cflt=" + params.category + "&find_loc=" +
+        params.city.split(' ').join('+') + "+" + params.state.split(' ').join('+');
     console.log(`Scraping ${url}`);
 
     x(url, {
@@ -244,10 +252,12 @@ function scrapeYelp(params, callback) {
         }
 
         for (var i = 0; i < data.business.length; i++) {
-          _.assign(data.business[i], {scraper: 'Yelp.com'});
+            _.assign(data.business[i], {
+                scraper: 'Yelp.com'
+            });
         }
 
-        console.log(`Yelp: ${data.business.length} ${params.category} scraped from ${params.location}`);
+        console.log(`Yelp: ${data.business.length} ${params.category} scraped from ${params.city} ${params.state}`);
         callback(data);
     })
 }

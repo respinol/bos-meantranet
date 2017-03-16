@@ -27,11 +27,6 @@ $(document).ready(function() {
     $('#state').change(loadUsCities);
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
-    // $('#crawlmode').change(function() {
-    //     if ($('input[type=checkbox]:checked').length > 0) {
-    //         crawlMode();
-    //     }
-    // });
 
     //TODO test
     function crawlMode() {
@@ -127,7 +122,7 @@ $(document).ready(function() {
                 option.value = item['region'];
                 option.text = item['region_abbrev'];
                 if ($(`#json-states option[value='${option.value}']`).length == 0) {
-                  datalist.appendChild(option);
+                    datalist.appendChild(option);
                 }
             });
         });
@@ -152,13 +147,13 @@ $(document).ready(function() {
 
             json.forEach(function(item) {
                 if (item['region'] == state.value) {
-                  var option = document.createElement('option');
+                    var option = document.createElement('option');
 
-                  option.value = item['locality'];
-                  option.text = item['locality'];
-                  if ($(`#json-cities option[value='${option.value}']`).length == 0) {
-                    datalist.appendChild(option);
-                  }
+                    option.value = item['locality'];
+                    option.text = item['locality'];
+                    if ($(`#json-cities option[value='${option.value}']`).length == 0) {
+                        datalist.appendChild(option);
+                    }
                 }
             });
         });
@@ -213,7 +208,8 @@ $(document).ready(function() {
         var parameters = {
             country: $('input[name=country]:checked').val(),
             website: $('#website').val(),
-            location: $('#city').val(),
+            city: $('#city').val(),
+            state: $('#state').val(),
             category: ''
         };
 
@@ -221,24 +217,36 @@ $(document).ready(function() {
         var dataTemplate = Handlebars.compile(source);
         results = $('#results')
 
-        newAlert("Please Wait!", "We're still scraping...");
-
         for (var i = 0; i < categories.length; i++) {
             parameters.category = categories[i];
 
             $.get('/searching', parameters, function(data) {
-                if (data instanceof Object) {
-                    results.append(dataTemplate({
-                        page: data
-                    }));
-                } else {
-                    results.append(data);
-                };
+              newAlert("Status...",
+                  `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
-                // showModal(parameters, data.business.length);
-                data.business = filterArray(data.business, filterD121);
-                scrapedData.push(data);
-            });
+                    if (data instanceof Object && data.business.length > 0) {
+                        results.append(dataTemplate({
+                            page: data
+                        }));
+                    } else {
+                        results.append(data);
+                    };
+
+                    if (parameters.country == 'United Kingdom') {
+                        data.business = filterArray(data.business, filterD121);
+                    }
+
+                    scrapedData.push(data);
+                })
+                .done(function() {
+                    newAlert("Status...",
+                        `Finished scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
+
+                    if ($('input[type=checkbox]:checked').length > 0) {
+                        $('#city').val(getRandomItem($('#json-cities > option')));
+                        scrapeThis();
+                    }
+                });
         }
     }
 
@@ -288,19 +296,9 @@ $(document).ready(function() {
         $("#alert-area").append($("<div class='alert alert-warning alert-dismissible show' role='alert'>" +
             "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>" +
             "<span aria-hidden='true'>&times;</span></button>" +
-            "<strong>" + header + "</strong> " + message + "</div>"));
-    }
-
-    /**
-     * Show modal with results.
-     */
-    function showModal(parameters, count) {
-        var msg = "Scraped " + count + " " + parameters.category + " from " + parameters.location + ".";
-
-        $('#scraperModal').modal('show');
-        $('.modal-msg').text(msg);
-        $(".alert").delay(3000).fadeOut("slow", function() {
-            $(this).first().remove();
+            "<strong>" + header + "</strong><br>" + message + "</div>"));
+        $(".alert").fadeTo(3000, 0).slideUp(1000, function() {
+            $(this).remove();
         });
     }
 
