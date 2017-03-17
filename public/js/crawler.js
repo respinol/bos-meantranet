@@ -11,6 +11,9 @@ $(document).ready(function() {
         ],
     };
 
+    $.ajaxSetup({
+        timeout: 60000
+    });
     $('input[name=country]:radio').change(function() {
         var country = $('input[name=country]:checked').val();
 
@@ -28,14 +31,6 @@ $(document).ready(function() {
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
 
-    //TODO test
-    function crawlMode() {
-        do {
-            $('#city').val(getRandomItem($('#json-cities > option')));
-            scrapeThis();
-        }
-        while (($('input[type=checkbox]:checked').length > 0));
-    }
     /**
      * Get random item.
      */
@@ -207,7 +202,6 @@ $(document).ready(function() {
         var categories = $('#category').val().split('\n');
         var parameters = {
             country: $('input[name=country]:checked').val(),
-            website: $('#website').val(),
             city: $('#city').val(),
             state: $('#state').val(),
             category: ''
@@ -219,11 +213,10 @@ $(document).ready(function() {
 
         for (var i = 0; i < categories.length; i++) {
             parameters.category = categories[i];
+            newAlert("info",
+                `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
             $.get('/searching', parameters, function(data) {
-              newAlert("Status...",
-                  `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
-
                     if (data instanceof Object && data.business.length > 0) {
                         results.append(dataTemplate({
                             page: data
@@ -238,14 +231,27 @@ $(document).ready(function() {
 
                     scrapedData.push(data);
                 })
-                .done(function() {
-                    newAlert("Status...",
-                        `Finished scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
+                .done(function(data) {
+                    var type = "warning";
+
+                    if (data.business.length > 0) {
+                        type = "success"
+                    }
+
+                    newAlert(type,
+                        `Scraped ${data.business.length} ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
                     if ($('input[type=checkbox]:checked').length > 0) {
                         $('#city').val(getRandomItem($('#json-cities > option')));
-                        scrapeThis();
+                        setTimeout(scrapeThis(), 5000);
+
+                    } else {
+                        newAlert(type, `Finished scraping session...`);
                     }
+                })
+                .fail(function() {
+                    newAlert('error',
+                        `Error encountered while scraping. Session stopped.`);
                 });
         }
     }
@@ -292,14 +298,17 @@ $(document).ready(function() {
     /**
      * Add dynamic alert on page.
      */
-    function newAlert(header, message) {
-        $("#alert-area").append($("<div class='alert alert-warning alert-dismissible show' role='alert'>" +
-            "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>" +
-            "<span aria-hidden='true'>&times;</span></button>" +
-            "<strong>" + header + "</strong><br>" + message + "</div>"));
-        $(".alert").fadeTo(3000, 0).slideUp(1000, function() {
-            $(this).remove();
-        });
+    function newAlert(type, message) {
+        $('#alert-area').append($(`<div class="alert alert-${type} alert-dismissible show" role="alert">` +
+            `<button type="button" class="close" data-dismiss="alert" aria-label="Close">` +
+            `<span aria-hidden="true">&times;</span></button>` +
+            `<strong>${message}</strong></div>`));
+
+        setTimeout(function() {
+            $('#alert-area').children('.alert:first-child').fadeTo(1000, 0).slideUp(500, function() {
+                $(this).remove();
+            });
+        }, 3000);
     }
 
     function downloadCSV() {

@@ -9,18 +9,6 @@ block script
 block content
     .container
         h1 Big Outsource Web Crawler
-        #alert-area
-        #scraperModal.modal.fade(role="dialog")
-            .modal-dialog
-                .modal-content
-                    .modal-header
-                        button.close("button", data-dismiss="modal") x
-                        h4.modal-title Scraping Status
-                    .modal-body
-                        p.modal-msg Scrape finished...
-                    .modal-footer
-                        button.btn.btn-default(type="button", data-dismiss="modal") Close
-
         div.page-wrapper
           label(for="select-country") Select a country:
           form#select-country
@@ -50,6 +38,7 @@ block content
             div.slider.round
           button#scrape.btn.default(type="button") Scrape
           button#download.btn.default(type="button") Download
-
+          
+        div#alert-area
         ul#results(data-role='listview', data-filter='true')
           include crawl-template.html
