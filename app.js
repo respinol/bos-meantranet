@@ -19,7 +19,6 @@ const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
 const sass = require('node-sass-middleware');
 const multer = require('multer');
-const cors = require('cors');
 
 /**
  * Custom module dependencies.
@@ -134,7 +133,6 @@ app.use(express.static(path.join(__dirname, 'public'), {
     maxAge: 31557600000
 }));
 
-app.use(cors());
 /**
  * Primary app routes.
  */
@@ -200,7 +198,6 @@ app.get('/intern/consequence', internController.getConsequence);
  * Crawler routes.
  */
 app.route('/crawler')
-  .all(cors())
   .get(crawlerController.getCrawler)
 app.get('/searching', crawlerController.getData);
 

@@ -28,14 +28,6 @@ $(document).ready(function() {
     $('#scrape').click(scrapeThis);
     $('#download').click(downloadCSV);
 
-    //TODO test
-    function crawlMode() {
-        do {
-            $('#city').val(getRandomItem($('#json-cities > option')));
-            scrapeThis();
-        }
-        while (($('input[type=checkbox]:checked').length > 0));
-    }
     /**
      * Get random item.
      */
@@ -210,6 +202,7 @@ $(document).ready(function() {
             website: $('#website').val(),
             city: $('#city').val(),
             state: $('#state').val(),
+            state_abb: $('#state').text(),
             category: ''
         };
 
@@ -220,9 +213,11 @@ $(document).ready(function() {
         for (var i = 0; i < categories.length; i++) {
             parameters.category = categories[i];
 
+            newAlert("Status...",
+                `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
+
             $.get('/searching', parameters, function(data) {
-              newAlert("Status...",
-                  `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
+
 
                     if (data instanceof Object && data.business.length > 0) {
                         results.append(dataTemplate({
@@ -238,15 +233,71 @@ $(document).ready(function() {
 
                     scrapedData.push(data);
                 })
-                .done(function() {
-                    newAlert("Status...",
-                        `Finished scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
+                .done(function(data) {
+                    var type = "warning";
+
+                    if (data.business.length > 0) {
+                        type = "success"
+                    }
+
+                    newAlert(type,
+                        `Scraped ${data.business.length} ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
                     if ($('input[type=checkbox]:checked').length > 0) {
                         $('#city').val(getRandomItem($('#json-cities > option')));
-                        scrapeThis();
+                        setTimeout(scrapeThis, 10000);
+
+                    } else {
+                        newAlert(type, `Finished scraping session...`);
                     }
+                })
+                .fail(function(err) {
+                    newAlert('danger',
+                        `Error encountered while scraping. Session stopped.`);
+                    console.log(err);
                 });
+
+            // $.ajax({
+            //         method: "GET",
+            //         url: "/searching",
+            //         data: parameters,
+            //         timeout: 600000,
+            //         success: function(data) {
+            //             newAlert("Status...",
+            //                 `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
+            //
+            //             if (data instanceof Object && data.business.length > 0) {
+            //                 results.append(dataTemplate({
+            //                     page: data
+            //                 }));
+            //             } else {
+            //                 results.append(data);
+            //             };
+            //
+            //             if (parameters.country == 'United Kingdom') {
+            //                 data.business = filterArray(data.business, filterD121);
+            //             }
+            //
+            //             scrapedData.push(data);
+            //         },
+            //         error: function(x, t, m) {
+            //             if (t === "timeout") {
+            //                 alert("got timeout");
+            //             } else {
+            //                 alert(t);
+            //             }
+            //         }
+            //     })
+            //     .done(function() {
+            //         newAlert("Status...",
+            //             `Finished scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
+            //
+            //         if ($('input[type=checkbox]:checked').length > 0) {
+            //             $('#city').val(getRandomItem($('#json-cities > option')));
+            //             scrapeThis();
+            //         }
+            //     });
+
         }
     }
 
