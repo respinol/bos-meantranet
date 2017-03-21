@@ -9,6 +9,7 @@ block script
 block content
     .container
         h1 Big Outsource Web Crawler
+        div#alert-area
         div.page-wrapper
           label(for="select-country") Select a country:
           form#select-country
@@ -39,6 +40,6 @@ block content
           button#scrape.btn.default(type="button") Scrape
           button#download.btn.default(type="button") Download
           
-        div#alert-area
+        
         ul#results(data-role='listview', data-filter='true')
           include crawl-template.html

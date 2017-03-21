@@ -11,9 +11,6 @@ $(document).ready(function() {
         ],
     };
 
-    $.ajaxSetup({
-        timeout: 60000
-    });
     $('input[name=country]:radio').change(function() {
         var country = $('input[name=country]:checked').val();
 
@@ -199,13 +196,15 @@ $(document).ready(function() {
      * Start scraper function on button click.
      */
     function scrapeThis() {
-        var categories = $('#category').val().split('\n');
-        var parameters = {
-            country: $('input[name=country]:checked').val(),
-            city: $('#city').val(),
-            state: $('#state').val(),
-            category: ''
-        };
+      var categories = $('#category').val().split('\n');
+      var parameters = {
+          country: $('input[name=country]:checked').val(),
+          website: $('#website').val(),
+          city: $('#city').val(),
+          state: $('#state').val(),
+          state_abb: $('#state').text(),
+          category: ''
+      };
 
         var source = $("#search-results").html();
         var dataTemplate = Handlebars.compile(source);
@@ -213,6 +212,7 @@ $(document).ready(function() {
 
         for (var i = 0; i < categories.length; i++) {
             parameters.category = categories[i];
+
             newAlert("info",
                 `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
@@ -243,15 +243,16 @@ $(document).ready(function() {
 
                     if ($('input[type=checkbox]:checked').length > 0) {
                         $('#city').val(getRandomItem($('#json-cities > option')));
-                        setTimeout(scrapeThis(), 5000);
+                        setTimeout(scrapeThis, 10000);
 
                     } else {
                         newAlert(type, `Finished scraping session...`);
                     }
                 })
-                .fail(function() {
-                    newAlert('error',
+                .fail(function(err) {
+                    newAlert('danger',
                         `Error encountered while scraping. Session stopped.`);
+                    console.log(err);
                 });
         }
     }
@@ -305,10 +306,10 @@ $(document).ready(function() {
             `<strong>${message}</strong></div>`));
 
         setTimeout(function() {
-            $('#alert-area').children('.alert:first-child').fadeTo(1000, 0).slideUp(500, function() {
+            $('#alert-area').children('.alert:first-child').fadeTo(3000, 0).slideUp(1000, function() {
                 $(this).remove();
             });
-        }, 3000);
+        }, 5000);
     }
 
     function downloadCSV() {

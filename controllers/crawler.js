@@ -3,29 +3,32 @@ const async = require('async');
 const _ = require('lodash');
 
 var x = Xray({
-    filters: {
-        trim: function(value) {
-            return typeof value === 'string' ? value.trim() : value
-        },
-        formatString: function(value) {
-            value = value.replace(/,\s*$/, '');
-            return value.replace(/\w\S*/g, function(s) {
-                return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase();
-            });
-        },
-        formatPhoneUK: function(value) {
-            if (typeof value === 'string') {
-                value = value.trim().split(' ').join('');
-                return value.replace(/^0/, '44');
-            } else {
-                return value;
+        filters: {
+            trim: function(value) {
+                return typeof value === 'string' ? value.trim() : value
+            },
+            formatString: function(value) {
+                value = value.replace(/,\s*$/, '');
+                return value.replace(/\w\S*/g, function(s) {
+                    return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase();
+                });
+            },
+            formatPhoneUK: function(value) {
+                if (typeof value === 'string') {
+                    value = value.trim().split(' ').join('');
+                    return value.replace(/^0/, '44');
+                } else {
+                    return value;
+                }
+            },
+            formatNumber: function(value) {
+                return typeof value === 'string' ? value.trim().replace(/\D/g, '') : value
             }
-        },
-        formatNumber: function(value) {
-            return typeof value === 'string' ? value.trim().replace(/\D/g, '') : value
         }
-    }
-});
+    })
+    // .delay(500)
+    .timeout(30000);
+    // .throttle(1, 1000);
 
 /**
  * GET /crawler/crawler
