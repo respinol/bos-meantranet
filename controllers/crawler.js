@@ -23,39 +23,22 @@ var x = Xray({
             },
             formatNumber: function(value) {
                 return typeof value === 'string' ? value.trim().replace(/\D/g, '') : value
-<<<<<<< HEAD
             },
             formatStreet: function(value) {
-                var regex = /^(\w*\s*)*$/
-                var result = string.match(regex);
-                return result[1];
+                return value;
             },
             formatCity: function(value) {
-                var regex = /^(\w*\s*)*$/
-                var result = string.match(regex);
-                return result[2];
+                return value;
             },
             formatState: function(value) {
-                var regex = /^(\w*\s*)*$/
-                var result = string.match(regex);
-                return result[3];
+                return value;
             },
             formatPostal: function(value) {
-                var regex = /^(\w*\s*)*$/
-                var result = string.match(regex);
-                return result[4];
+                return value;
             }
         }
     })
     .timeout(600000);
-=======
-            }
-        }
-    })
-    // .delay(500)
-    .timeout(30000);
-    // .throttle(1, 1000);
->>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
 
 /**
  * GET /crawler/crawler
@@ -84,7 +67,9 @@ exports.getData = (req, res) => {
         async.parallel([
                 function(callback) {
                     scrapeYell(parameters, function(data) {
-                        console.log(`Yell: ${data.business.length} records ready for merging...`);
+                        if (data.business.length > 0) {
+                            console.log(`Yell: ${data.business.length} records ready for merging...`);
+                        }
                         callback(null, data.business);
                         return;
                     });
@@ -113,15 +98,19 @@ exports.getData = (req, res) => {
     } else if (country == 'United States') {
         async.parallel([
                 function(callback) {
-                    scrapeYellowpages(parameters, function(data) {
-                        console.log(`Yellowpages: ${data.business.length} records ready for merging...`);
+                    scrapeYelp(parameters, function(data) {
+                        if (data.business.length > 0) {
+                            console.log(`Yelp: ${data.business.length} records ready for merging...`);
+                        }
                         callback(null, data.business);
                         return;
                     });
                 },
                 function(callback) {
-                    scrapeYelp(parameters, function(data) {
-                        console.log(`Yelp: ${data.business.length} records ready for merging...`);
+                    scrapeYellowpages(parameters, function(data) {
+                        if (data.business.length > 0) {
+                            console.log(`Yellowpages: ${data.business.length} records ready for merging...`);
+                        }
                         callback(null, data.business);
                         return;
                     });
@@ -152,15 +141,11 @@ exports.getData = (req, res) => {
 
 function scrapeYell(params, callback) {
     var category = params.category.split(' ').join('+')
-    var state = params.state.split(' ').join('+');
+    // var state = params.state.split(' ').join('+');
     var city = params.city.split(' ').join('+');
-<<<<<<< HEAD
-    var state_abb = params.state_abb.split(' ').join('+');
-    var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}%2C+${state_abb}`;
-=======
-    var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}` +
-        `&location=${city}%2C+${state}`;
->>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
+    var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
+    // var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}%2C+${state}`;
+
     console.log(`Scraping ${url}`);
 
     x(url, {
@@ -176,8 +161,6 @@ function scrapeYell(params, callback) {
                 review_count: '.ta-rating | formatNumber',
                 website: '.businessCapsule--callToAction a@href',
                 email: null,
-                contact_person: null,
-                contact_title: null,
                 page_url: '.col-sm-21 a@href',
                 scraper: null
             }])
@@ -195,7 +178,11 @@ function scrapeYell(params, callback) {
             });
         }
 
-        console.log(`Yell: ${data.business.length} ${params.category} scraped from ${params.city} ${params.state}`);
+        if (data.business.length > 0) {
+            console.log(`Yell: ${data.business.length} ${params.category}(s) scraped from ${params.city} ${params.state}`);
+        } else {
+            console.log(`Yell: No ${params.category}(s) scraped from ${params.city} ${params.state}`);
+        }
         callback(data);
     })
 }
@@ -204,12 +191,7 @@ function scrapeYellowpages(params, callback) {
     var category = params.category.split(' ').join('+')
     var state = params.state.split(' ').join('+');
     var city = params.city.split(' ').join('+');
-<<<<<<< HEAD
     var url = `https://www.yellowpages.com/search?search_terms=${category}&geo_location_terms=${city}%2C+${state}`;
-=======
-    var url = `https://www.yellowpages.com/search?search_terms=${category}` +
-        `&geo_location_terms=${city}%2C+${state}`;
->>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
     console.log(`Scraping ${url}`);
 
     x(url, {
@@ -226,21 +208,14 @@ function scrapeYellowpages(params, callback) {
                 review_count: '.primary-info section a span',
                 website: '.track-visit-website@href',
                 email: null,
-                contact_person: null,
-                contact_title: null,
                 page_url: '.n a@href',
                 scraper: null
             }])
             .paginate('.next@href')
     })(function(err, data) {
         if (err) {
-<<<<<<< HEAD
-            callback(err);
-            console.log(err);
-=======
             console.log(`Error: ${err}`);
             callback(err);
->>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
             return;
         }
 
@@ -250,32 +225,30 @@ function scrapeYellowpages(params, callback) {
             });
         }
 
-        console.log(`Yellowpages: ${data.business.length} ${params.category} scraped from ${params.city} ${params.state}`);
+        if (data.business.length > 0) {
+            console.log(`Yellowpages: ${data.business.length} ${params.category}(s) scraped from ${params.city} ${params.state}`);
+        } else {
+            console.log(`Yell: No ${params.category}(s) scraped from ${params.city} ${params.state}`);
+        }
         callback(data);
     })
 }
 
 function scrapeYelp(params, callback) {
-    var category = params.category.split(' ').join('+')
+    var category = params.category.split(' ').join('+');
     var state = params.state.split(' ').join('+');
     var city = params.city.split(' ').join('+');
-<<<<<<< HEAD
     var url = `https://www.yelp.com/search?find_desc=${category}&find_loc=${city}%2C+${state}`;
-=======
-    var url = `https://www.yelp.com/search?rpp=40&find_desc=${category}` +
-        `&find_loc=${city}%2C+${state}`;
->>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
     console.log(`Scraping ${url}`);
 
     x(url, {
         business: x('.regular-search-result', [{
                 name: '.biz-name span',
                 phone: '.biz-phone | formatNumber',
-<<<<<<< HEAD
-                street_address: '.secondary-attributes address | formatStreet',
-                address_locality: '.secondary-attributes address | formatCity',
-                address_region: '.secondary-attributes address | formatState',
-                postal_code: '.secondary-attributes address | formatPostal',
+                street_address: x('.biz-name@href', 'span[itemprop="streetAddress"]'),
+                address_locality: x('.biz-name@href', 'span[itemprop="addressLocality"]'),
+                address_region: x('.biz-name@href', 'span[itemprop="addressRegion"]'),
+                postal_code: x('.biz-name@href', 'span[itemprop="postalCode"]'),
                 category: '.category-str-list | trim',
                 price_range: '.price-range',
                 star_rating: 'img.offscreen@alt',
@@ -284,22 +257,10 @@ function scrapeYelp(params, callback) {
                 email: null,
                 contact_person: x('.biz-name@href', '.user-display-name'),
                 contact_title: x('.biz-name@href', '.business-owner-role'),
-=======
-                street_address: '.neighborhood-str-list | formatString',
-                address_locality: '.neighborhood-str-list | formatString',
-                address_region: '.neighborhood-str-list | trim',
-                postal_code: '.neighborhood-str-list | formatString',
-                category: '.category-str-list | trim',
-                price_range: '.price-range',
-                star_rating: null,
-                review_count: '.review-count | formatNumber',
-                website: null,
-                email: null,
->>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
                 page_url: '.biz-name@href',
                 scraper: null
             }])
-            .paginate('.next@href')
+            .paginate('.pagination-label@href')
     })(function(err, data) {
         if (err) {
             console.log(`Error: ${err}`);
@@ -313,7 +274,11 @@ function scrapeYelp(params, callback) {
             });
         }
 
-        console.log(`Yelp: ${data.business.length} ${params.category} scraped from ${params.city} ${params.state}`);
+        if (data.business.length > 0) {
+            console.log(`Yelp: ${data.business.length} ${params.category}(s) scraped from ${params.city} ${params.state}`);
+        } else {
+            console.log(`Yelp: No ${params.category}(s) scraped from ${params.city} ${params.state}`);
+        }
         callback(data);
     })
 }

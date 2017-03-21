@@ -111,8 +111,8 @@ $(document).ready(function() {
             json.forEach(function(item) {
                 var option = document.createElement('option');
 
-                option.value = item['region'];
-                option.text = item['region_abbrev'];
+                option.value = item['region_abbrev'];
+                option.text = item['region'];
                 if ($(`#json-states option[value='${option.value}']`).length == 0) {
                     datalist.appendChild(option);
                 }
@@ -138,7 +138,7 @@ $(document).ready(function() {
             var json = JSON.parse(res);
 
             json.forEach(function(item) {
-                if (item['region'] == state.value) {
+                if (item['region_abbrev'] == state.value) {
                     var option = document.createElement('option');
 
                     option.value = item['locality'];
@@ -196,45 +196,23 @@ $(document).ready(function() {
      * Start scraper function on button click.
      */
     function scrapeThis() {
-<<<<<<< HEAD
         var categories = $('#category').val().split('\n');
         var parameters = {
             country: $('input[name=country]:checked').val(),
-            website: $('#website').val(),
             city: $('#city').val(),
             state: $('#state').val(),
-            state_abb: $('#state').text(),
             category: ''
         };
-=======
-      var categories = $('#category').val().split('\n');
-      var parameters = {
-          country: $('input[name=country]:checked').val(),
-          website: $('#website').val(),
-          city: $('#city').val(),
-          state: $('#state').val(),
-          state_abb: $('#state').text(),
-          category: ''
-      };
->>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
 
         var source = $("#search-results").html();
         var dataTemplate = Handlebars.compile(source);
-        results = $('#results')
+        var results = $('#results');
 
         for (var i = 0; i < categories.length; i++) {
             parameters.category = categories[i];
 
-<<<<<<< HEAD
-            newAlert("Status...",
-                `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
-
-            $.get('/searching', parameters, function(data) {
-
-=======
             newAlert("info",
                 `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
->>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
 
             $.get('/searching', parameters, function(data) {
                     if (data instanceof Object && data.business.length > 0) {
@@ -262,60 +240,18 @@ $(document).ready(function() {
                         `Scraped ${data.business.length} ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
                     if ($('input[type=checkbox]:checked').length > 0) {
+                        $('#state').val(getRandomItem($('#json-states > option')));
                         $('#city').val(getRandomItem($('#json-cities > option')));
-                        setTimeout(scrapeThis, 10000);
+                        setTimeout(scrapeThis(), 5000);
 
                     } else {
                         newAlert(type, `Finished scraping session...`);
                     }
                 })
-                .fail(function(err) {
+                .fail(function() {
                     newAlert('danger',
                         `Error encountered while scraping. Session stopped.`);
-                    console.log(err);
                 });
-
-            // $.ajax({
-            //         method: "GET",
-            //         url: "/searching",
-            //         data: parameters,
-            //         timeout: 600000,
-            //         success: function(data) {
-            //             newAlert("Status...",
-            //                 `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
-            //
-            //             if (data instanceof Object && data.business.length > 0) {
-            //                 results.append(dataTemplate({
-            //                     page: data
-            //                 }));
-            //             } else {
-            //                 results.append(data);
-            //             };
-            //
-            //             if (parameters.country == 'United Kingdom') {
-            //                 data.business = filterArray(data.business, filterD121);
-            //             }
-            //
-            //             scrapedData.push(data);
-            //         },
-            //         error: function(x, t, m) {
-            //             if (t === "timeout") {
-            //                 alert("got timeout");
-            //             } else {
-            //                 alert(t);
-            //             }
-            //         }
-            //     })
-            //     .done(function() {
-            //         newAlert("Status...",
-            //             `Finished scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
-            //
-            //         if ($('input[type=checkbox]:checked').length > 0) {
-            //             $('#city').val(getRandomItem($('#json-cities > option')));
-            //             scrapeThis();
-            //         }
-            //     });
-
         }
     }
 
@@ -368,10 +304,10 @@ $(document).ready(function() {
             `<strong>${message}</strong></div>`));
 
         setTimeout(function() {
-            $('#alert-area').children('.alert:first-child').fadeTo(3000, 0).slideUp(1000, function() {
+            $('#alert-area').children('.alert:first-child').fadeTo(1000, 0).slideUp(500, function() {
                 $(this).remove();
             });
-        }, 5000);
+        }, 3000);
     }
 
     function downloadCSV() {
