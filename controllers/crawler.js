@@ -22,7 +22,7 @@ var x = Xray({
                 }
             },
             formatNumber: function(value) {
-                return typeof value === 'string' ? value.trim().replace(/\D/g, '') : value
+                return typeof value === 'string' ? value.trim().replace(/[^0-9.]/g, '') : value
             },
             formatStreet: function(value) {
                 return value;
@@ -67,7 +67,7 @@ exports.getData = (req, res) => {
         async.parallel([
                 function(callback) {
                     scrapeYell(parameters, function(data) {
-                        if (data.business.length > 0) {
+                        if (data.business) {
                             console.log(`Yell: ${data.business.length} records ready for merging...`);
                         }
                         callback(null, data.business);
@@ -99,7 +99,7 @@ exports.getData = (req, res) => {
         async.parallel([
                 function(callback) {
                     scrapeYelp(parameters, function(data) {
-                        if (data.business.length > 0) {
+                        if (data.business) {
                             console.log(`Yelp: ${data.business.length} records ready for merging...`);
                         }
                         callback(null, data.business);
@@ -108,7 +108,7 @@ exports.getData = (req, res) => {
                 },
                 function(callback) {
                     scrapeYellowpages(parameters, function(data) {
-                        if (data.business.length > 0) {
+                        if (data.business) {
                             console.log(`Yellowpages: ${data.business.length} records ready for merging...`);
                         }
                         callback(null, data.business);
@@ -251,7 +251,7 @@ function scrapeYelp(params, callback) {
                 postal_code: x('.biz-name@href', 'span[itemprop="postalCode"]'),
                 category: '.category-str-list | trim',
                 price_range: '.price-range',
-                star_rating: 'img.offscreen@alt',
+                star_rating: 'img.offscreen@alt | formatNumber',
                 review_count: '.review-count | formatNumber',
                 website: x('.biz-name@href', 'span.biz-website a'),
                 email: null,
