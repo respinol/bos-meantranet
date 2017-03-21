@@ -23,6 +23,7 @@ var x = Xray({
             },
             formatNumber: function(value) {
                 return typeof value === 'string' ? value.trim().replace(/\D/g, '') : value
+<<<<<<< HEAD
             },
             formatStreet: function(value) {
                 var regex = /^(\w*\s*)*$/
@@ -47,6 +48,14 @@ var x = Xray({
         }
     })
     .timeout(600000);
+=======
+            }
+        }
+    })
+    // .delay(500)
+    .timeout(30000);
+    // .throttle(1, 1000);
+>>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
 
 /**
  * GET /crawler/crawler
@@ -145,8 +154,13 @@ function scrapeYell(params, callback) {
     var category = params.category.split(' ').join('+')
     var state = params.state.split(' ').join('+');
     var city = params.city.split(' ').join('+');
+<<<<<<< HEAD
     var state_abb = params.state_abb.split(' ').join('+');
     var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}%2C+${state_abb}`;
+=======
+    var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}` +
+        `&location=${city}%2C+${state}`;
+>>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
     console.log(`Scraping ${url}`);
 
     x(url, {
@@ -170,7 +184,8 @@ function scrapeYell(params, callback) {
             .paginate('.pagination--next@href')
     })(function(err, data) {
         if (err) {
-            callback(err)
+            console.log(`Error: ${err}`);
+            callback(err);
             return;
         }
 
@@ -189,7 +204,12 @@ function scrapeYellowpages(params, callback) {
     var category = params.category.split(' ').join('+')
     var state = params.state.split(' ').join('+');
     var city = params.city.split(' ').join('+');
+<<<<<<< HEAD
     var url = `https://www.yellowpages.com/search?search_terms=${category}&geo_location_terms=${city}%2C+${state}`;
+=======
+    var url = `https://www.yellowpages.com/search?search_terms=${category}` +
+        `&geo_location_terms=${city}%2C+${state}`;
+>>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
     console.log(`Scraping ${url}`);
 
     x(url, {
@@ -201,9 +221,9 @@ function scrapeYellowpages(params, callback) {
                 address_region: '.adr span:nth-child(3) | trim',
                 postal_code: '.adr span:nth-child(4) | formatString',
                 category: '.categories a | trim',
-                price_range: null,
+                price_range: x('.n a@href', 'dd:contains("$")'),
                 star_rating: null,
-                review_count: '.ta-count',
+                review_count: '.primary-info section a span',
                 website: '.track-visit-website@href',
                 email: null,
                 contact_person: null,
@@ -214,8 +234,13 @@ function scrapeYellowpages(params, callback) {
             .paginate('.next@href')
     })(function(err, data) {
         if (err) {
+<<<<<<< HEAD
             callback(err);
             console.log(err);
+=======
+            console.log(`Error: ${err}`);
+            callback(err);
+>>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
             return;
         }
 
@@ -230,40 +255,23 @@ function scrapeYellowpages(params, callback) {
     })
 }
 
-// function scrapeCitysearch(params, callback) {
-//     var url = url = "http://www.citysearch.com/search?what=" + params.category + "&where=" + params.location.split(' ').join('+');
-//     console.log(`Scraping ${url}`);
-//
-//     x(url, {
-//         business: x('.regular-search-result', [{
-//                 name: '.biz-name span',
-//                 phone: '.biz-phone | formatNumber',
-//                 street_address: '.neighborhood-str-list | formatString',
-//                 address_locality: '.neighborhood-str-list | formatString',
-//                 address_region: '.neighborhood-str-list | trim',
-//                 postal_code: '.neighborhood-str-list | formatString',
-//                 category: '.category-str-list | trim',
-//                 website: '.price-range',
-//                 page_url: '.biz-name@href'
-//             }])
-//             .paginate('.next@href')
-//     })(function(err, data) {
-//         console.log(`Yelp: ${data.business.length} ${params.category} scraped from ${params.location}`);
-//         callback(data);
-//     })
-// }
-
 function scrapeYelp(params, callback) {
     var category = params.category.split(' ').join('+')
     var state = params.state.split(' ').join('+');
     var city = params.city.split(' ').join('+');
+<<<<<<< HEAD
     var url = `https://www.yelp.com/search?find_desc=${category}&find_loc=${city}%2C+${state}`;
+=======
+    var url = `https://www.yelp.com/search?rpp=40&find_desc=${category}` +
+        `&find_loc=${city}%2C+${state}`;
+>>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
     console.log(`Scraping ${url}`);
 
     x(url, {
         business: x('.regular-search-result', [{
                 name: '.biz-name span',
                 phone: '.biz-phone | formatNumber',
+<<<<<<< HEAD
                 street_address: '.secondary-attributes address | formatStreet',
                 address_locality: '.secondary-attributes address | formatCity',
                 address_region: '.secondary-attributes address | formatState',
@@ -276,13 +284,26 @@ function scrapeYelp(params, callback) {
                 email: null,
                 contact_person: x('.biz-name@href', '.user-display-name'),
                 contact_title: x('.biz-name@href', '.business-owner-role'),
+=======
+                street_address: '.neighborhood-str-list | formatString',
+                address_locality: '.neighborhood-str-list | formatString',
+                address_region: '.neighborhood-str-list | trim',
+                postal_code: '.neighborhood-str-list | formatString',
+                category: '.category-str-list | trim',
+                price_range: '.price-range',
+                star_rating: null,
+                review_count: '.review-count | formatNumber',
+                website: null,
+                email: null,
+>>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
                 page_url: '.biz-name@href',
                 scraper: null
             }])
             .paginate('.next@href')
     })(function(err, data) {
         if (err) {
-            callback(err)
+            console.log(`Error: ${err}`);
+            callback(err);
             return;
         }
 

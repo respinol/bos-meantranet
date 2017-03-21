@@ -196,6 +196,7 @@ $(document).ready(function() {
      * Start scraper function on button click.
      */
     function scrapeThis() {
+<<<<<<< HEAD
         var categories = $('#category').val().split('\n');
         var parameters = {
             country: $('input[name=country]:checked').val(),
@@ -205,6 +206,17 @@ $(document).ready(function() {
             state_abb: $('#state').text(),
             category: ''
         };
+=======
+      var categories = $('#category').val().split('\n');
+      var parameters = {
+          country: $('input[name=country]:checked').val(),
+          website: $('#website').val(),
+          city: $('#city').val(),
+          state: $('#state').val(),
+          state_abb: $('#state').text(),
+          category: ''
+      };
+>>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
 
         var source = $("#search-results").html();
         var dataTemplate = Handlebars.compile(source);
@@ -213,12 +225,18 @@ $(document).ready(function() {
         for (var i = 0; i < categories.length; i++) {
             parameters.category = categories[i];
 
+<<<<<<< HEAD
             newAlert("Status...",
                 `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
             $.get('/searching', parameters, function(data) {
 
+=======
+            newAlert("info",
+                `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
+>>>>>>> 49fc19ee56f830dc876ddfa0aed5228fa3f9c6b5
 
+            $.get('/searching', parameters, function(data) {
                     if (data instanceof Object && data.business.length > 0) {
                         results.append(dataTemplate({
                             page: data
@@ -343,14 +361,17 @@ $(document).ready(function() {
     /**
      * Add dynamic alert on page.
      */
-    function newAlert(header, message) {
-        $("#alert-area").append($("<div class='alert alert-warning alert-dismissible show' role='alert'>" +
-            "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>" +
-            "<span aria-hidden='true'>&times;</span></button>" +
-            "<strong>" + header + "</strong><br>" + message + "</div>"));
-        $(".alert").fadeTo(3000, 0).slideUp(1000, function() {
-            $(this).remove();
-        });
+    function newAlert(type, message) {
+        $('#alert-area').append($(`<div class="alert alert-${type} alert-dismissible show" role="alert">` +
+            `<button type="button" class="close" data-dismiss="alert" aria-label="Close">` +
+            `<span aria-hidden="true">&times;</span></button>` +
+            `<strong>${message}</strong></div>`));
+
+        setTimeout(function() {
+            $('#alert-area').children('.alert:first-child').fadeTo(3000, 0).slideUp(1000, function() {
+                $(this).remove();
+            });
+        }, 5000);
     }
 
     function downloadCSV() {
