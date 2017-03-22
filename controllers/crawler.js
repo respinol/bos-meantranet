@@ -38,6 +38,7 @@ var x = Xray({
             }
         }
     })
+    .throttle(1, 500)
     .timeout(600000);
 
 /**
@@ -141,10 +142,8 @@ exports.getData = (req, res) => {
 
 function scrapeYell(params, callback) {
     var category = params.category.split(' ').join('+')
-    // var state = params.state.split(' ').join('+');
     var city = params.city.split(' ').join('+');
     var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
-    // var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}%2C+${state}`;
 
     console.log(`Scraping ${url}`);
 
@@ -152,23 +151,23 @@ function scrapeYell(params, callback) {
         business: x('.businessCapsule', [{
                 name: '.businessCapsule--title h2',
                 phone: '.businessCapsule--telephone strong | formatPhoneUK',
-                street_address: '.businessCapsule--address a span span:nth-child(1) | formatString',
-                address_locality: '.businessCapsule--address a span span:nth-child(2) | formatString',
-                postal_code: '.businessCapsule--address a span span:nth-child(3)',
+                street_address: 'span[itemprop="streetAddress"] | formatString',
+                address_locality: 'span[itemprop="addressLocality"] | formatString',
+                address_region: null,
+                postal_code: 'span[itemprop="postalCode"] | trim',
                 category: '.businessCapsule--classificationText | trim',
                 price_range: null,
-                star_rating: null,
-                review_count: '.ta-rating | formatNumber',
+                star_rating: '.starRating@title',
+                review_count: '.reviewStars--text | formatNumber',
                 website: '.businessCapsule--callToAction a@href',
                 email: null,
-                page_url: '.col-sm-21 a@href',
+                page_url: '.col-sm-24 a@href',
                 scraper: null
             }])
             .paginate('.pagination--next@href')
     })(function(err, data) {
         if (err) {
             console.log(`Error: ${err}`);
-            callback(err);
             return;
         }
 
@@ -215,7 +214,6 @@ function scrapeYellowpages(params, callback) {
     })(function(err, data) {
         if (err) {
             console.log(`Error: ${err}`);
-            callback(err);
             return;
         }
 
@@ -260,11 +258,10 @@ function scrapeYelp(params, callback) {
                 page_url: '.biz-name@href',
                 scraper: null
             }])
-            .paginate('.pagination-label@href')
+            .paginate('a.next@href')
     })(function(err, data) {
         if (err) {
             console.log(`Error: ${err}`);
-            callback(err);
             return;
         }
 

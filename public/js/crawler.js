@@ -239,18 +239,20 @@ $(document).ready(function() {
                     newAlert(type,
                         `Scraped ${data.business.length} ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
-                    if ($('input[type=checkbox]:checked').length > 0) {
-                        $('#state').val(getRandomItem($('#json-states > option')));
-                        $('#city').val(getRandomItem($('#json-cities > option')));
-                        setTimeout(scrapeThis(), 5000);
-
-                    } else {
-                        newAlert(type, `Finished scraping session...`);
-                    }
                 })
                 .fail(function() {
                     newAlert('danger',
                         `Error encountered while scraping. Session stopped.`);
+                })
+                .always(function() {
+                    if ($('input[type=checkbox]:checked').length > 0) {
+                        $('#state').val(getRandomItem($('#json-states > option')));
+                        $('#city').val(getRandomItem($('#json-cities > option')));
+                        setTimeout(scrapeThis(), 10000);
+                        newAlert(type, `Crawling another page...`);
+                    } else {
+                        newAlert(type, `Finished scraping session...`);
+                    }
                 });
         }
     }
