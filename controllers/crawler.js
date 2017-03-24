@@ -1,5 +1,6 @@
 const Xray = require('x-ray');
 const async = require('async');
+const osmosis = require('osmosis');
 const _ = require('lodash');
 const Business = require('../models/Business');
 
@@ -206,50 +207,91 @@ exports.getData = (req, res) => {
     }
 };
 
+// function scrapeYell(params, callback) {
+//     var category = params.category.split(' ').join('+')
+//     var city = params.city.split(' ').join('+');
+//     var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
+//     console.log(`Scraping ${url}`);
+//
+//     x(url, {
+//         business: x('.businessCapsule', [{
+//                 name: '.businessCapsule--title h2',
+//                 phone: '.businessCapsule--telephone strong | formatPhoneUK',
+//                 street_address: 'span[itemprop="streetAddress"] | formatString',
+//                 address_locality: 'span[itemprop="addressLocality"] | formatString',
+//                 address_region: null,
+//                 postal_code: 'span[itemprop="postalCode"] | trim',
+//                 category: '.businessCapsule--classificationText | trim',
+//                 price_range: null,
+//                 star_rating: '.starRating@title',
+//                 review_count: '.reviewStars--text | formatNumber',
+//                 website: '.businessCapsule--callToAction a@href',
+//                 email: null,
+//                 page_url: '.col-sm-24 a@href',
+//                 scraper: null
+//             }])
+//             .paginate('.pagination--next@href')
+//     })(function(err, data) {
+//         if (err) {
+//             console.log(`Error: ${err}.`);
+//             callback();
+//             return;
+//         }
+//
+//         for (var i = 0; i < data.business.length; i++) {
+//             _.assign(data.business[i], {
+//                 scraper: 'Yell.com'
+//             });
+//         }
+//
+//         if (data.business.length > 0) {
+//             console.log(`Yell: ${data.business.length} ${params.category}(s) scraped from ${params.city} ${params.state}`);
+//         } else {
+//             console.log(`Yell: No ${params.category}(s) scraped from ${params.city} ${params.state}`);
+//         }
+//         callback(data);
+//     })
+// }
+
 function scrapeYell(params, callback) {
     var category = params.category.split(' ').join('+')
     var city = params.city.split(' ').join('+');
     var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
     console.log(`Scraping ${url}`);
 
-    x(url, {
-        business: x('.businessCapsule', [{
-                name: '.businessCapsule--title h2',
-                phone: '.businessCapsule--telephone strong | formatPhoneUK',
-                street_address: 'span[itemprop="streetAddress"] | formatString',
-                address_locality: 'span[itemprop="addressLocality"] | formatString',
-                address_region: null,
-                postal_code: 'span[itemprop="postalCode"] | trim',
-                category: '.businessCapsule--classificationText | trim',
-                price_range: null,
-                star_rating: '.starRating@title',
-                review_count: '.reviewStars--text | formatNumber',
-                website: '.businessCapsule--callToAction a@href',
-                email: null,
-                page_url: '.col-sm-24 a@href',
-                scraper: null
-            }])
-            .paginate('.pagination--next@href')
-    })(function(err, data) {
-        if (err) {
-            console.log(`Error: ${err}.`);
-            callback();
-            return;
-        }
-
-        for (var i = 0; i < data.business.length; i++) {
-            _.assign(data.business[i], {
-                scraper: 'Yell.com'
-            });
-        }
-
-        if (data.business.length > 0) {
-            console.log(`Yell: ${data.business.length} ${params.category}(s) scraped from ${params.city} ${params.state}`);
-        } else {
-            console.log(`Yell: No ${params.category}(s) scraped from ${params.city} ${params.state}`);
-        }
-        callback(data);
-    })
+    var scraper = osmosis
+        .get(url)
+        // .paginate('a.pagination--next')
+        .find('div.row.businessCapsule--title div.col-sm-24 a')
+        .delay(5000)
+        .follow('@href')
+        .delay(5000)
+        .set({
+            'name': 'h1.businessCapsule--title',
+            'phone': 'strong.businessCapsule--telephone',
+            'street_address': 'span[itemprop="streetAddress"]',
+            'address_locality': 'span[itemprop="addressLocality"]',
+            'address_region': 'span[itemprop="addressRegion"]',
+            'postal_code': 'span[itemprop="postalCode"]',
+            'category': 'span[itemprop="name"]',
+            'price_range': null,
+            'star_rating': 'span.histogram--score',
+            'review_count': 'span.reviewCount',
+            'website': 'div.businessCapsule--callToAction a@href',
+            'email': null,
+            'page_url': 'meta[name="og:url"]@content',
+            'scraper': null
+        })
+        .data(function(listing) {
+            listing.scraper = 'Yell';
+            console.log(listing);
+        })
+        .log(console.log)
+        .error(console.log)
+        .debug(console.log)
+        .done(function(data) {
+            callback(data);
+        })
 }
 
 function scrapeYellowpages(params, callback) {

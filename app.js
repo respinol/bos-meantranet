@@ -23,6 +23,7 @@ const multer = require('multer');
 /**
  * Custom module dependencies.
  */
+const osmosis = require('osmosis');
 const Xray = require('x-ray');
 
 const upload = multer({
