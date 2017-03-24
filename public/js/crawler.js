@@ -11,6 +11,10 @@ $(document).ready(function() {
         ],
     };
 
+    $.ajaxSetup({
+      timeout: 300000
+    });
+
     $('input[name=country]:radio').change(function() {
         var country = $('input[name=country]:checked').val();
 
@@ -26,7 +30,31 @@ $(document).ready(function() {
 
     $('#state').change(loadUsCities);
     $('#scrape').click(scrapeThis);
-    $('#download').click(downloadCSV);
+    // $('#download').click(downloadCSV);
+    $('#download').click(saveData);
+    $('#results > table > tbody > tr > td').bind('click', dataClick);
+
+    function saveData() {
+      $.post('/searching', scrapedData, function() {
+        alert(`Stored ${scrapedData.lenght} records to the database.`);
+      })
+      .done(function() {
+        alert('All collections saved.');
+      })
+      .fail(function() {
+        alert('Error encountered');
+      });
+    }
+
+    function dataClick(e) {
+        console.log(e);
+        if (e.currentTarget.contentEditable != null) {
+            $(e.currentTarget).attr('contentEditable', true);
+
+        } else {
+            $(e.currentTarget).append('<input type="text">');
+        }
+    }
 
     /**
      * Get random item.
@@ -214,7 +242,7 @@ $(document).ready(function() {
             newAlert("info",
                 `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
-            $.get('/searching', parameters, function(data) {
+            var scrape = $.get('/searching', parameters, function(data) {
                     if (data instanceof Object && data.business.length > 0) {
                         results.append(dataTemplate({
                             page: data
@@ -230,29 +258,27 @@ $(document).ready(function() {
                     scrapedData.push(data);
                 })
                 .done(function(data) {
-                    var type = "warning";
-
-                    if (data.business.length > 0) {
-                        type = "success"
-                    }
+                    var type = (data.business.length > 0) ? type = 'success' : type = 'warning';
 
                     newAlert(type,
                         `Scraped ${data.business.length} ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
-                })
-                .fail(function() {
-                    newAlert('danger',
-                        `Error encountered while scraping. Session stopped.`);
-                })
-                .always(function() {
                     if ($('input[type=checkbox]:checked').length > 0) {
                         $('#state').val(getRandomItem($('#json-states > option')));
                         $('#city').val(getRandomItem($('#json-cities > option')));
-                        setTimeout(scrapeThis(), 10000);
-                        newAlert(type, `Crawling another page...`);
+                        setTimeout(scrapeThis(), 30000);
+
                     } else {
-                        newAlert(type, `Finished scraping session...`);
+                        newAlert('success', `Finished scraping session...`);
                     }
+                })
+                .fail(function(jqXHRm, textStatus) {
+                    var error = (textStatus === 'timeout') ? (error = 'Failed from timeout.') : (error = 'Error encountered while scraping.');
+
+                    console.log(error);
+                    newAlert('danger', error);
+                    scrape.abort();
+                    newAlert('info', 'Session Stopped.');
                 });
         }
     }
@@ -285,6 +311,7 @@ $(document).ready(function() {
 
         if (!filters) {
             filteredData = data;
+
         } else {
             filteredData = $.grep(data, function(el, index) {
                 for (var i = 0; i < predicates.length; i++) {

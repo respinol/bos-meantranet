@@ -199,7 +199,9 @@ app.get('/intern/consequence', internController.getConsequence);
  */
 app.route('/crawler')
   .get(crawlerController.getCrawler)
-app.get('/searching', crawlerController.getData);
+app.route('/searching')
+  .get(crawlerController.getData)
+  .post(crawlerController.postData)
 
 /**
  * Admin routes.

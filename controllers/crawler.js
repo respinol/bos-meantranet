@@ -1,6 +1,7 @@
 const Xray = require('x-ray');
 const async = require('async');
 const _ = require('lodash');
+const Business = require('../models/Business');
 
 var x = Xray({
         filters: {
@@ -38,7 +39,6 @@ var x = Xray({
             }
         }
     })
-    .throttle(1, 500)
     .timeout(600000);
 
 /**
@@ -52,6 +52,55 @@ exports.getCrawler = (req, res) => {
 };
 
 /**
+ * POST
+ *
+ */
+exports.postData = (req, res, next) => {
+    const errors = req.validationErrors();
+
+    if (errors) {
+        req.flash('errors', errors);
+        return res.redirect('/signup');
+    }
+
+    const data = req.body;
+    const business = new Business({
+        name: data.name,
+        password: data.phone,
+        street_address: data.street_address,
+        address_locality: data.address_locality,
+        address_region: data.address_region,
+        postal_code: data.postal_code,
+        category: data.category,
+        price_range: data.price_range,
+        star_rating: data.star_rating,
+        review_count: data.review_count,
+        website: data.website,
+        email: data.email,
+        contact_person: data.contact_person,
+        contact_title: data.contact_title,
+        page_url: data.page_url,
+        scraper: data.scraper,
+    });
+
+    console.log(data);
+    // Business.insertMany(req)
+    //     .then(function(mongooseDocuments) {
+    //         req.flash('success', {
+    //             msg: 'Data has been saved.'
+    //         });
+    //         res.redirect('/crawler');
+    //     })
+    //     .catch(function(err) {
+    //         req.flash('errors', {
+    //             msg: 'Encountered an error.'
+    //         });
+    //         return res.redirect('/crawler');
+    //     });
+};
+
+/**
+ * GET
  * Passess a json object to #results.
  */
 exports.getData = (req, res) => {
@@ -68,17 +117,19 @@ exports.getData = (req, res) => {
         async.parallel([
                 function(callback) {
                     scrapeYell(parameters, function(data) {
-                        if (data.business) {
+                        if (data.business || data.business.length > 0) {
                             console.log(`Yell: ${data.business.length} records ready for merging...`);
+                            callback(null, data.business);
+                            return;
                         }
-                        callback(null, data.business);
+                        callback();
                         return;
                     });
                 }
             ],
             function(err, results) {
                 if (err) {
-                    callback(err);
+                    console.log(`Error: ${err}.`);
                     return;
                 }
 
@@ -100,19 +151,33 @@ exports.getData = (req, res) => {
         async.parallel([
                 function(callback) {
                     scrapeYelp(parameters, function(data) {
-                        if (data.business) {
+                        if (data.business || data.business.length > 0) {
                             console.log(`Yelp: ${data.business.length} records ready for merging...`);
+                            callback(null, data.business);
+                            return;
                         }
-                        callback(null, data.business);
-                        return;
+                        callback();
+                        return;;
                     });
                 },
                 function(callback) {
                     scrapeYellowpages(parameters, function(data) {
-                        if (data.business) {
+                        if (data.business || data.business.length > 0) {
                             console.log(`Yellowpages: ${data.business.length} records ready for merging...`);
+                            callback(null, data.business);
+                            return;
                         }
-                        callback(null, data.business);
+                        return;
+                    });
+                },
+                function(callback) {
+                    scrapeCitysearch(parameters, function(data) {
+                        if (data.business || data.business.length > 0) {
+                            console.log(`Yellowpages: ${data.business.length} records ready for merging...`);
+                            callback(null, data.business);
+                            return;
+                        }
+                        callback();
                         return;
                     });
                 }
@@ -120,7 +185,8 @@ exports.getData = (req, res) => {
             ],
             function(err, results) {
                 if (err) {
-                    callback(err);
+                    console.log(`Error: ${err}.`);
+                    res.json(results);
                     return;
                 }
 
@@ -144,7 +210,6 @@ function scrapeYell(params, callback) {
     var category = params.category.split(' ').join('+')
     var city = params.city.split(' ').join('+');
     var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
-
     console.log(`Scraping ${url}`);
 
     x(url, {
@@ -167,7 +232,8 @@ function scrapeYell(params, callback) {
             .paginate('.pagination--next@href')
     })(function(err, data) {
         if (err) {
-            console.log(`Error: ${err}`);
+            console.log(`Error: ${err}.`);
+            callback();
             return;
         }
 
@@ -213,7 +279,8 @@ function scrapeYellowpages(params, callback) {
             .paginate('.next@href')
     })(function(err, data) {
         if (err) {
-            console.log(`Error: ${err}`);
+            console.log(`Error: ${err}.`);
+            callback();
             return;
         }
 
@@ -258,10 +325,11 @@ function scrapeYelp(params, callback) {
                 page_url: '.biz-name@href',
                 scraper: null
             }])
-            .paginate('a.next@href')
+            .paginate('div.pagination-links a@href')
     })(function(err, data) {
         if (err) {
-            console.log(`Error: ${err}`);
+            console.log(`Error: ${err}.`);
+            callback();
             return;
         }
 
@@ -278,4 +346,23 @@ function scrapeYelp(params, callback) {
         }
         callback(data);
     })
+}
+
+function scrapeCitysearch(params, callback) {
+    var category = params.category.split(' ').join('+');
+    var state = params.state.split(' ').join('+');
+    var city = params.city.split(' ').join('+');
+    var url = `http://www.citysearch.com/search?what=${category}&where=${city}%2C+${state}`;
+    console.log(`Scraping ${url}`);
+
+    x(url, {
+            links: x('li.naturalResult', [{
+                link: 'a.clip.url@href'
+            }])
+        })
+        (function(err, results) {
+            results.forEach(function(links, link) {
+                console.log(links.link)
+            });
+        });
 }
