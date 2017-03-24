@@ -118,9 +118,9 @@ exports.getData = (req, res) => {
         async.parallel([
                 function(callback) {
                     scrapeYell(parameters, function(data) {
-                        if (data.business || data.business.length > 0) {
-                            console.log(`Yell: ${data.business.length} records ready for merging...`);
-                            callback(null, data.business);
+                        if (data.length > 0) {
+                            console.log(`Yell: ${data.length} records ready for merging...`);
+                            callback(null, data);
                             return;
                         }
                         callback();
@@ -259,6 +259,7 @@ function scrapeYell(params, callback) {
     var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
     console.log(`Scraping ${url}`);
 
+    var results = [];
     var scraper = osmosis
         .get(url)
         // .paginate('a.pagination--next')
@@ -286,11 +287,15 @@ function scrapeYell(params, callback) {
             listing.scraper = 'Yell';
             console.log(listing);
         })
+        .then(function(context, data) {
+          results.push(data);
+        })
         .log(console.log)
         .error(console.log)
         .debug(console.log)
-        .done(function(data) {
-            callback(data);
+        .done(function() {
+            callback(results);
+            console.log(`Passing ${results.length}...`)
         })
 }
 
