@@ -8,6 +8,7 @@ block script
 
 block content
     .container
+<<<<<<< HEAD
         #scraperModal.modal.fade(role="dialog")
             .modal-dialog
                 .modal-content
@@ -61,3 +62,40 @@ block content
     #alert-area     
     ul#results(data-role='listview', data-filter='true', style='width:100%;padding-left:0px;')
     include crawl-template.html
+=======
+        h1 Big Outsource Web Crawler
+        div#alert-area
+        div.page-wrapper
+          label(for="select-country") Select a country:
+          form#select-country
+            input.country(type="radio", name="country", value = "United States")
+            | &nbsp; United States
+            input.country(type="radio", name="country", value = "United Kingdom")
+            | &nbsp; United Kingdom
+          label(for="website") Select a website:
+          input#website(type="text", list="website-crawlers", placeholder="e.g. Yell.com")
+          datalist#website-crawlers
+
+        div.page-wrapper
+          label(for="state") Select a state:
+          input#state(type="text", list="json-states", placeholder="e.g. Texas")
+          datalist#json-states
+
+          label(for="cities") Select a city:
+          input#city(type="text", list="json-cities", placeholder="e.g. Glasgow")
+          datalist#json-cities
+          br
+          label(for="category") Select a category:
+          textarea#category(name="textarea" rows="10")
+
+        div
+          label#crawlmode.switch
+            input(type="checkbox", checked="checked")
+            div.slider.round
+          button#scrape.btn.default(type="button") Scrape
+          button#download.btn.default(type="button") Download
+          
+        
+        ul#results(data-role='listview', data-filter='true')
+          include crawl-template.html
+>>>>>>> 0e0b7dbd02a6688249d437076fe08fba7c03ac90

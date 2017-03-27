@@ -11,6 +11,10 @@ $(document).ready(function() {
         ],
     };
 
+    $.ajaxSetup({
+      timeout: 300000
+    });
+
     $('input[name=country]:radio').change(function() {
         var country = $('input[name=country]:checked').val();
 
@@ -26,21 +30,32 @@ $(document).ready(function() {
 
     $('#state').change(loadUsCities);
     $('#scrape').click(scrapeThis);
-    $('#download').click(downloadCSV);
-    // $('#crawlmode').change(function() {
-    //     if ($('input[type=checkbox]:checked').length > 0) {
-    //         crawlMode();
-    //     }
-    // });
+    // $('#download').click(downloadCSV);
+    $('#download').click(saveData);
+    $('#results > table > tbody > tr > td').bind('click', dataClick);
 
-    //TODO test
-    function crawlMode() {
-        do {
-            $('#city').val(getRandomItem($('#json-cities > option')));
-            scrapeThis();
-        }
-        while (($('input[type=checkbox]:checked').length > 0));
+    function saveData() {
+      $.post('/searching', scrapedData, function() {
+        alert(`Stored ${scrapedData.lenght} records to the database.`);
+      })
+      .done(function() {
+        alert('All collections saved.');
+      })
+      .fail(function() {
+        alert('Error encountered');
+      });
     }
+
+    function dataClick(e) {
+        console.log(e);
+        if (e.currentTarget.contentEditable != null) {
+            $(e.currentTarget).attr('contentEditable', true);
+
+        } else {
+            $(e.currentTarget).append('<input type="text">');
+        }
+    }
+
     /**
      * Get random item.
      */
@@ -124,10 +139,10 @@ $(document).ready(function() {
             json.forEach(function(item) {
                 var option = document.createElement('option');
 
-                option.value = item['region'];
-                option.text = item['region_abbrev'];
+                option.value = item['region_abbrev'];
+                option.text = item['region'];
                 if ($(`#json-states option[value='${option.value}']`).length == 0) {
-                  datalist.appendChild(option);
+                    datalist.appendChild(option);
                 }
             });
         });
@@ -151,14 +166,14 @@ $(document).ready(function() {
             var json = JSON.parse(res);
 
             json.forEach(function(item) {
-                if (item['region'] == state.value) {
-                  var option = document.createElement('option');
+                if (item['region_abbrev'] == state.value) {
+                    var option = document.createElement('option');
 
-                  option.value = item['locality'];
-                  option.text = item['locality'];
-                  if ($(`#json-cities option[value='${option.value}']`).length == 0) {
-                    datalist.appendChild(option);
-                  }
+                    option.value = item['locality'];
+                    option.text = item['locality'];
+                    if ($(`#json-cities option[value='${option.value}']`).length == 0) {
+                        datalist.appendChild(option);
+                    }
                 }
             });
         });
@@ -212,8 +227,8 @@ $(document).ready(function() {
         var categories = $('#category').val().split('\n');
         var parameters = {
             country: $('input[name=country]:checked').val(),
-            website: $('#website').val(),
-            location: $('#city').val(),
+            city: $('#city').val(),
+            state: $('#state').val(),
             category: ''
         };
 
@@ -221,24 +236,50 @@ $(document).ready(function() {
         var dataTemplate = Handlebars.compile(source);
         var results = $('#results');
 
-        newAlert("Please Wait!", "We're still scraping...");
-
         for (var i = 0; i < categories.length; i++) {
             parameters.category = categories[i];
 
-            $.get('/searching', parameters, function(data) {
-                if (data instanceof Object) {
-                    results.append(dataTemplate({
-                        page: data
-                    }));
-                } else {
-                    results.append(data);
-                };
+            newAlert("info",
+                `Scraping ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
 
-                // showModal(parameters, data.business.length);
-                data.business = filterArray(data.business, filterD121);
-                scrapedData.push(data);
-            });
+            var scrape = $.get('/searching', parameters, function(data) {
+                    if (data instanceof Object && data.business.length > 0) {
+                        results.append(dataTemplate({
+                            page: data
+                        }));
+                    } else {
+                        results.append(data);
+                    };
+
+                    if (parameters.country == 'United Kingdom') {
+                        data.business = filterArray(data.business, filterD121);
+                    }
+
+                    scrapedData.push(data);
+                })
+                .done(function(data) {
+                    var type = (data.business.length > 0) ? type = 'success' : type = 'warning';
+
+                    newAlert(type,
+                        `Scraped ${data.business.length} ${parameters.category}(s) from ${parameters.city} ${parameters.state}`);
+
+                    if ($('input[type=checkbox]:checked').length > 0) {
+                        $('#state').val(getRandomItem($('#json-states > option')));
+                        $('#city').val(getRandomItem($('#json-cities > option')));
+                        setTimeout(scrapeThis(), 30000);
+
+                    } else {
+                        newAlert('success', `Finished scraping session...`);
+                    }
+                })
+                .fail(function(jqXHRm, textStatus) {
+                    var error = (textStatus === 'timeout') ? (error = 'Failed from timeout.') : (error = 'Error encountered while scraping.');
+
+                    console.log(error);
+                    newAlert('danger', error);
+                    scrape.abort();
+                    newAlert('info', 'Session Stopped.');
+                });
         }
     }
 
@@ -270,6 +311,7 @@ $(document).ready(function() {
 
         if (!filters) {
             filteredData = data;
+
         } else {
             filteredData = $.grep(data, function(el, index) {
                 for (var i = 0; i < predicates.length; i++) {
@@ -284,24 +326,17 @@ $(document).ready(function() {
     /**
      * Add dynamic alert on page.
      */
-    function newAlert(header, message) {
-        $("#alert-area").append($("<div class='alert alert-warning alert-dismissible show' role='alert'>" +
-            "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>" +
-            "<span aria-hidden='true'>&times;</span></button>" +
-            "<strong>" + header + "</strong> " + message + "</div>"));
-    }
+    function newAlert(type, message) {
+        $('#alert-area').append($(`<div class="alert alert-${type} alert-dismissible show" role="alert">` +
+            `<button type="button" class="close" data-dismiss="alert" aria-label="Close">` +
+            `<span aria-hidden="true">&times;</span></button>` +
+            `<strong>${message}</strong></div>`));
 
-    /**
-     * Show modal with results.
-     */
-    function showModal(parameters, count) {
-        var msg = "Scraped " + count + " " + parameters.category + " from " + parameters.location + ".";
-
-        $('#scraperModal').modal('show');
-        $('.modal-msg').text(msg);
-        $(".alert").delay(3000).fadeOut("slow", function() {
-            $(this).first().remove();
-        });
+        setTimeout(function() {
+            $('#alert-area').children('.alert:first-child').fadeTo(1000, 0).slideUp(500, function() {
+                $(this).remove();
+            });
+        }, 3000);
     }
 
     function downloadCSV() {
