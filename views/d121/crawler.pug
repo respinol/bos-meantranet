@@ -8,7 +8,7 @@ block script
 
 block content
   .container
-    h1.crawler 
+    h1.crawler-header
       strong D121 Web Crawler
     div#alert-area
 
@@ -16,7 +16,7 @@ block content
       //- label(for="state") Select a state:
       //- input#state(type="text", list="json-states", placeholder="e.g. Texas")
       //- datalist#json-states
-      .container-fluid.well
+      .container.well
         .row.input-spacing
           .col-xs-2
           .col-xs-4
@@ -27,7 +27,7 @@ block content
           .col-xs-4
             label(for="category") Select a category:
             br
-            textarea#category(name="textarea" rows="10")
+            textarea#category(name="textarea" rows="6")
         .row.input-spacing
           .col-xs-2
           .col-xs-4

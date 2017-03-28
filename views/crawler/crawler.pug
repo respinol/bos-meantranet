@@ -8,13 +8,14 @@ block script
 
 block content
   .container
-    h1.crawler
+    h1.crawler-header
       strong Big Outsource Web Crawler
       div#alert-area
     form
       .container-fluid.well
         .row.input-spacing
-          .col-xs-4
+          .col-xs-1
+          .col-xs-3
             label(for="select-country") Select a country:
             #select-country
             input.country(type="radio", name="country", value = "United States")
@@ -29,14 +30,15 @@ block content
             input#website(type="text", list="website-crawlers", placeholder="e.g. Yell.com")
             datalist#website-crawlers
 
-          .col-xs-4
+          .col-xs-3
             label(for="cities") Select a city:
             br
             input#city(type="text", list="json-cities", placeholder="e.g. Glasgow")
             datalist#json-cities
               
         .row.input-spacing
-          .col-xs-4
+          .col-xs-1
+          .col-xs-3
             label Crawl Mode:
             br
             label#crawlmode.switch
@@ -47,10 +49,10 @@ block content
             br
             input#state(type="text", list="json-states", placeholder="e.g. Texas")
             datalist#json-states
-          .col-xs-4
+          .col-xs-3
             label(for="category") Select a category:
             br
-            textarea#category(name="textarea" rows="10")
+            textarea#category(name="textarea" rows="6")
         .row.input-spacing
           .col-xs-4
           .col-xs-6
