@@ -1,47 +1,47 @@
-const Xray = require('x-ray');
+// const Xray = require('x-ray');
 const async = require('async');
 const osmosis = require('osmosis');
 const _ = require('lodash');
 
 const Business = require('../models/Business');
 
-var x = Xray({
-        filters: {
-            trim: function(value) {
-                return typeof value === 'string' ? value.trim() : value
-            },
-            formatString: function(value) {
-                value = value.replace(/,\s*$/, '');
-                return value.replace(/\w\S*/g, function(s) {
-                    return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase();
-                });
-            },
-            formatPhoneUK: function(value) {
-                if (typeof value === 'string') {
-                    value = value.trim().split(' ').join('');
-                    return value.replace(/^0/, '44');
-                } else {
-                    return value;
-                }
-            },
-            formatNumber: function(value) {
-                return typeof value === 'string' ? value.trim().replace(/[^0-9.]/g, '') : value
-            },
-            formatStreet: function(value) {
-                return value;
-            },
-            formatCity: function(value) {
-                return value;
-            },
-            formatState: function(value) {
-                return value;
-            },
-            formatPostal: function(value) {
-                return value;
-            }
-        }
-    })
-    .timeout(600000);
+// var x = Xray({
+//         filters: {
+//             trim: function(value) {
+//                 return typeof value === 'string' ? value.trim() : value
+//             },
+//             formatString: function(value) {
+//                 value = value.replace(/,\s*$/, '');
+//                 return value.replace(/\w\S*/g, function(s) {
+//                     return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase();
+//                 });
+//             },
+//             formatPhoneUK: function(value) {
+//                 if (typeof value === 'string') {
+//                     value = value.trim().split(' ').join('');
+//                     return value.replace(/^0/, '44');
+//                 } else {
+//                     return value;
+//                 }
+//             },
+//             formatNumber: function(value) {
+//                 return typeof value === 'string' ? value.trim().replace(/[^0-9.]/g, '') : value
+//             },
+//             formatStreet: function(value) {
+//                 return value;
+//             },
+//             formatCity: function(value) {
+//                 return value;
+//             },
+//             formatState: function(value) {
+//                 return value;
+//             },
+//             formatPostal: function(value) {
+//                 return value;
+//             }
+//         }
+//     })
+//     .timeout(600000);
 
 /**
  * GET /crawler/crawler
@@ -123,21 +123,11 @@ exports.getData = (req, res) => {
             //         return;
             //     });
             // }
-            // function(callback) {
-            //     scrapeKompass(parameters, function(data) {
-            //         if (data.length > 0) {
-            //             console.log(`Kompass: ${data.length} records ready for merging...`);
-            //             callback(null, data);
-            //             return;
-            //         }
-            //         callback();
-            //         return;
-            //     });
-            // }
+
             function(callback) {
-                scrapeMisterWhat(parameters, function(data) {
+                scrapeKompass(parameters, function(data) {
                     if (data.length > 0) {
-                        console.log(`MisterWhat: ${data.length} records ready for merging...`);
+                        console.log(`Kompass: ${data.length} records ready for merging...`);
                         callback(null, data);
                         return;
                     }
@@ -145,6 +135,30 @@ exports.getData = (req, res) => {
                     return;
                 });
             }
+
+            // function(callback) {
+            //     scrapeMisterWhat(parameters, function(data) {
+            //         if (data.length > 0) {
+            //             console.log(`MisterWhat: ${data.length} records ready for merging...`);
+            //             callback(null, data);
+            //             return;
+            //         }
+            //         callback();
+            //         return;
+            //     });
+            // }
+
+            // function(callback) {
+            //     scrapeManta(parameters, function(data) {
+            //         if (data.length > 0) {
+            //             console.log(`Manta: ${data.length} records ready for merging...`);
+            //             callback(null, data);
+            //             return;
+            //         }
+            //         callback();
+            //         return;
+            //     });
+            // }
         ],
         function(err, results) {
             if (err) {
@@ -178,9 +192,8 @@ function scrapeYell(params, callback) {
         .get(url)
         // .paginate('a.pagination--next')
         .find('div.row.businessCapsule--title div.col-sm-24 a')
-        .delay(3000)
+        .delay(1000)
         .follow('@href')
-        .delay(3000)
         .set({
             'name': 'h1.businessCapsule--title',
             'phone': 'strong.business-telephone',
@@ -224,9 +237,8 @@ function scrapeMisterWhat(params, callback) {
         .get(url)
         // .paginate('ul.pagination li:nth-last-chlld(1) a')
         .find('a.compName')
-        .delay(3000)
+        .delay(1000)
         .follow('@href')
-        .delay(3000)
         .set({
             'name': 'span[itemprop="name"]',
             'phone': 'span[itemprop="telephone"]',
@@ -272,29 +284,29 @@ function scrapeKompass(params, callback) {
         .get(url)
         // .paginate('a.pagination--next')
         .find('div.details h2 a')
-        .delay(3000)
+        .delay(1000)
         .follow('@href')
-        .delay(3000)
         .set({
             'name': 'h1[itemprop="name"]',
             'phone': 'a.phoneCompany input@value',
             'street_address': 'span[itemprop="streetAddress"]',
-            'address_locality': 'span[itemprop="addressLocality"]',
+            'address_locality': 'div.addressCoordinates p',
             'address_region': 'span[itemprop="addressRegion"]',
             'postal_code': 'span[itemprop="postalCode"]',
-            'category': 'div.activities.extra p',
+            'category': 'i.icon-circle.service + a',
             'website': 'a#website@href',
             'email': null,
             'contact_person': 'p.name',
             'contact_title': 'p.fonction',
             'employee_size': 'p.number',
-            'business_type': null,
+            'business_type': 'p:contains("Type of company") + p',
             'page_url': null,
             'scraper': null
         })
         .data(function(listing) {
             console.log(`Saving ${listing.name}...`);
             listing.scraper = 'Kompass';
+            listing.address_locality = listing.address_locality.replace(listing.streetAddress, '').replace('United Kingdom', '');
             listing.phone = formatPhoneUK(listing.phone);
         })
         .then(function(context, data) {
