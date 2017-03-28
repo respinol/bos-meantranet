@@ -52,6 +52,7 @@ const applicantController = require('./controllers/applicant');
 const adminController = require('./controllers/admin');
 const internController = require('./controllers/intern');
 const crawlerController = require('./controllers/crawler');
+const d121Controller = require('./controllers/d121');
 
 /**
  * API keys and Passport configuration.
@@ -203,6 +204,12 @@ app.route('/crawler')
 app.route('/searching')
   .get(crawlerController.getData)
   .post(crawlerController.postData)
+
+app.route('/d121')
+  .get(d121Controller.getCrawler)
+app.route('/search/d121')
+  .get(d121Controller.getData)
+  .post(d121Controller.postData)
 
 /**
  * Admin routes.

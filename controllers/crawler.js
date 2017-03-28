@@ -2,6 +2,7 @@ const Xray = require('x-ray');
 const async = require('async');
 const osmosis = require('osmosis');
 const _ = require('lodash');
+
 const Business = require('../models/Business');
 
 var x = Xray({
@@ -116,10 +117,21 @@ exports.getData = (req, res) => {
 
     if (country == 'United Kingdom') {
         async.parallel([
+                // function(callback) {
+                //     scrapeYell(parameters, function(data) {
+                //         if (data.length > 0) {
+                //             console.log(`Yell: ${data.length} records ready for merging...`);
+                //             callback(null, data);
+                //             return;
+                //         }
+                //         callback();
+                //         return;
+                //     });
+                // }
                 function(callback) {
-                    scrapeYell(parameters, function(data) {
+                    scrapeKompass(parameters, function(data) {
                         if (data.length > 0) {
-                            console.log(`Yell: ${data.length} records ready for merging...`);
+                            console.log(`Kompass: ${data.length} records ready for merging...`);
                             callback(null, data);
                             return;
                         }
@@ -207,52 +219,6 @@ exports.getData = (req, res) => {
     }
 };
 
-// function scrapeYell(params, callback) {
-//     var category = params.category.split(' ').join('+')
-//     var city = params.city.split(' ').join('+');
-//     var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
-//     console.log(`Scraping ${url}`);
-//
-//     x(url, {
-//         business: x('.businessCapsule', [{
-//                 name: '.businessCapsule--title h2',
-//                 phone: '.businessCapsule--telephone strong | formatPhoneUK',
-//                 street_address: 'span[itemprop="streetAddress"] | formatString',
-//                 address_locality: 'span[itemprop="addressLocality"] | formatString',
-//                 address_region: null,
-//                 postal_code: 'span[itemprop="postalCode"] | trim',
-//                 category: '.businessCapsule--classificationText | trim',
-//                 price_range: null,
-//                 star_rating: '.starRating@title',
-//                 review_count: '.reviewStars--text | formatNumber',
-//                 website: '.businessCapsule--callToAction a@href',
-//                 email: null,
-//                 page_url: '.col-sm-24 a@href',
-//                 scraper: null
-//             }])
-//             .paginate('.pagination--next@href')
-//     })(function(err, data) {
-//         if (err) {
-//             console.log(`Error: ${err}.`);
-//             callback();
-//             return;
-//         }
-//
-//         for (var i = 0; i < data.business.length; i++) {
-//             _.assign(data.business[i], {
-//                 scraper: 'Yell.com'
-//             });
-//         }
-//
-//         if (data.business.length > 0) {
-//             console.log(`Yell: ${data.business.length} ${params.category}(s) scraped from ${params.city} ${params.state}`);
-//         } else {
-//             console.log(`Yell: No ${params.category}(s) scraped from ${params.city} ${params.state}`);
-//         }
-//         callback(data);
-//     })
-// }
-
 function scrapeYell(params, callback) {
     var category = params.category.split(' ').join('+')
     var city = params.city.split(' ').join('+');
@@ -262,7 +228,7 @@ function scrapeYell(params, callback) {
     var results = [];
     var scraper = osmosis
         .get(url)
-        // .paginate('a.pagination--next')
+        .paginate('a.pagination--next')
         .find('div.row.businessCapsule--title div.col-sm-24 a')
         .delay(5000)
         .follow('@href')
@@ -285,6 +251,100 @@ function scrapeYell(params, callback) {
         })
         .data(function(listing) {
             listing.scraper = 'Yell';
+            console.log(listing);
+        })
+        .then(function(context, data) {
+          results.push(data);
+        })
+        .log(console.log)
+        .error(console.log)
+        .debug(console.log)
+        .done(function() {
+            callback(results);
+            console.log(`Passing ${results.length}...`)
+        })
+}
+
+// function scrapeMisterWhat(params, callback) {
+//     var category = params.category.split(' ').join('+')
+//     var city = params.city.split(' ').join('+');
+//     var url = `http://www.misterwhat.co.uk/search?what=${category}&where=${city}`;
+//     console.log(`Scraping ${url}`);
+//
+//     var results = [];
+//     var scraper = osmosis
+//         .get(url)
+//         // .paginate('ul.pagination li:nth-last-chlld(1) a')
+//         .find('a.compName')
+//         .delay(5000)
+//         .follow('@href')
+//         .delay(5000)
+//         .set({
+//             'name': 'span[itemprop="name"]',
+//             'phone': 'span[itemprop="telephone"]',
+//             'street_address': 'span[itemprop="streetAddress"]',
+//             'address_locality': 'a[itemprop="addressLocality"]',
+//             'address_region': 'span[itemprop="addressRegion"]',
+//             'postal_code': 'span[itemprop="postalCode"]',
+//             'category': null,
+//             'website': null,
+//             'email': null,
+//             'contact_person': 'div.col-sm-9',
+//             'contact_title': null,
+//             'employee_size': 'div.col-sm-9',
+//             'business_type': 'div.col-sm-9',
+//             'page_url': 'meta[name="og:url"]@content',
+//             'scraper': null
+//         })
+//         .data(function(listing) {
+//             listing.scraper = 'Misterwhat';
+//             console.log(listing);
+//         })
+//         .then(function(context, data) {
+//           results.push(data);
+//         })
+//         .log(console.log)
+//         .error(console.log)
+//         .debug(console.log)
+//         .done(function() {
+//             callback(results);
+//             console.log(`Passing ${results.length}...`)
+//         })
+// }
+
+function scrapeKompass(params, callback) {
+    var category = params.category.split(' ').join('+')
+    var city = params.city.split(' ').join('+');
+    var url = `http://gb.kompass.com/searchCompanies?acClassif=&localizationCode=GB&localizationLabel=United+Kingdom&localizationType=country&text=${category}&searchType=SUPPLIER`;
+    console.log(`Scraping ${url}`);
+
+    var results = [];
+    var scraper = osmosis
+        .get(url)
+        // .paginate('a.pagination--next')
+        .find('div.details h2 a')
+        .delay(5000)
+        .follow('@href')
+        .delay(5000)
+        .set({
+            'name': 'h1[itemprop="name"]',
+            'phone': 'a.phoneCompany input@value',
+            'street_address': 'span[itemprop="streetAddress"]',
+            'address_locality': 'span[itemprop="addressLocality"]',
+            'address_region': 'span[itemprop="addressRegion"]',
+            'postal_code': 'span[itemprop="postalCode"]',
+            'category': 'div.activities.extra p',
+            'website': 'a#website@href',
+            'email': null,
+            'contact_person': 'p.name',
+            'contact_title': 'p.fonction',
+            'employee_size': 'p.number',
+            'business_type': null,
+            'page_url': null,
+            'scraper': null
+        })
+        .data(function(listing) {
+            listing.scraper = 'Misterwhat';
             console.log(listing);
         })
         .then(function(context, data) {

@@ -1,0 +1,35 @@
+extends ../layout
+
+block script
+    script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.4/papaparse.min.js")
+    script(src='/js/d121.js')
+    script(src='/js/usLocations.json')
+
+block content
+    .container
+        h1 D121 Web Crawler
+        div#alert-area
+
+        div.page-wrapper
+          //- label(for="state") Select a state:
+          //- input#state(type="text", list="json-states", placeholder="e.g. Texas")
+          //- datalist#json-states
+
+          label(for="cities") Select a city:
+          input#city(type="text", list="json-cities", placeholder="e.g. Glasgow")
+          datalist#json-cities
+          br
+          label(for="category") Select a category:
+          textarea#category(name="textarea" rows="10")
+
+        div
+          label#crawlmode.switch
+            input(type="checkbox", checked="checked")
+            div.slider.round
+          button#scrape.btn.default(type="button") Scrape
+          button#download.btn.default(type="button") Download
+          
+        
+        ul#results(data-role='listview', data-filter='true')
+          include d121-template.html
