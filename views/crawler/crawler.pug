@@ -1,100 +1,51 @@
 extends ../layout
 
 block script
-    script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js")
-    script(src="//cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.4/papaparse.min.js")
-    script(src='/js/crawler.js')
-    script(src='/js/usLocations.json')
+  script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.4/papaparse.min.js")
+  script(src='/js/crawler.js')
+  script(src='/js/usLocations.json')
 
 block content
-    .container
-
-        #scraperModal.modal.fade(role="dialog")
-            .modal-dialog
-                .modal-content
-                    .modal-header
-                        button.close("button", data-dismiss="modal") x
-                        h4.modal-title Scraping Status
-                    .modal-body
-                        p.modal-msg Scrape finished...
-                    .modal-footer
-                        button.btn.btn-default(type="button", data-dismiss="modal") Close
-    .main-content
-      h1.crawler
-        strong Big Outsource Web Crawler
-      form
-        .container-fluid.well
-          .row(style="padding-bottom:20px;")
-            .col-xs-3
-              label Select a country:
-              br
-              input.country(type="radio", name="country", value = "United States")
-              | &nbsp; United States
-              br
-              input.country(type="radio", name="country", value = "United Kingdom")
-              | &nbsp; United Kingdom
-            .col-xs-3
-              label(for="website") Select a website:
-              input#website(type="text", list="website-crawlers", placeholder="e.g. Yell.com" required)
-              datalist#website-crawlers
-              br
-              br
-              br
-            .col-xs-3
-              label(for="cities") Select a city:
-              input#city(type="text", list="json-cities", placeholder="e.g. Glasgow")
-              datalist#json-cities
-            .col-xs-3
-              label(for="category") Select a category:
-              textarea#category(name="textarea" rows="10")
-          .row
-            .col-xs-3
-              label.crawl-mode-label Crawl Mode:
-              label#crawlmode.switch
-                br
-                input(type="checkbox")
-                div.slider.round
-            .col-xs-1
-            .col-xs-6
-              button#scrape.cr-btn(type="button") Scrape
-              button#download.cr-btn(type="button") Download
-              button.cr-btn(type="reset") Reset
-    #alert-area     
-    ul#results(data-role='listview', data-filter='true', style='width:100%;padding-left:0px;')
-    include crawl-template.html
-
-        h1 Big Outsource Web Crawler
-        div#alert-area
-        div.page-wrapper
-          label(for="select-country") Select a country:
-          form#select-country
+  .container
+    h1.crawler
+      strong Big Outsource Web Crawler
+      div#alert-area
+    form
+      .container-fluid.well
+        .row(style='padding-bottom:20px;')
+          .col-xs-6
+            label(for="select-country") Select a country:
+            #select-country
             input.country(type="radio", name="country", value = "United States")
             | &nbsp; United States
             input.country(type="radio", name="country", value = "United Kingdom")
             | &nbsp; United Kingdom
-          label(for="website") Select a website:
-          input#website(type="text", list="website-crawlers", placeholder="e.g. Yell.com")
-          datalist#website-crawlers
-
-        div.page-wrapper
-          label(for="state") Select a state:
-          input#state(type="text", list="json-states", placeholder="e.g. Texas")
-          datalist#json-states
-
-          label(for="cities") Select a city:
-          input#city(type="text", list="json-cities", placeholder="e.g. Glasgow")
-          datalist#json-cities
-          br
-          label(for="category") Select a category:
-          textarea#category(name="textarea" rows="10")
-
-        div
-          label#crawlmode.switch
-            input(type="checkbox", checked="checked")
-            div.slider.round
-          button#scrape.btn.default(type="button") Scrape
-          button#download.btn.default(type="button") Download
-          
+            label(for="website") Select a website:
+            input#website(type="text", list="website-crawlers", placeholder="e.g. Yell.com")
+            datalist#website-crawlers
+          .col-xs-6
+            label(for="state") Select a state:
+            input#state(type="text", list="json-states", placeholder="e.g. Texas")
+            datalist#json-states
+        .row(style='padding-bottom:20px;')
+          .col-xs-6
+            label(for="cities") Select a city:
+            input#city(type="text", list="json-cities", placeholder="e.g. Glasgow")
+            datalist#json-cities
+            br
+            label(for="category") Select a category:
+            textarea#category(name="textarea" rows="10")
+          .col-xs-6
+            label#crawlmode.switch
+              input(type="checkbox", checked="checked")
+              div.slider.round
+        .row(style='padding-bottom:20px;')
+          .col-xs-3
+          .col-xs-6
+            button#scrape.cr-btn(type="button") Scrape
+            button#download.cr-btn(type="button") Download
+            button.cr-btn(type='reset')
         
-        ul#results(data-role='listview', data-filter='true')
-          include crawl-template.html
+  ul#results(data-role='listview', data-filter='true')
+    include crawl-template.html
