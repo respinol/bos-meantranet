@@ -13,39 +13,50 @@ block content
       div#alert-area
     form
       .container-fluid.well
-        .row(style='padding-bottom:20px;')
-          .col-xs-6
+        .row.input-spacing
+          .col-xs-4
             label(for="select-country") Select a country:
             #select-country
             input.country(type="radio", name="country", value = "United States")
             | &nbsp; United States
+            br
             input.country(type="radio", name="country", value = "United Kingdom")
             | &nbsp; United Kingdom
+
+          .col-xs-4
             label(for="website") Select a website:
+            br
             input#website(type="text", list="website-crawlers", placeholder="e.g. Yell.com")
             datalist#website-crawlers
-          .col-xs-6
-            label(for="state") Select a state:
-            input#state(type="text", list="json-states", placeholder="e.g. Texas")
-            datalist#json-states
-        .row(style='padding-bottom:20px;')
-          .col-xs-6
+
+          .col-xs-4
             label(for="cities") Select a city:
+            br
             input#city(type="text", list="json-cities", placeholder="e.g. Glasgow")
             datalist#json-cities
+              
+        .row.input-spacing
+          .col-xs-4
+            label Crawl Mode:
             br
-            label(for="category") Select a category:
-            textarea#category(name="textarea" rows="10")
-          .col-xs-6
             label#crawlmode.switch
               input(type="checkbox", checked="checked")
               div.slider.round
-        .row(style='padding-bottom:20px;')
-          .col-xs-3
+          .col-xs-4
+            label(for="state") Select a state:
+            br
+            input#state(type="text", list="json-states", placeholder="e.g. Texas")
+            datalist#json-states
+          .col-xs-4
+            label(for="category") Select a category:
+            br
+            textarea#category(name="textarea" rows="10")
+        .row.input-spacing
+          .col-xs-4
           .col-xs-6
             button#scrape.cr-btn(type="button") Scrape
             button#download.cr-btn(type="button") Download
-            button.cr-btn(type='reset')
+            button.cr-btn(type='reset') Reset
         
   ul#results(data-role='listview', data-filter='true')
     include crawl-template.html
