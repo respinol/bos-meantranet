@@ -1,47 +1,8 @@
-// const Xray = require('x-ray');
 const async = require('async');
 const osmosis = require('osmosis');
 const _ = require('lodash');
 
 const Business = require('../models/Business');
-
-// var x = Xray({
-//         filters: {
-//             trim: function(value) {
-//                 return typeof value === 'string' ? value.trim() : value
-//             },
-//             formatString: function(value) {
-//                 value = value.replace(/,\s*$/, '');
-//                 return value.replace(/\w\S*/g, function(s) {
-//                     return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase();
-//                 });
-//             },
-//             formatPhoneUK: function(value) {
-//                 if (typeof value === 'string') {
-//                     value = value.trim().split(' ').join('');
-//                     return value.replace(/^0/, '44');
-//                 } else {
-//                     return value;
-//                 }
-//             },
-//             formatNumber: function(value) {
-//                 return typeof value === 'string' ? value.trim().replace(/[^0-9.]/g, '') : value
-//             },
-//             formatStreet: function(value) {
-//                 return value;
-//             },
-//             formatCity: function(value) {
-//                 return value;
-//             },
-//             formatState: function(value) {
-//                 return value;
-//             },
-//             formatPostal: function(value) {
-//                 return value;
-//             }
-//         }
-//     })
-//     .timeout(600000);
 
 /**
  * GET /crawler/crawler
@@ -112,22 +73,10 @@ exports.getData = (req, res) => {
     };
 
     async.parallel([
-            // function(callback) {
-            //     scrapeYell(parameters, function(data) {
-            //         if (data.length > 0) {
-            //             console.log(`Yell: ${data.length} records ready for merging...`);
-            //             callback(null, data);
-            //             return;
-            //         }
-            //         callback();
-            //         return;
-            //     });
-            // }
-
             function(callback) {
-                scrapeKompass(parameters, function(data) {
+                scrapeYell(parameters, function(data) {
                     if (data.length > 0) {
-                        console.log(`Kompass: ${data.length} records ready for merging...`);
+                        console.log(`Yell: ${data.length} records ready for merging...`);
                         callback(null, data);
                         return;
                     }
@@ -135,6 +84,18 @@ exports.getData = (req, res) => {
                     return;
                 });
             }
+
+            // function(callback) {
+            //     scrapeKompass(parameters, function(data) {
+            //         if (data.length > 0) {
+            //             console.log(`Kompass: ${data.length} records ready for merging...`);
+            //             callback(null, data);
+            //             return;
+            //         }
+            //         callback();
+            //         return;
+            //     });
+            // }
 
             // function(callback) {
             //     scrapeMisterWhat(parameters, function(data) {
@@ -181,50 +142,50 @@ exports.getData = (req, res) => {
         });
 };
 
-function scrapeYell(params, callback) {
-    var category = params.category.split(' ').join('+')
-    var city = params.city.split(' ').join('+');
-    var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
-    console.log(`Scraping ${url}`);
-
-    var results = [];
-    var scraper = osmosis
-        .get(url)
-        // .paginate('a.pagination--next')
-        .find('div.row.businessCapsule--title div.col-sm-24 a')
-        .delay(1000)
-        .follow('@href')
-        .set({
-            'name': 'h1.businessCapsule--title',
-            'phone': 'strong.business-telephone',
-            'street_address': 'span[itemprop="streetAddress"]',
-            'address_locality': 'span[itemprop="addressLocality"]',
-            'address_region': 'span[itemprop="addressRegion"]',
-            'postal_code': 'span[itemprop="postalCode"]',
-            'category': 'span[itemprop="name"]',
-            'website': 'div.businessCapsule--callToAction a@href',
-            'email': null,
-            'employee_size': null,
-            'business_type': null,
-            'page_url': 'meta[name="og:url"]@content',
-            'scraper': null
-        })
-        .data(function(listing) {
-            console.log(`Saving ${listing.name}...`);
-            listing.scraper = 'Yell';
-            listing.phone = formatPhoneUK(listing.phone);
-        })
-        .then(function(context, data) {
-            results.push(data);
-        })
-        .log(console.log)
-        .error(console.log)
-        .debug(console.log)
-        .done(function() {
-            callback(results);
-            console.log(`Scraped ${results.length} ${category}(s) from ${city}...`)
-        })
-}
+// function scrapeYell(params, callback) {
+//     var category = params.category.split(' ').join('+')
+//     var city = params.city.split(' ').join('+');
+//     var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
+//     console.log(`Scraping ${url}`);
+//
+//     var results = [];
+//     var scraper = osmosis
+//         .get(url)
+//         // .paginate('a.pagination--next')
+//         .find('div.row.businessCapsule--title div.col-sm-24 a')
+//         .delay(1000)
+//         .follow('@href')
+//         .set({
+//             'name': 'h1.businessCapsule--title',
+//             'phone': 'strong.business-telephone',
+//             'street_address': 'span[itemprop="streetAddress"]',
+//             'address_locality': 'span[itemprop="addressLocality"]',
+//             'address_region': 'span[itemprop="addressRegion"]',
+//             'postal_code': 'span[itemprop="postalCode"]',
+//             'category': 'span[itemprop="name"]',
+//             'website': 'div.businessCapsule--callToAction a@href',
+//             'email': null,
+//             'employee_size': null,
+//             'business_type': null,
+//             'page_url': 'meta[name="og:url"]@content',
+//             'scraper': null
+//         })
+//         .data(function(listing) {
+//             console.log(`Saving ${listing.name}...`);
+//             listing.scraper = 'Yell';
+//             listing.phone = formatPhoneUK(listing.phone);
+//         })
+//         .then(function(context, data) {
+//             results.push(data);
+//         })
+//         .log(console.log)
+//         .error(console.log)
+//         .debug(console.log)
+//         .done(function() {
+//             callback(results);
+//             console.log(`Scraped ${results.length} ${category}(s) from ${city}...`)
+//         })
+// }
 
 function scrapeMisterWhat(params, callback) {
     var category = params.category.split(' ').join('+')
@@ -319,6 +280,91 @@ function scrapeKompass(params, callback) {
             callback(results);
             console.log(`Scraped ${results.length} ${category}(s) from ${city}...`)
         })
+}
+
+function scrapeYell(params, callback) {
+    var category = params.category.split(' ').join('+')
+    var city = params.city.split(' ').join('+');
+    var url = `https://www.yell.com/ucs/UcsSearchAction.do?keywords=${category}&location=${city}`;
+    console.log(`Scraping ${url}`);
+
+    var results = [];
+    var scraper = osmosis
+        .get(url)
+        // .paginate('a.pagination--next')
+        .find('div.row.businessCapsule--title div.col-sm-20 a')
+        // .proxy([
+        //     '118.70.212.139:3128',
+        //     '118.193.23.162:3128',
+        //     '110.73.182.12:9000',
+        //     '114.32.57.98:3128',
+        //     '165.234.102.177:8080',
+        //     '97.77.104.22:80'
+        // ])
+        .delay(1000)
+        .follow('@href')
+        .set({
+            'name': 'h1.businessCapsule--title',
+            'phone': 'strong.business-telephone',
+            'street_address': 'span[itemprop="streetAddress"]',
+            'address_locality': 'span[itemprop="addressLocality"]',
+            'address_region': 'span[itemprop="addressRegion"]',
+            'postal_code': 'span[itemprop="postalCode"]',
+            'category': 'span[itemprop="name"]',
+            'website': 'div.businessCapsule--callToAction a@href',
+            'email': null,
+            'employee_size': null,
+            'business_type': null,
+            'page_url': 'meta[name="og:url"]@content',
+            'scraper': null
+        })
+        .data(function(listing) {
+            console.log(`Saving ${listing.name}...`);
+            listing.scraper = 'Yell';
+            listing.address_locality = listing.address_locality.replace(listing.streetAddress, '').replace('United Kingdom', '');
+            listing.phone = formatPhoneUK(listing.phone);
+
+            scrapeAlf(listing.name, function(info) {
+                console.log(`Getting additional information for ${listing.name}...`);
+                listing.employee_size = info.employee_size;
+            });
+        })
+        .then(function(context, data) {
+            results.push(data);
+        })
+        .log(console.log)
+        .error(console.log)
+        .debug(console.log)
+        .done(function() {
+            callback(results);
+            console.log(`Scraped ${results.length} ${category}(s) from ${city}...`)
+        })
+}
+
+function scrapeAlf(search, callback) {
+    console.log(search);
+    // var search = params.split(' ').join('+');
+    var url = `https://www.alfinsight.com/app/SearchResults?quickSearch=${search}`;
+    console.log(`Scraping ${url}`);
+
+    var results = [];
+    var scraper = osmosis
+        .get(url)
+        .find('div.well.well-search.well-advertisers a')
+        .delay(1000)
+        .follow('@href')
+        .set({
+            'employee_size': 'p[itemprop="numberOfEmployees"]'
+        })
+        .then(function(context, data) {
+            results.push(data);
+        })
+        .done(function() {
+            callback(results);
+        })
+        .log(console.log)
+        .error(console.log)
+        .debug(console.log)
 }
 
 function formatPhoneUK(value) {
