@@ -393,9 +393,6 @@ $(document).ready(function() {
             if(!lines[lines.length - 1]) {
                 $this.attr('rows', rows - 1);
             }
-            if($('#category').val('')){
-              $this.attr('rows',1);
-            }
         }
     });
     //reset row on click
