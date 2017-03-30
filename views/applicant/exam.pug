@@ -1,382 +1,383 @@
 extends ../layout
 
 block content
-  ul.nav.nav-tabs(style="padding-top:80px;")
-    li.active
-      a(data-toggle='tab', href='#home') Clerical Ability Test
-    li
-      a(data-toggle='tab', href='#menu1') Aptitude Test
-    li
-      a(data-toggle='tab', href='#menu2') Typing Test
-  .tab-content
-    #home.tab-pane.fade.in.active
-      // Content field 1
-      .form-group
-        // Test 1
-        h3
-          a(href='#', data-toggle='modal', data-target='#myTest1') Alphabetical and Numerical Filing
-        h5
-          | You are first to sort names and company names according to alphabetic filing, later you are to sort numerical sequences according to numerical filing.
-        h4.text-danger Time: 3 Mins.
-        // Modal Test1
-        #myTest1.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-          .modal-dialog.modal-lg
-            .modal-content
-              .modal-header
-                button.close(type='button', data-dismiss='modal', aria-label='Close')
-                  span(aria-hidden='true') ×
-                h4#myModalLabel.modal-title Alphabetical and Numerical Filing
-              .modal-body
-                center
-                  .test-container
-                    object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
-                      param(name='movie', value='http://aptitude-test.com/fla/filing.swf')
-                      param(name='FlashVars', value='test=absrea')
-                      param(name='quality', value='high')
-                      param(name='bgcolor', value='#F5F5F5')
-                      param(name='wmode', value='opaque')
-                      param(name='swfversion', value='6.0.65.0')
-                      // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
-                      param(name='expressinstall', value='Scripts/expressInstall.swf')
-                      // Next object tag is for non-IE browsers. So hide it from IE using IECC.
-                      //if !IE
-                      object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/filing.swf', width='600', height='450')
-                        // <![endif]
+  .container(style="padding:100px 20px 0px 20px;")
+    ul.nav.nav-tabs
+      li.active
+        a(data-toggle='tab', href='#home') Clerical Ability Test
+      li
+        a(data-toggle='tab', href='#menu1') Aptitude Test
+      li
+        a(data-toggle='tab', href='#menu2') Typing Test
+    .tab-content
+      #home.tab-pane.fade.in.active
+        // Content field 1
+        .form-group
+          // Test 1
+          h3
+            a(href='#', data-toggle='modal', data-target='#myTest1') Alphabetical and Numerical Filing
+          h5
+            | You are first to sort names and company names according to alphabetic filing, later you are to sort numerical sequences according to numerical filing.
+          h4.text-danger Time: 3 Mins.
+          // Modal Test1
+          #myTest1.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-dialog.modal-lg
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                  h4#myModalLabel.modal-title Alphabetical and Numerical Filing
+                .modal-body
+                  center
+                    .test-container
+                      object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
+                        param(name='movie', value='http://aptitude-test.com/fla/filing.swf')
                         param(name='FlashVars', value='test=absrea')
                         param(name='quality', value='high')
                         param(name='bgcolor', value='#F5F5F5')
                         param(name='wmode', value='opaque')
                         param(name='swfversion', value='6.0.65.0')
+                        // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
                         param(name='expressinstall', value='Scripts/expressInstall.swf')
-                        // The browser displays the following alternative content for users with Flash Player 6.0 and older.
-                        div
-                          h4 Content on this page requires a newer version of Adobe Flash Player.
-                          p
-                            a(href='http://www.adobe.com/go/getflashplayer')
-                              img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                        // Next object tag is for non-IE browsers. So hide it from IE using IECC.
                         //if !IE
-                      // <![endif]
-              .modal-footer
-                button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest2') Next
-      .form-group
-        // Test 2
-        h3
-          a(href='#', data-toggle='modal', data-target='#myTest2') Attention to Detail
-        h5
-          | You are presented with three names, numbers, or addresses. You have to determine whether one of these are different from the other two, or if there is no difference between the three.
-        h4.text-danger Time: 3 Mins.
-        // Modal Test2
-        #myTest2.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-          .modal-dialog.modal-lg
-            .modal-content
-              .modal-header
-                button.close(type='button', data-dismiss='modal', aria-label='Close')
-                  span(aria-hidden='true') ×
-                h4#myModalLabel.modal-title Attention to Detail
-              .modal-body
-                center
-                  .test-container
-                    object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
-                      param(name='movie', value='http://aptitude-test.com/fla/attention.swf')
-                      param(name='FlashVars', value='test=absrea')
-                      param(name='quality', value='high')
-                      param(name='bgcolor', value='#F5F5F5')
-                      param(name='wmode', value='opaque')
-                      param(name='swfversion', value='6.0.65.0')
-                      // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
-                      param(name='expressinstall', value='Scripts/expressInstall.swf')
-                      // Next object tag is for non-IE browsers. So hide it from IE using IECC.
-                      //if !IE
-                      object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/attention.swf', width='600', height='450')
+                        object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/filing.swf', width='600', height='450')
+                          // <![endif]
+                          param(name='FlashVars', value='test=absrea')
+                          param(name='quality', value='high')
+                          param(name='bgcolor', value='#F5F5F5')
+                          param(name='wmode', value='opaque')
+                          param(name='swfversion', value='6.0.65.0')
+                          param(name='expressinstall', value='Scripts/expressInstall.swf')
+                          // The browser displays the following alternative content for users with Flash Player 6.0 and older.
+                          div
+                            h4 Content on this page requires a newer version of Adobe Flash Player.
+                            p
+                              a(href='http://www.adobe.com/go/getflashplayer')
+                                img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                          //if !IE
                         // <![endif]
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest2') Next
+        .form-group
+          // Test 2
+          h3
+            a(href='#', data-toggle='modal', data-target='#myTest2') Attention to Detail
+          h5
+            | You are presented with three names, numbers, or addresses. You have to determine whether one of these are different from the other two, or if there is no difference between the three.
+          h4.text-danger Time: 3 Mins.
+          // Modal Test2
+          #myTest2.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-dialog.modal-lg
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                  h4#myModalLabel.modal-title Attention to Detail
+                .modal-body
+                  center
+                    .test-container
+                      object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
+                        param(name='movie', value='http://aptitude-test.com/fla/attention.swf')
                         param(name='FlashVars', value='test=absrea')
                         param(name='quality', value='high')
                         param(name='bgcolor', value='#F5F5F5')
                         param(name='wmode', value='opaque')
                         param(name='swfversion', value='6.0.65.0')
+                        // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
                         param(name='expressinstall', value='Scripts/expressInstall.swf')
-                        // The browser displays the following alternative content for users with Flash Player 6.0 and older.
-                        div
-                          h4 Content on this page requires a newer version of Adobe Flash Player.
-                          p
-                            a(href='http://www.adobe.com/go/getflashplayer')
-                              img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                        // Next object tag is for non-IE browsers. So hide it from IE using IECC.
                         //if !IE
-                      // <![endif]
-              .modal-footer
-                button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest3') Next
-      .form-group
-        // Test 3
-        h3
-          a(href='#', data-toggle='modal', data-target='#myTest3') Workload/Concentration
-        h5 You are to answer what may seem like short and simple questions.
-        h4.text-danger Time: 2 Mins.
-        // Modal Test3
-        #myTest3.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-          .modal-dialog.modal-lg
-            .modal-content
-              .modal-header
-                button.close(type='button', data-dismiss='modal', aria-label='Close')
-                  span(aria-hidden='true') ×
-                h4#myModalLabel.modal-title Workload/Concentration
-              .modal-body
-                center
-                  .test-container
-                    object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
-                      param(name='movie', value='http://aptitude-test.com/fla/workload.swf')
-                      param(name='FlashVars', value='test=absrea')
-                      param(name='quality', value='high')
-                      param(name='bgcolor', value='#F5F5F5')
-                      param(name='wmode', value='opaque')
-                      param(name='swfversion', value='6.0.65.0')
-                      // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
-                      param(name='expressinstall', value='Scripts/expressInstall.swf')
-                      // Next object tag is for non-IE browsers. So hide it from IE using IECC.
-                      //if !IE
-                      object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/workload.swf', width='600', height='450')
+                        object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/attention.swf', width='600', height='450')
+                          // <![endif]
+                          param(name='FlashVars', value='test=absrea')
+                          param(name='quality', value='high')
+                          param(name='bgcolor', value='#F5F5F5')
+                          param(name='wmode', value='opaque')
+                          param(name='swfversion', value='6.0.65.0')
+                          param(name='expressinstall', value='Scripts/expressInstall.swf')
+                          // The browser displays the following alternative content for users with Flash Player 6.0 and older.
+                          div
+                            h4 Content on this page requires a newer version of Adobe Flash Player.
+                            p
+                              a(href='http://www.adobe.com/go/getflashplayer')
+                                img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                          //if !IE
                         // <![endif]
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest3') Next
+        .form-group
+          // Test 3
+          h3
+            a(href='#', data-toggle='modal', data-target='#myTest3') Workload/Concentration
+          h5 You are to answer what may seem like short and simple questions.
+          h4.text-danger Time: 2 Mins.
+          // Modal Test3
+          #myTest3.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-dialog.modal-lg
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                  h4#myModalLabel.modal-title Workload/Concentration
+                .modal-body
+                  center
+                    .test-container
+                      object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
+                        param(name='movie', value='http://aptitude-test.com/fla/workload.swf')
                         param(name='FlashVars', value='test=absrea')
                         param(name='quality', value='high')
                         param(name='bgcolor', value='#F5F5F5')
                         param(name='wmode', value='opaque')
                         param(name='swfversion', value='6.0.65.0')
+                        // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
                         param(name='expressinstall', value='Scripts/expressInstall.swf')
-                        // The browser displays the following alternative content for users with Flash Player 6.0 and older.
-                        div
-                          h4 Content on this page requires a newer version of Adobe Flash Player.
-                          p
-                            a(href='http://www.adobe.com/go/getflashplayer')
-                              img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                        // Next object tag is for non-IE browsers. So hide it from IE using IECC.
                         //if !IE
-                      // <![endif]
-              .modal-footer
-                button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest4') Next
-      .form-group
-        // Test 4
-        h3
-          a(href='#', data-toggle='modal', data-target='#myTest4') Data Checking
-        h5
-          | You are presented with two addresses or invoices. You have to determine whether the two displayed addresses or invoices are exactly the same or different
-        h4.text-danger Time: 2 Mins.
-        // Modal Test4
-        #myTest4.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-          .modal-dialog.modal-lg
-            .modal-content
-              .modal-header
-                button.close(type='button', data-dismiss='modal', aria-label='Close')
-                  span(aria-hidden='true') ×
-                h4#myModalLabel.modal-title Data Checking
-              .modal-body
-                center
-                  .test-container
-                    object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
-                      param(name='movie', value='http://aptitude-test.com/fla/datachecking.swf')
-                      param(name='FlashVars', value='test=absrea')
-                      param(name='quality', value='high')
-                      param(name='bgcolor', value='#F5F5F5')
-                      param(name='wmode', value='opaque')
-                      param(name='swfversion', value='6.0.65.0')
-                      // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
-                      param(name='expressinstall', value='Scripts/expressInstall.swf')
-                      // Next object tag is for non-IE browsers. So hide it from IE using IECC.
-                      //if !IE
-                      object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/datachecking.swf', width='600', height='450')
+                        object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/workload.swf', width='600', height='450')
+                          // <![endif]
+                          param(name='FlashVars', value='test=absrea')
+                          param(name='quality', value='high')
+                          param(name='bgcolor', value='#F5F5F5')
+                          param(name='wmode', value='opaque')
+                          param(name='swfversion', value='6.0.65.0')
+                          param(name='expressinstall', value='Scripts/expressInstall.swf')
+                          // The browser displays the following alternative content for users with Flash Player 6.0 and older.
+                          div
+                            h4 Content on this page requires a newer version of Adobe Flash Player.
+                            p
+                              a(href='http://www.adobe.com/go/getflashplayer')
+                                img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                          //if !IE
                         // <![endif]
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest4') Next
+        .form-group
+          // Test 4
+          h3
+            a(href='#', data-toggle='modal', data-target='#myTest4') Data Checking
+          h5
+            | You are presented with two addresses or invoices. You have to determine whether the two displayed addresses or invoices are exactly the same or different
+          h4.text-danger Time: 2 Mins.
+          // Modal Test4
+          #myTest4.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-dialog.modal-lg
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                  h4#myModalLabel.modal-title Data Checking
+                .modal-body
+                  center
+                    .test-container
+                      object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
+                        param(name='movie', value='http://aptitude-test.com/fla/datachecking.swf')
                         param(name='FlashVars', value='test=absrea')
                         param(name='quality', value='high')
                         param(name='bgcolor', value='#F5F5F5')
                         param(name='wmode', value='opaque')
                         param(name='swfversion', value='6.0.65.0')
+                        // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
                         param(name='expressinstall', value='Scripts/expressInstall.swf')
-                        // The browser displays the following alternative content for users with Flash Player 6.0 and older.
-                        div
-                          h4 Content on this page requires a newer version of Adobe Flash Player.
-                          p
-                            a(href='http://www.adobe.com/go/getflashplayer')
-                              img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                        // Next object tag is for non-IE browsers. So hide it from IE using IECC.
                         //if !IE
-                      // <![endif]
-              .modal-footer
-                button.btn.btn-default(type='button', data-dismiss='modal') Close
-    #menu1.tab-pane.fade
-      // Content field 2
-      .form-group
-        // Test 5
-        h3
-          a(href='http://www.aptitude-test.com/verbal-aptitudetest1.html', data-toggle='modal', data-target='#myTest5') Mixed Verbal Aptitude
-        h5
-          | Includes 15 mixed verbal aptitude questions with topics from:
-          br
-          |               Verbal Logic
-          br
-          |               Verbal Reasoning
-          br
-          |               Verbal Comprehension
-          br
-          |               Vocabulary
-          br
-          |               Word Relations
-          br
-          |               Synonyms & Antonyms
-          br
-          |               Homonyms
-          br
-          |               Spelling & Grammar
-          br
-          |               Word Meanings
-        h4.text-danger Time: 10 Mins.
-        // Modal Test5
-        #myTest5.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-          .modal-dialog.modal-lg
-            .modal-content
-              .modal-header
-                button.close(type='button', data-dismiss='modal', aria-label='Close')
-                  span(aria-hidden='true') ×
-                h4#myModalLabel.modal-title Mixed Verbal Aptitude
-              .modal-body
-                center
-                  .test-container
-                    object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
-                      param(name='movie', value='http://aptitude-test.com/fla/freetest.swf')
-                      param(name='FlashVars', value='test=verbalaptitude')
-                      param(name='quality', value='high')
-                      param(name='bgcolor', value='#F5F5F5')
-                      param(name='wmode', value='opaque')
-                      param(name='swfversion', value='6.0.65.0')
-                      // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
-                      param(name='expressinstall', value='Scripts/expressInstall.swf')
-                      // Next object tag is for non-IE browsers. So hide it from IE using IECC.
-                      //if !IE
-                      object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/freetest.swf', width='600', height='450')
+                        object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/datachecking.swf', width='600', height='450')
+                          // <![endif]
+                          param(name='FlashVars', value='test=absrea')
+                          param(name='quality', value='high')
+                          param(name='bgcolor', value='#F5F5F5')
+                          param(name='wmode', value='opaque')
+                          param(name='swfversion', value='6.0.65.0')
+                          param(name='expressinstall', value='Scripts/expressInstall.swf')
+                          // The browser displays the following alternative content for users with Flash Player 6.0 and older.
+                          div
+                            h4 Content on this page requires a newer version of Adobe Flash Player.
+                            p
+                              a(href='http://www.adobe.com/go/getflashplayer')
+                                img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                          //if !IE
                         // <![endif]
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal') Close
+      #menu1.tab-pane.fade
+        // Content field 2
+        .form-group
+          // Test 5
+          h3
+            a(href='http://www.aptitude-test.com/verbal-aptitudetest1.html', data-toggle='modal', data-target='#myTest5') Mixed Verbal Aptitude
+          h5
+            | Includes 15 mixed verbal aptitude questions with topics from:
+            br
+            |               Verbal Logic
+            br
+            |               Verbal Reasoning
+            br
+            |               Verbal Comprehension
+            br
+            |               Vocabulary
+            br
+            |               Word Relations
+            br
+            |               Synonyms & Antonyms
+            br
+            |               Homonyms
+            br
+            |               Spelling & Grammar
+            br
+            |               Word Meanings
+          h4.text-danger Time: 10 Mins.
+          // Modal Test5
+          #myTest5.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-dialog.modal-lg
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                  h4#myModalLabel.modal-title Mixed Verbal Aptitude
+                .modal-body
+                  center
+                    .test-container
+                      object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
+                        param(name='movie', value='http://aptitude-test.com/fla/freetest.swf')
                         param(name='FlashVars', value='test=verbalaptitude')
                         param(name='quality', value='high')
                         param(name='bgcolor', value='#F5F5F5')
                         param(name='wmode', value='opaque')
                         param(name='swfversion', value='6.0.65.0')
+                        // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
                         param(name='expressinstall', value='Scripts/expressInstall.swf')
-                        // The browser displays the following alternative content for users with Flash Player 6.0 and older.
-                        div
-                          h4 Content on this page requires a newer version of Adobe Flash Player.
-                          p
-                            a(href='http://www.adobe.com/go/getflashplayer')
-                              img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                        // Next object tag is for non-IE browsers. So hide it from IE using IECC.
                         //if !IE
-                      // <![endif]
-              .modal-footer
-                button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest6') Next
-      .form-group
-        // Test 6
-        h3
-          a(href='#', data-toggle='modal', data-target='#myTest6') Mixed Non-Verbal Aptitude
-        h5
-          | Includes 15 mixed non-verbal aptitude questions with topics from:
-          br
-          |             Non-verbal Reasoning
-          br
-          |             Abstract Reasoning
-          br
-          |             Spatial Visualization
-        h4.text-danger Time: 15 Mins.
-        // Modal Test6
-        #myTest6.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-          .modal-dialog.modal-lg
-            .modal-content
-              .modal-header
-                button.close(type='button', data-dismiss='modal', aria-label='Close')
-                  span(aria-hidden='true') ×
-                h4#myModalLabel.modal-title Mixed Non-Verbal Aptitude
-              .modal-body
-                center
-                  .test-container
-                    object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
-                      param(name='movie', value='http://aptitude-test.com/fla/freetest.swf')
-                      param(name='FlashVars', value='test=nonapti')
-                      param(name='quality', value='high')
-                      param(name='bgcolor', value='#F5F5F5')
-                      param(name='wmode', value='opaque')
-                      param(name='swfversion', value='6.0.65.0')
-                      // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
-                      param(name='expressinstall', value='Scripts/expressInstall.swf')
-                      // Next object tag is for non-IE browsers. So hide it from IE using IECC.
-                      //if !IE
-                      object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/freetest.swf', width='600', height='450')
+                        object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/freetest.swf', width='600', height='450')
+                          // <![endif]
+                          param(name='FlashVars', value='test=verbalaptitude')
+                          param(name='quality', value='high')
+                          param(name='bgcolor', value='#F5F5F5')
+                          param(name='wmode', value='opaque')
+                          param(name='swfversion', value='6.0.65.0')
+                          param(name='expressinstall', value='Scripts/expressInstall.swf')
+                          // The browser displays the following alternative content for users with Flash Player 6.0 and older.
+                          div
+                            h4 Content on this page requires a newer version of Adobe Flash Player.
+                            p
+                              a(href='http://www.adobe.com/go/getflashplayer')
+                                img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                          //if !IE
                         // <![endif]
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest6') Next
+        .form-group
+          // Test 6
+          h3
+            a(href='#', data-toggle='modal', data-target='#myTest6') Mixed Non-Verbal Aptitude
+          h5
+            | Includes 15 mixed non-verbal aptitude questions with topics from:
+            br
+            |             Non-verbal Reasoning
+            br
+            |             Abstract Reasoning
+            br
+            |             Spatial Visualization
+          h4.text-danger Time: 15 Mins.
+          // Modal Test6
+          #myTest6.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-dialog.modal-lg
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                  h4#myModalLabel.modal-title Mixed Non-Verbal Aptitude
+                .modal-body
+                  center
+                    .test-container
+                      object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
+                        param(name='movie', value='http://aptitude-test.com/fla/freetest.swf')
                         param(name='FlashVars', value='test=nonapti')
                         param(name='quality', value='high')
                         param(name='bgcolor', value='#F5F5F5')
                         param(name='wmode', value='opaque')
                         param(name='swfversion', value='6.0.65.0')
+                        // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
                         param(name='expressinstall', value='Scripts/expressInstall.swf')
-                        // The browser displays the following alternative content for users with Flash Player 6.0 and older.
-                        div
-                          h4 Content on this page requires a newer version of Adobe Flash Player.
-                          p
-                            a(href='http://www.adobe.com/go/getflashplayer')
-                              img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                        // Next object tag is for non-IE browsers. So hide it from IE using IECC.
                         //if !IE
-                      // <![endif]
-              .modal-footer
-                button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest7') Next
-      .form-group
-        // Test 7
-        h3
-          a(href='#', data-toggle='modal', data-target='#myTest7') Numerical Aptitude
-        h5
-          | Includes 15 numerical aptitude questions with topics from:
-          br
-          |                   Numerical Logic
-          br
-          |                   Numerical Reasoning
-          br
-          |                   Data Interpretation
-          br
-          |                   Math Knowledge
-        h4.text-danger Time: 20 Mins.
-        // Modal Test7
-        #myTest7.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-          .modal-dialog.modal-lg
-            .modal-content
-              .modal-header
-                button.close(type='button', data-dismiss='modal', aria-label='Close')
-                  span(aria-hidden='true') ×
-                h4#myModalLabel.modal-title Numerical Aptitude
-              .modal-body
-                center
-                  .test-container
-                    object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
-                      param(name='movie', value='http://aptitude-test.com/fla/freetest.swf')
-                      param(name='FlashVars', value='test=numapti')
-                      param(name='quality', value='high')
-                      param(name='bgcolor', value='#F5F5F5')
-                      param(name='wmode', value='opaque')
-                      param(name='swfversion', value='6.0.65.0')
-                      // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
-                      param(name='expressinstall', value='Scripts/expressInstall.swf')
-                      // Next object tag is for non-IE browsers. So hide it from IE using IECC.
-                      //if !IE
-                      object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/freetest.swf', width='600', height='450')
+                        object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/freetest.swf', width='600', height='450')
+                          // <![endif]
+                          param(name='FlashVars', value='test=nonapti')
+                          param(name='quality', value='high')
+                          param(name='bgcolor', value='#F5F5F5')
+                          param(name='wmode', value='opaque')
+                          param(name='swfversion', value='6.0.65.0')
+                          param(name='expressinstall', value='Scripts/expressInstall.swf')
+                          // The browser displays the following alternative content for users with Flash Player 6.0 and older.
+                          div
+                            h4 Content on this page requires a newer version of Adobe Flash Player.
+                            p
+                              a(href='http://www.adobe.com/go/getflashplayer')
+                                img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                          //if !IE
                         // <![endif]
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal', data-toggle='modal', data-target='#myTest7') Next
+        .form-group
+          // Test 7
+          h3
+            a(href='#', data-toggle='modal', data-target='#myTest7') Numerical Aptitude
+          h5
+            | Includes 15 numerical aptitude questions with topics from:
+            br
+            |                   Numerical Logic
+            br
+            |                   Numerical Reasoning
+            br
+            |                   Data Interpretation
+            br
+            |                   Math Knowledge
+          h4.text-danger Time: 20 Mins.
+          // Modal Test7
+          #myTest7.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-dialog.modal-lg
+              .modal-content
+                .modal-header
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                  h4#myModalLabel.modal-title Numerical Aptitude
+                .modal-body
+                  center
+                    .test-container
+                      object#FlashID(classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000', width='600', height='450')
+                        param(name='movie', value='http://aptitude-test.com/fla/freetest.swf')
                         param(name='FlashVars', value='test=numapti')
                         param(name='quality', value='high')
                         param(name='bgcolor', value='#F5F5F5')
                         param(name='wmode', value='opaque')
                         param(name='swfversion', value='6.0.65.0')
+                        // This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don't want users to see the prompt.
                         param(name='expressinstall', value='Scripts/expressInstall.swf')
-                        // The browser displays the following alternative content for users with Flash Player 6.0 and older.
-                        div
-                          h4 Content on this page requires a newer version of Adobe Flash Player.
-                          p
-                            a(href='http://www.adobe.com/go/getflashplayer')
-                              img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                        // Next object tag is for non-IE browsers. So hide it from IE using IECC.
                         //if !IE
-                      // <![endif]
-              .modal-footer
-                button.btn.btn-default(type='button', data-dismiss='modal') Next
-    #menu2.tab-pane.fade
-      // Content field 3
-      .form-group
-        h3
-          a(href='http://www.typingtest.com', target='_blank') Typing Test
-        h5 2 minute typing test
-        h4.text-danger Time: 2 Mins.
+                        object(type='application/x-shockwave-flash', data='http://aptitude-test.com/fla/freetest.swf', width='600', height='450')
+                          // <![endif]
+                          param(name='FlashVars', value='test=numapti')
+                          param(name='quality', value='high')
+                          param(name='bgcolor', value='#F5F5F5')
+                          param(name='wmode', value='opaque')
+                          param(name='swfversion', value='6.0.65.0')
+                          param(name='expressinstall', value='Scripts/expressInstall.swf')
+                          // The browser displays the following alternative content for users with Flash Player 6.0 and older.
+                          div
+                            h4 Content on this page requires a newer version of Adobe Flash Player.
+                            p
+                              a(href='http://www.adobe.com/go/getflashplayer')
+                                img(src='http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif', alt='Get Adobe Flash player', width='112', height='33')
+                          //if !IE
+                        // <![endif]
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal') Next
+      #menu2.tab-pane.fade
+        // Content field 3
+        .form-group
+          h3
+            a(href='http://www.typingtest.com', target='_blank') Typing Test
+          h5 2 minute typing test
+          h4.text-danger Time: 2 Mins.
