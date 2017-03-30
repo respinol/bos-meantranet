@@ -46,6 +46,6 @@ gulp.task('start', function() {
 				})
 })
 
-gulp.task('default', [ 'mongo', 'start' ], function() {
+gulp.task('default', [ /*'mongo',*/ 'start' ], function() {
 
 });
