@@ -76,3 +76,23 @@ textarea {
 .fa {
   margin-right: 6px;
 }
+
+// Upload Page
+//---------------------------
+
+.custom-file-uploader {
+  position: relative;
+
+  input[type='file'] {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    opacity: 0;
+    cursor: default;
+  }
+}
