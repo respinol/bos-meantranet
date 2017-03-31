@@ -115,8 +115,15 @@ function scrapeYell(params, callback) {
 
     var results = [];
     var scraper = osmosis
+        // .proxy([
+        //     '104.128.120.187:1080',
+        //     '173.255.143.184:80',
+        //     '75.66.83.12:80',
+        //     '216.173.157.159:10000',
+        //     '166.62.97.243:18628'
+        // ])
         .get(url)
-        // .paginate('a.pagination--next')
+        .paginate('a.pagination--next')
         .find('div.row.businessCapsule--title div a')
         .delay(5000)
         .follow('@href')

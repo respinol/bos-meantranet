@@ -127,20 +127,70 @@ $(document).ready(function() {
         for (var i = 0; i < categories.length; i++) {
             parameters.category = categories[i];
 
-            newAlert("info",
-                `Scraping ${parameters.category}(s) from ${parameters.city}`);
+            // var scrape = $.get('/search/d121', parameters, function(data) {
+            //         if (data instanceof Object && data.business.length > 0) {
+            //             results.append(dataTemplate({
+            //                 page: data
+            //             }));
+            //         } else {
+            //             results.append(data);
+            //         };
+            //
+            //         data.business = filterArray(data.business, filterD121);
+            //         scrapedData.push(data);
+            //     })
+            //     .done(function(data) {
+            //         var type = (data.business.length > 0) ? type = 'success' : type = 'warning';
+            //
+            //         newAlert(type,
+            //             `Scraped ${data.business.length} ${parameters.category}(s) from ${parameters.city}`);
+            //
+            //         if ($('input[type=checkbox]:checked').length > 0) {
+            //             $('#state').val(getRandomItem($('#json-states > option')));
+            //             $('#city').val(getRandomItem($('#json-cities > option')));
+            //             setTimeout(scrapeThis(), 30000);
+            //
+            //         } else {
+            //             newAlert('success', `Finished scraping session...`);
+            //         }
+            //     })
+            //     .fail(function(jqXHRm, textStatus) {
+            //         var error = (textStatus === 'timeout') ? (error = 'Failed from timeout.') : (error = 'Error encountered while scraping.');
+            //
+            //         console.log(error);
+            //         newAlert('danger', error);
+            //         scrape.abort();
+            //         newAlert('info', 'Session Stopped.');
+            //     });
 
-            var scrape = $.get('/search/d121', parameters, function(data) {
-                    if (data instanceof Object && data.business.length > 0) {
-                        results.append(dataTemplate({
-                            page: data
-                        }));
-                    } else {
-                        results.append(data);
-                    };
+            var scrape = $.ajax({
+                    url: '/search/d121',
+                    method: 'GET',
+                    contentType: 'application/json',
+                    data: parameters,
+                    timeout: 600000,
+                    cache: false,
+                    beforeSend: function() {
+                      newAlert('info',
+                          `Scraping ${parameters.category}(s) from ${parameters.city}`);
+                    },
+                    success: function(data) {
+                        if (data.success == true) {
+                          location.reload(true);
 
-                    data.business = filterArray(data.business, filterD121);
-                    scrapedData.push(data);
+                          if (data instanceof Object && data.business.length > 0) {
+                              results.append(dataTemplate({
+                                  page: data
+                              }));
+                          } else {
+                              results.append(data);
+                          };
+
+                          data.business = filterArray(data.business, filterD121);
+                          scrapedData.push(data);
+                          
+                        }
+                    }
                 })
                 .done(function(data) {
                     var type = (data.business.length > 0) ? type = 'success' : type = 'warning';
@@ -163,7 +213,6 @@ $(document).ready(function() {
                     console.log(error);
                     newAlert('danger', error);
                     scrape.abort();
-                    newAlert('info', 'Session Stopped.');
                 });
         }
     }
