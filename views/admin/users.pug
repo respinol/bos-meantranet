@@ -11,10 +11,10 @@ block content
       .row.well
         .col-xs-1
         .col-xs-10
-          .row
-            ul
-              for user in users
-                form.form-horizontal(action='/admin/users', method='POST')
+          form.form-horizontal(action='/admin/users', method='POST')
+            .row
+              ul
+                for user in users  
                   input(type='hidden', name='_csrf', value=_csrf)
                   .form-group
                     label.control-label(for='name') Name:
@@ -43,10 +43,10 @@ block content
                       option Team Leader
                       option Agent
                       option Intern
-          .row
-            .col-xs-4
-            .col-xs-4
-              button.btn.btn.btn-primary.center-block(type='submit')
-                i.fa.fa-pencil
-                | Update Profiles
+            .row
+              .col-xs-4
+              .col-xs-4
+                button.btn.btn.btn-primary.center-block(type='submit')
+                  i.fa.fa-pencil
+                  | Update Profiles
         .col-xs-1
