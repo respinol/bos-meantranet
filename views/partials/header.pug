@@ -90,7 +90,7 @@
                 if user.profile.picture
                   img(src=user.profile.picture style='width:50px;height:50px;')
                 else
-                  img(src=user.gravatar(60))
+                  img(src=user.gravatar(60) style='width:50px;height:50px;')
                 span= user.profile.name || user.email || user.id
                 i.caret
               ul.dropdown-menu
