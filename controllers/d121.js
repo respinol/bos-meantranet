@@ -123,7 +123,7 @@ function scrapeYell(params, callback) {
         //     '166.62.97.243:18628'
         // ])
         .get(url)
-        .paginate('a.pagination--next')
+        // .paginate('a.pagination--next')
         .find('div.row.businessCapsule--title div a')
         .delay(5000)
         .follow('@href')
