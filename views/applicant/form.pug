@@ -1,5 +1,9 @@
 extends ../layout
 
 block content
-  .container
-    iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSc8139fryhFr9cGd_wRRhupCfCbwVvtwKpSNW2NVtwVkHTWoQ/viewform?embedded=true#start=embed', width='760', height='500', frameborder='0', marginheight='0', marginwidth='0') Loading...
+  .container-fluid(style='padding:70px 20px 0px 20px;')
+    .row
+      .col-xs-2
+      .col-xs-8
+        iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSc8139fryhFr9cGd_wRRhupCfCbwVvtwKpSNW2NVtwVkHTWoQ/viewform?embedded=true#start=embed', frameborder='0', marginheight='0', marginwidth='0' style='position:absolute;width:100%;height:500') Loading...
+      .col-xs-2

@@ -1,113 +1,115 @@
 extends ../layout
 
 block content
-  .page-header
-    h3 Profile Information
+  .container(style='padding-top:70px;')
+    .page-header
+      h3 Profile Information
+    .well
+      form.form-horizontal(action='/account/profile', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          label.col-sm-3.control-label(for='email') Email
+          .col-sm-7
+            input#email.form-control(type='email', name='email', value=user.email)
+        .form-group
+          label.col-sm-3.control-label(for='name') Name
+          .col-sm-7
+            input#name.form-control(type='text', name='name', value=user.profile.name)
+        .form-group
+          label.col-sm-3.control-label Gender
+          .col-sm-6
+            label.radio.col-sm-3
+              input(type='radio', checked=user.profile.gender=='male', name='gender', value='Male', data-toggle='radio')
+              span Male
+            label.radio.col-sm-3
+              input(type='radio', checked=user.profile.gender=='female', name='gender', value='Female', data-toggle='radio')
+              span Female
+        .form-group
+          label.col-sm-3.control-label(for='userlevel') User Level
+          .col-sm-7
+            if user.profile.userlevel == 'Admin'
+              input#userlevel.form-control(type='text', list='userlevels', name='userlevel', value=user.profile.userlevel)
+              datalist#userlevels
+                option Admin
+                option Employee
+                option Intern
+            else
+              input#userlevel.form-control(type='text', name='userlevel' disabled, value=user.profile.userlevel)
+        .form-group
+          label.col-sm-3.control-label(for='department') Department
+          .col-sm-7
+            if user.profile.userlevel == 'Admin'
+              input#department.form-control(type='text', list='departments', name='department', value=user.profile.department)
+              datalist#departments
+                option I.T.
+                option Human Resources
+                option Finance
+                option Operations
+                option Intern
+            else
+              input#location.form-control(type='text', name='department' disabled, value=user.profile.department)
 
-  form.form-horizontal(action='/account/profile', method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label.col-sm-3.control-label(for='email') Email
-      .col-sm-7
-        input#email.form-control(type='email', name='email', value=user.email)
-    .form-group
-      label.col-sm-3.control-label(for='name') Name
-      .col-sm-7
-        input#name.form-control(type='text', name='name', value=user.profile.name)
-    .form-group
-      label.col-sm-3.control-label Gender
-      .col-sm-6
-        label.radio.col-sm-3
-          input(type='radio', checked=user.profile.gender=='male', name='gender', value='Male', data-toggle='radio')
-          span Male
-        label.radio.col-sm-3
-          input(type='radio', checked=user.profile.gender=='female', name='gender', value='Female', data-toggle='radio')
-          span Female
-    .form-group
-      label.col-sm-3.control-label(for='userlevel') User Level
-      .col-sm-7
-        if user.profile.userlevel == 'Admin'
-          input#userlevel.form-control(type='text', list='userlevels', name='userlevel', value=user.profile.userlevel)
-          datalist#userlevels
-            option Admin
-            option Employee
-            option Intern
-        else
-          input#userlevel.form-control(type='text', name='userlevel' disabled, value=user.profile.userlevel)
-    .form-group
-      label.col-sm-3.control-label(for='department') Department
-      .col-sm-7
-        if user.profile.userlevel == 'Admin'
-          input#department.form-control(type='text', list='departments', name='department', value=user.profile.department)
-          datalist#departments
-            option I.T.
-            option Human Resources
-            option Finance
-            option Operations
-            option Intern
-        else
-          input#location.form-control(type='text', name='department' disabled, value=user.profile.department)
+        .form-group
+          label.col-sm-3.control-label(for='jobtitle') Job Title
+          .col-sm-7
+            if user.profile.userlevel == 'Admin'
+              input#jobtitle.form-control(type='text', list='jobtitles', name='jobtitle', value=user.profile.jobtitle)
+              datalist#jobtitles
+                option I.T. Administrator
+                option Management
+                option Team Leader
+                option Agent
+                option Intern
+            else
+              input#jobtitle.form-control(type='text', name='jobtitle' disabled, value=user.profile.jobtitle)
+        .form-group
+          label.col-sm-3.control-label Gravatar
+          .col-sm-4
+            img(src=user.gravatar(), class='profile', width='100', height='100')
+        .form-group
+          .col-sm-offset-3.col-sm-4
+            button.btn.btn.btn-primary(type='submit')
+              i.fa.fa-pencil
+              | Update Profile
 
-    .form-group
-      label.col-sm-3.control-label(for='jobtitle') Job Title
-      .col-sm-7
-        if user.profile.userlevel == 'Admin'
-          input#jobtitle.form-control(type='text', list='jobtitles', name='jobtitle', value=user.profile.jobtitle)
-          datalist#jobtitles
-            option I.T. Administrator
-            option Management
-            option Team Leader
-            option Agent
-            option Intern
-        else
-          input#jobtitle.form-control(type='text', name='jobtitle' disabled, value=user.profile.jobtitle)
-    .form-group
-      label.col-sm-3.control-label Gravatar
-      .col-sm-4
-        img(src=user.gravatar(), class='profile', width='100', height='100')
-    .form-group
-      .col-sm-offset-3.col-sm-4
-        button.btn.btn.btn-primary(type='submit')
-          i.fa.fa-pencil
-          | Update Profile
+    .page-header
+      h3 Change Password
+    .well
+      form.form-horizontal(action='/account/password', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          label.col-sm-3.control-label(for='password') New Password
+          .col-sm-7
+            input#password.form-control(type='password', name='password')
+        .form-group
+          label.col-sm-3.control-label(for='confirmPassword') Confirm Password
+          .col-sm-7
+            input#confirmPassword.form-control(type='password', name='confirmPassword')
+        .form-group
+          .col-sm-offset-3.col-sm-4
+            button.btn.btn-primary(type='submit')
+              i.fa.fa-lock
+              | Change Password
 
-  .page-header
-    h3 Change Password
+    .page-header
+      h3 Delete Account
+    .well
+      form.form-horizontal(action='/account/delete', method='POST')
+        .form-group
+          p.col-sm-offset-3.col-sm-4 You can delete your account, but keep in mind this action is irreversible.
+          input(type='hidden', name='_csrf', value=_csrf)
+          .col-sm-offset-3.col-sm-4
+            button.btn.btn-danger(type='submit')
+              i.fa.fa-trash
+              | Delete my account
 
-  form.form-horizontal(action='/account/password', method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label.col-sm-3.control-label(for='password') New Password
-      .col-sm-7
-        input#password.form-control(type='password', name='password')
-    .form-group
-      label.col-sm-3.control-label(for='confirmPassword') Confirm Password
-      .col-sm-7
-        input#confirmPassword.form-control(type='password', name='confirmPassword')
-    .form-group
-      .col-sm-offset-3.col-sm-4
-        button.btn.btn-primary(type='submit')
-          i.fa.fa-lock
-          | Change Password
-
-  .page-header
-    h3 Delete Account
-
-  form.form-horizontal(action='/account/delete', method='POST')
-    .form-group
-      p.col-sm-offset-3.col-sm-4 You can delete your account, but keep in mind this action is irreversible.
-      input(type='hidden', name='_csrf', value=_csrf)
-      .col-sm-offset-3.col-sm-4
-        button.btn.btn-danger(type='submit')
-          i.fa.fa-trash
-          | Delete my account
-
-  .page-header
-    h3 Linked Accounts
-  .form-horizontal
-    .form-group
-      .col-sm-offset-3.col-sm-4
-        if user.google
-          p: a.text-danger(href='/account/unlink/google') Unlink your Google account
-        else
-          p: a(href='/auth/google') Link your Google account
+    .page-header
+      h3 Linked Accounts
+    .well
+      .form-horizontal
+        .form-group
+          .col-sm-offset-3.col-sm-4
+            if user.google
+              p: a.text-danger(href='/account/unlink/google') Unlink your Google account
+            else
+              p: a(href='/auth/google') Link your Google account
