@@ -399,4 +399,8 @@ $(document).ready(function() {
     $('button[type=reset]').on('click',function(){
       $('#category').attr('rows',1);
     });
+    //clear alerts from div#alert-area
+    $('#clr-alert').click(function(){
+      $('#alert-area').empty();
+    });
 });
