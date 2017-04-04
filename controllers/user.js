@@ -53,8 +53,14 @@ exports.postLogin = (req, res, next) => {
  */
 exports.logout = (req, res) => {
   req.logout();
-  req.session.destroy();
-  res.redirect('/');
+  req.session.destroy(function(err){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.redirect('/');
+    }
+  });
 };
 
 /**
