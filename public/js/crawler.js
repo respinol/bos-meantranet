@@ -20,9 +20,11 @@ $(document).ready(function() {
 
         if (country == 'United Kingdom') {
             loadUkLocations();
+            $('#USState').hide();
 
         } else {
             loadUsStates();
+            $('#USState').show();
         }
 
         loadCrawlers();

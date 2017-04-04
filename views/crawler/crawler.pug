@@ -50,10 +50,11 @@ block content
             button.cr-btn(type='reset') Reset
             button#clr-alert.cr-btn(type='button') Clear Alerts
           .col-xs-4
-            label(for="state") Select a state:
-            br
-            input#state.Datalist.search-box(type="text", list="json-states", placeholder="e.g. Texas")
-            datalist#json-states
+            #USState
+              label(for="state") Select a state:
+              br
+              input#state.Datalist.search-box(type="text", list="json-states", placeholder="e.g. Texas")
+              datalist#json-states
           .col-xs-4
             label(for="category") Select a category:
             br
