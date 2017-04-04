@@ -10,11 +10,11 @@ block content
         .form-group
           label.col-sm-3.control-label(for='email') Email
           .col-sm-7
-            input#email.form-control(type='email', name='email', value=user.email)
+            input#email.input-design.form-control(type='email', name='email', value=user.email)
         .form-group
           label.col-sm-3.control-label(for='name') Name
           .col-sm-7
-            input#name.form-control(type='text', name='name', value=user.profile.name)
+            input#name.input-design.form-control(type='text', name='name', value=user.profile.name)
         .form-group
           label.col-sm-3.control-label Gender
           .col-sm-6
@@ -28,18 +28,18 @@ block content
           label.col-sm-3.control-label(for='userlevel') User Level
           .col-sm-7
             if user.profile.userlevel == 'Admin'
-              input#userlevel.form-control(type='text', list='userlevels', name='userlevel', value=user.profile.userlevel)
+              input#userlevel.input-design.form-control(type='text', list='userlevels', name='userlevel', value=user.profile.userlevel)
               datalist#userlevels
                 option Admin
                 option Employee
                 option Intern
             else
-              input#userlevel.form-control(type='text', name='userlevel' disabled, value=user.profile.userlevel)
+              input#userlevel.input-design.form-control(type='text', name='userlevel' disabled, value=user.profile.userlevel)
         .form-group
           label.col-sm-3.control-label(for='department') Department
           .col-sm-7
             if user.profile.userlevel == 'Admin'
-              input#department.form-control(type='text', list='departments', name='department', value=user.profile.department)
+              input#department.input-design.form-control(type='text', list='departments', name='department', value=user.profile.department)
               datalist#departments
                 option I.T.
                 option Human Resources
@@ -47,13 +47,13 @@ block content
                 option Operations
                 option Intern
             else
-              input#location.form-control(type='text', name='department' disabled, value=user.profile.department)
+              input#location.input-design.form-control(type='text', name='department' disabled, value=user.profile.department)
 
         .form-group
           label.col-sm-3.control-label(for='jobtitle') Job Title
           .col-sm-7
             if user.profile.userlevel == 'Admin'
-              input#jobtitle.form-control(type='text', list='jobtitles', name='jobtitle', value=user.profile.jobtitle)
+              input#jobtitle.input-design.form-control(type='text', list='jobtitles', name='jobtitle', value=user.profile.jobtitle)
               datalist#jobtitles
                 option I.T. Administrator
                 option Management
@@ -61,7 +61,7 @@ block content
                 option Agent
                 option Intern
             else
-              input#jobtitle.form-control(type='text', name='jobtitle' disabled, value=user.profile.jobtitle)
+              input#jobtitle.input-design.form-control(type='text', name='jobtitle' disabled, value=user.profile.jobtitle)
         .form-group
           label.col-sm-3.control-label Gravatar
           .col-sm-4
@@ -80,11 +80,11 @@ block content
         .form-group
           label.col-sm-3.control-label(for='password') New Password
           .col-sm-7
-            input#password.form-control(type='password', name='password')
+            input#password.input-design.form-control(type='password', name='password')
         .form-group
           label.col-sm-3.control-label(for='confirmPassword') Confirm Password
           .col-sm-7
-            input#confirmPassword.form-control(type='password', name='confirmPassword')
+            input#confirmPassword.input-design.form-control(type='password', name='confirmPassword')
         .form-group
           .col-sm-offset-3.col-sm-4
             button.btn.btn-primary(type='submit')
