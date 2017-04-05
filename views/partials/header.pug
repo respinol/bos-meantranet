@@ -52,12 +52,19 @@
 
         li.dropdown(class=(title == 'Admin Tools') ? 'active' : undefined)
           a.dropdown-toggle(href='#', data-toggle='dropdown')
-            span.fa.fa-user-circle(aria-hidden='true')
+            span.fa.fa-wrench(aria-hidden='true')
             | Admin Tools
             b.caret
           ul.dropdown-menu
             li(class=(title == 'Admin Page') ? 'active' : undefined)
-              a(href='/admin/users') Admin Page
+              if !user
+                a(href='/login')
+                  span.fa.fa-caret-right(aria-hidden:'true')
+                  | Admin Page
+              else
+                a(href='/admin/users')
+                  span.fa.fa-caret-right(aria-hidden:'true')
+                  | Admin Page
             li(class=(title == 'Assessment Scores') ? 'active' : undefined)
               a(href='/applicant/scores')
                 span.fa.fa-caret-right(aria-hidden='true')
@@ -81,16 +88,20 @@
         ul.nav.navbar-nav.pull-right
           if !user
             li(class=(title == 'Login') ? 'active' : undefined)
-              a(href='/login') Login
+              a(href='/login')
+                span.fa.fa-user(aria-hidden:'true')
+                | Login
             li(class=(title == 'Create Account') ? 'active' : undefined)
-              a(href='/signup') Create Account
+              a(href='/signup')
+                span.fa.fa-user-plus(aria-hidden:'true')
+                | Create Account
           else
             li.dropdown(class=(title == 'Account Management') ? 'active' : undefined)
               a.dropdown-toggle(href='#', data-toggle='dropdown')
                 if user.profile.picture
-                  img(src=user.profile.picture)
+                  img(src=user.profile.picture style='width:50px;height:50px;')
                 else
-                  img(src=user.gravatar(60))
+                  img(src=user.gravatar(60) style='width:50px;height:50px;')
                 span= user.profile.name || user.email || user.id
                 i.caret
               ul.dropdown-menu

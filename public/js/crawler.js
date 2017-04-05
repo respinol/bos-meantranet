@@ -20,9 +20,11 @@ $(document).ready(function() {
 
         if (country == 'United Kingdom') {
             loadUkLocations();
+            $('#USState').hide();
 
         } else {
             loadUsStates();
+            $('#USState').show();
         }
 
         loadCrawlers();
@@ -376,4 +378,31 @@ $(document).ready(function() {
         downloadLink.click();
         document.body.removeChild(downloadLink);
     }
+    ////textarea auto resize
+    $('#category').keydown(function(e) {
+       var $this = $(this);
+       var rows = parseInt($this.attr('rows'));
+       var lines;
+
+       // on enter
+        if (e.which === 13){
+          $this.attr('rows', rows + 1);
+        }
+        //remove row if empty
+        if (e.which === 8 && rows !== 1) {
+            lines = $(this).val().split('\n')
+            console.log(lines);
+            if(!lines[lines.length - 1]) {
+                $this.attr('rows', rows - 1);
+            }
+        }
+    });
+    //reset row on click
+    $('button[type=reset]').on('click',function(){
+      $('#category').attr('rows',1);
+    });
+    //clear alerts from div#alert-area
+    $('#clr-alert').click(function(){
+      $('#alert-area').empty();
+    });
 });
