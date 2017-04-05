@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    let socket = io.connect(window.location.href);
+    socket.on('greet', function(data) {
+        console.log(data);
+        socket.emit('respond', {
+            message: 'Hello to you too, Mr.Server!'
+        });
+    });
     var scrapedData = [];
     var filterD121 = {
         name: '',
@@ -308,29 +315,29 @@ $(document).ready(function() {
     }
     ////textarea auto resize
     $('#category').keydown(function(e) {
-       var $this = $(this);
-       var rows = parseInt($this.attr('rows'));
-       var lines;
+        var $this = $(this);
+        var rows = parseInt($this.attr('rows'));
+        var lines;
 
-       // on enter
-        if (e.which === 13){
-          $this.attr('rows', rows + 1);
+        // on enter
+        if (e.which === 13) {
+            $this.attr('rows', rows + 1);
         }
         //remove row if empty
         if (e.which === 8 && rows !== 1) {
             lines = $(this).val().split('\n')
             console.log(lines);
-            if(!lines[lines.length - 1]) {
+            if (!lines[lines.length - 1]) {
                 $this.attr('rows', rows - 1);
             }
         }
     });
     //reset row on click
-    $('button[type=reset]').on('click',function(){
-      $('#category').attr('rows',1);
+    $('button[type=reset]').on('click', function() {
+        $('#category').attr('rows', 1);
     });
     //clear alerts from div#alert-area
-    $('#clr-alert').click(function(){
-      $('#alert-area').empty();
+    $('#clr-alert').click(function() {
+        $('#alert-area').empty();
     });
 });

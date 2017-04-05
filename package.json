@@ -49,6 +49,7 @@
     "passport-oauth": "^1.0.0",
     "pug": "^2.0.0-beta6",
     "request": "^2.78.0",
+    "socket.io": "^1.7.3",
     "validator": "^6.1.0",
     "x-ray": "^2.3.1"
   },
