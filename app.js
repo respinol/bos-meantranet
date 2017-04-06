@@ -63,6 +63,8 @@ const passportConfig = require('./config/passport');
  * Create Express server.
  */
 const app = express();
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
 /**
  * Connect to MongoDB.
@@ -77,7 +79,7 @@ mongoose.connection.on('error', () => {
 /**
  * Express configuration.
  */
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.use(expressStatusMonitor());
@@ -140,21 +142,21 @@ app.use(express.static(path.join(__dirname, 'public'), {
  */
 app.get('/', homeController.index);
 app.route('/login')
-  .get(userController.getLogin)
-  .post(userController.postLogin)
+    .get(userController.getLogin)
+    .post(userController.postLogin)
 app.get('/logout', userController.logout);
 app.route('/forgot')
-  .get(userController.getForgot)
-  .post(userController.postForgot)
+    .get(userController.getForgot)
+    .post(userController.postForgot)
 app.route('/reset/:token')
-  .get(userController.getReset)
-  .post(userController.postReset)
+    .get(userController.getReset)
+    .post(userController.postReset)
 app.route('/signup')
-  .get(userController.getSignup)
-  .post(userController.postSignup)
+    .get(userController.getSignup)
+    .post(userController.postSignup)
 app.route('/contact')
-  .get(contactController.getContact)
-  .post(contactController.postContact)
+    .get(contactController.getContact)
+    .post(contactController.postContact)
 app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
@@ -188,8 +190,8 @@ app.get('/auth/google/callback', passport.authenticate('google', {
  * Applicant Hiring Process routes.
  */
 app.get('/applicant/exam', applicantController.getExam);
-app.get('/applicant/scores',  passportConfig.isAuthenticated, applicantController.getScores);
-app.get('/applicant/form',  passportConfig.isAuthenticated, applicantController.getForm);
+app.get('/applicant/scores', passportConfig.isAuthenticated, applicantController.getScores);
+app.get('/applicant/form', passportConfig.isAuthenticated, applicantController.getForm);
 
 /**
  * Intern Tools routes.
@@ -200,23 +202,23 @@ app.get('/intern/consequence', internController.getConsequence);
  * Crawler routes.
  */
 app.route('/crawler')
-  .get(crawlerController.getCrawler)
+    .get(crawlerController.getCrawler)
 app.route('/searching')
-  .get(crawlerController.getData)
-  .post(crawlerController.postData)
+    .get(crawlerController.getData)
+    .post(crawlerController.postData)
 
 app.route('/d121')
-  .get(d121Controller.getCrawler)
+    .get(d121Controller.getCrawler)
 app.route('/search/d121')
-  .get(d121Controller.getData)
-  .post(d121Controller.postData)
+    .get(d121Controller.getData)
+    .post(d121Controller.postData)
 
 /**
  * Admin routes.
  */
 app.route('/admin/users')
-  .get(adminController.getUsers)
-  .post(adminController.postUpdateUsers)
+    .get(adminController.getUsers)
+    .post(adminController.postUpdateUsers)
 
 /**
  * Error Handler.
@@ -226,9 +228,20 @@ app.use(errorHandler());
 /**
  * Start Express server.
  */
-app.listen(app.get('port'), () => {
+server.listen(app.get('port'), () => {
     console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env')); 
     console.log('  Press CTRL-C to stop\n');
+});
+
+io.on('connection', (socket) => {
+    socket.emit('greet', {
+        hello: 'Hey there browser!'
+    });
+    socket.on('respond', (data) => {
+    });
+    socket.on('disconnect', () => {
+        console.log('Socket disconnected');
+    });
 });
 
 module.exports = app;

@@ -1,25 +1,41 @@
 extends ../layout
 
 block content
-  .page-header
-    h2
-      i.fa.fa-upload
-      | File Upload
-
-  .btn-group.btn-group-justified
-    a.btn.btn-success(href='https://github.com/expressjs/multer', target='_blank')
-      i.fa.fa-book
-      | Multer Documentation
-    a.btn.btn-success(href='http://codepen.io/search/pens?q=custom+file+upload&limit=all&type=type-pens', target='_blank')
-      i.fa.fa-laptop
-      | Customize File Upload
-
-  h3 File Upload Form
-  .row
-    .col-sm-6
-      p All files will be uploaded to "/uploads" directory.
-      form(role='form', enctype='multipart/form-data', method='POST')
-        .form-group
-          label.control-label File Input
-          input(type='file', name='myFile')
-        button.btn.btn-primary(type='submit') Submit
+  .container(style='padding:50px 20px 0px 20px;')
+    .page-header
+      .row
+        .col-xs-1
+        .col-xs-10
+          h2
+            i.fa.fa-upload
+            | File Upload
+      .container-fluid.well
+        .row
+          .col-xs-1
+          .col-xs-10
+            .btn-group.btn-group-justified
+              a.btn.btn-success(href='https://github.com/expressjs/multer', target='_blank')
+                i.fa.fa-book
+                | Multer Documentation
+              a.btn.btn-success(href='http://codepen.io/search/pens?q=custom+file+upload&limit=all&type=type-pens', target='_blank')
+                i.fa.fa-laptop
+                | Customize File Upload
+        .row
+          .col-xs-1
+          .col-xs-10
+            h3 File Upload Form
+            .row
+              .col-xs-6
+                p All files will be uploaded to "/uploads" directory.
+            .row
+              .col-xs-6
+                form(role='form', enctype='multipart/form-data', method='POST')
+                  .form-group
+                    label.control-label File Input
+                    .input-group
+                      input.form-control(type="text" name="filename" placeholder="No file selected" readonly)
+                      span.input-group-btn
+                        .btn.btn-default.custom-file-uploader
+                          input(type='file' name='myFile' onchange='this.form.filename.value = this.files[0].name')
+                          | Select a File
+                  button.btn.btn-primary(type='submit') Submit

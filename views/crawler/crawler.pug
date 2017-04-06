@@ -44,12 +44,28 @@ block content
             label#crawlmode.switch
               input(type="checkbox", checked="checked")
               div.slider.round
+         HEAD
           .col-xs-4
             label(for="state") Select a state:
             br
             input#state(type="text", list="json-states", placeholder="e.g. Texas")
             datalist#json-states
           .col-xs-3
+
+            br
+            br
+            button#scrape.cr-btn(type="button") Scrape
+            button#download.cr-btn(type="button") Download
+            br
+            button.cr-btn(type='reset') Reset
+            button#clr-alert.cr-btn(type='button') Clear Alerts
+          .col-xs-4
+            #USState
+              label(for="state") Select a state:
+              br
+              input#state.Datalist.search-box(type="text", list="json-states", placeholder="e.g. Texas")
+              datalist#json-states
+          .col-xs-4
             label(for="category") Select a category:
             br
             textarea#category(name="textarea" rows="6")

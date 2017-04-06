@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    let socket = io.connect(window.location.href);
+    socket.on('greet', function(data) {
+        console.log(data);
+        socket.emit('respond', {
+            message: 'Hello to you too, Mr.Server!'
+        });
+    });
     var scrapedData = [];
     var filterD121 = {
         name: '',
@@ -127,9 +134,6 @@ $(document).ready(function() {
         for (var i = 0; i < categories.length; i++) {
             parameters.category = categories[i];
 
-            newAlert("info",
-                `Scraping ${parameters.category}(s) from ${parameters.city}`);
-
             var scrape = $.get('/search/d121', parameters, function(data) {
                     if (data instanceof Object && data.business.length > 0) {
                         results.append(dataTemplate({
@@ -165,6 +169,55 @@ $(document).ready(function() {
                     scrape.abort();
                     newAlert('info', 'Session Stopped.');
                 });
+
+            // var scrape = $.ajax({
+            //         url: '/search/d121',
+            //         method: 'GET',
+            //         contentType: 'application/json',
+            //         data: parameters,
+            //         timeout: 600000,
+            //         cache: false,
+            //         beforeSend: function() {
+            //           newAlert('info',
+            //               `Scraping ${parameters.category}(s) from ${parameters.city}`);
+            //         },
+            //         success: function(data) {
+            //               location.reload(true);
+            //
+            //               if (data instanceof Object && data.business.length > 0) {
+            //                   results.append(dataTemplate({
+            //                       page: data
+            //                   }));
+            //               } else {
+            //                   results.append(data);
+            //               };
+            //
+            //               data.business = filterArray(data.business, filterD121);
+            //               scrapedData.push(data);
+            //             }
+            //     })
+            //     .done(function(data) {
+            //         var type = (data.business.length > 0) ? type = 'success' : type = 'warning';
+            //
+            //         newAlert(type,
+            //             `Scraped ${data.business.length} ${parameters.category}(s) from ${parameters.city}`);
+            //
+            //         if ($('input[type=checkbox]:checked').length > 0) {
+            //             $('#state').val(getRandomItem($('#json-states > option')));
+            //             $('#city').val(getRandomItem($('#json-cities > option')));
+            //             setTimeout(scrapeThis(), 30000);
+            //
+            //         } else {
+            //             newAlert('success', `Finished scraping session...`);
+            //         }
+            //     })
+            //     .fail(function(jqXHRm, textStatus) {
+            //         var error = (textStatus === 'timeout') ? (error = 'Failed from timeout.') : (error = 'Error encountered while scraping.');
+            //
+            //         console.log(error);
+            //         newAlert('danger', error);
+            //         scrape.abort();
+            //     });
         }
     }
 
@@ -262,28 +315,29 @@ $(document).ready(function() {
     }
     ////textarea auto resize
     $('#category').keydown(function(e) {
-       var $this = $(this);
-       var rows = parseInt($this.attr('rows'));
-       var lines;
+        var $this = $(this);
+        var rows = parseInt($this.attr('rows'));
+        var lines;
 
-       // on enter
-        if (e.which === 13){
-          $this.attr('rows', rows + 1);
+        // on enter
+        if (e.which === 13) {
+            $this.attr('rows', rows + 1);
         }
         //remove row if empty
         if (e.which === 8 && rows !== 1) {
             lines = $(this).val().split('\n')
             console.log(lines);
-            if(!lines[lines.length - 1]) {
+            if (!lines[lines.length - 1]) {
                 $this.attr('rows', rows - 1);
-            }
-            if($('#category').val('')){
-              $this.attr('rows',1);
             }
         }
     });
     //reset row on click
-    $('button[type=reset]').on('click',function(){
-      $('#category').attr('rows',1);
+    $('button[type=reset]').on('click', function() {
+        $('#category').attr('rows', 1);
+    });
+    //clear alerts from div#alert-area
+    $('#clr-alert').click(function() {
+        $('#alert-area').empty();
     });
 });
